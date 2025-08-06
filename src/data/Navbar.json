@@ -1,0 +1,673 @@
+[
+  {
+    "NavbarItem": "Product",
+    "Details": [
+      {
+        "title": "Smart Industry",
+        "src": "/images/product-hover/icons/sewing_machine_1.svg",
+        "description": "Ideal for manufacturing units, processing plants, & industrial automation.",
+        "images": [
+         {
+          "name": "Macsync",
+          "src": "/images/product-hover/smart-industry/mac.webp",
+          "filterTags": ["Controllers"]
+        },
+        {
+          "name": "Macset",
+          "src": "/images/product-hover/smart-industry/set.webp",
+          "filterTags": ["Controllers"]
+        },
+        {
+          "name": "LoRaWan Outdoor Gateway",
+          "src": "/images/product-hover/smart-industry/lorawan_outdoor_gateway.webp",
+          "filterTags": ["Gateway", "LoRaWAN"]
+        },
+        {
+          "name": "Setu",
+          "src": "/images/product-hover/smart-industry/setu.webp",
+          "filterTags": ["Nodes"]
+        },
+        {
+          "name": "4G Gateway",
+          "src": "/images/product-hover/smart-industry/4g_gateway.webp",
+          "filterTags": ["Gateway", "4G Cellular"]
+        },
+          {
+            "name": "Setu SD",
+            "src": "/images/product-hover/smart-industry/setu_sd.webp"
+          },
+          {
+            "name": "Autocore",
+            "src": "/images/product-hover/smart-industry/autocore.webp"
+          },
+          {
+            "name": "CO2 Sensor",
+            "src": "/images/product-hover/smart-industry/co2_sensor.webp"
+          },
+          {
+            "name": "Flow Convertor ",
+            "src": "/images/product-hover/smart-industry/flow_converter.webp"
+          },
+          
+         
+          
+          {
+            "name": "Noise Sensor",
+            "src": "/images/product-hover/smart-industry/noise_sensor.webp"
+          },
+          {
+            "name": "Pressure Sensor",
+            "src": "/images/product-hover/smart-industry/pressure_sensor.webp"
+          },
+          
+         
+          {
+            "name": "Temperature Sensor",
+            "src": "/images/product-hover/smart-industry/temperature_sensor.webp"
+          },
+          {
+            "name": "Viberation Sensor",
+            "src": "/images/product-hover/smart-industry/viberation_sensor.webp"
+          }
+        ]
+      },
+      {
+        "title": "Smart City",
+        "src": "/images/product-hover/icons/school_1.svg",
+        "description": "Suited for urban infrastructure, smart governance, and city-wide automation.",
+        "filterTags": ["Controllers"],
+        "images": [
+           {
+            "name": "LoRaWAN Outdoor Gateway",
+            "src": "/images/product-hover/smart-city/lorawan_outdoor_gateway.webp"
+          },
+          {
+            "name": "2G Gateway",
+            "src": "/images/product-hover/smart-city/2G_gateway.webp"
+          },
+          {
+            "name": "Macsync",
+            "src": "/images/product-hover/smart-city/macsync.webp"
+          },
+          {
+            "name": "Water Quality Sensor",
+            "src": "/images/product-hover/smart-city/water_quality_sensor.webp"
+          },
+          {
+            "name": "Weather Station",
+            "src": "/images/product-hover/smart-city/weather_station.webp"
+          },
+          {
+            "name": "Noise Sensor",
+            "src": "/images/product-hover/smart-city/noise_sensor.webp"
+          },
+          {
+            "name": "Temperature Sensor",
+            "src": "/images/product-hover/smart-city/temperature_sensor.webp"
+          },
+         
+          {
+            "name": "Macset",
+            "src": "/images/product-hover/smart-city/macset.webp"
+          },
+          
+          {
+            "name": "Ultrasonic Sensor ",
+            "src": "/images/product-hover/smart-city/megatough_Sensor.webp"
+          }
+          
+        ]
+      },
+      {
+        "title": "Smart Agriculture",
+        "src": "/images/product-hover/icons/apple_crate_1.svg",
+        "description": "Perfect for modern farms, greenhouses, and agri-tech innovators.",
+        "images": [
+          {
+            "name": "Macset",
+            "src": "/images/product-hover/smart-agriculture/macset.webp"
+          },
+          {
+            
+            "name": "Macsync",
+            "src": "/images/product-hover/smart-agriculture/macsync.webp"
+          },
+          {
+            "name": "Soil Sensor",
+            "src": "/images/product-hover/smart-agriculture/soil_sensor.webp"
+          },
+          {
+            "name": "Weather Station",
+            "src": "/images/product-hover/smart-city/weather_station.webp"
+          },
+          {
+            "name": "LoRaWAN Outdoor Gateway",
+            "src": "/images/product-hover/smart-agriculture/lorawan_outdoor_gateway.webp"
+          },
+          
+          
+          {
+            "name": "Mini Controller",
+            "src": "/images/product-hover/smart-agriculture/mini_controller.webp"
+          },
+          
+          {
+            "name": "Setu SD",
+            "src": "/images/product-hover/smart-agriculture/setu_sd.webp"
+          },
+          {
+            "name": "Pressure Sensor",
+            "src": "/images/product-hover/smart-agriculture/pressure_sensor.webp"
+          },
+          {
+            "name": "Toggle X",
+            "src": "/images/product-hover/smart-agriculture/toggle_x.webp"
+          },
+          {
+            "name": "AQI Sensor",
+            "src": "/images/product-hover/smart-agriculture/aqi_sensor.webp"
+          },
+          {
+            "name": "AutoCore",
+            "src": "/images/product-hover/smart-industry/autocore.webp"
+          }
+          
+          
+          
+        ]
+      },
+      {
+        "title": "Building Automation",
+        "src": "/images/product-hover/icons/smart_building.svg",
+        "description": "For commercial buildings, smart homes, and critical facilities.",
+        "images": [
+          {
+            "name": "AQI Sensor",
+            "src": "/images/product-hover/smart-building/aqi_sensor.webp"
+          },
+          {
+            "name": "Toggle X",
+            "src": "/images/product-hover/smart-building/toggle_x.webp"
+          },
+          {
+            "name": "Ultrasonic Sensor ",
+            "src": "/images/product-hover/smart-building/ultrasonic_sensor.webp"
+          },
+          {
+            "name": "Temperature Sensor",
+            "src": "/images/product-hover/smart-building/temperature_Sensor.webp"
+          },
+          {
+            "name": "Ble to WiFi GW",
+            "src": "/images/product-hover/smart-building/ble_to_wifi_gateway.webp"
+          },
+          {
+            "name": "LoRaWAN Outdoor Gateway",
+            "src": "/images/product-hover/smart-building/lorawan_outdoor_gateway.webp"
+          },
+          {
+            "name": "Macsync",
+            "src": "/images/product-hover/smart-building/macsync.webp"
+          },
+          {
+            "name": "MultiNode",
+            "src": "/images/product-hover/smart-building/multinode.webp"
+          },
+          {
+            "name": "Noise Sensor",
+            "src": "/images/product-hover/smart-building/noise_sensor.webp"
+          },
+          
+          
+          {
+            "name": "Ultrasonic Sensor ",
+            "src": "/images/product-hover/smart-building/ultrasonic_sensor_4.webp "
+          },
+          
+          {
+            "name": "Water Quality Sensor",
+            "src": "/images/product-hover/smart-building/water_quality_sensor.webp"
+          }
+        ]
+      },
+      {
+        "title": "Asset Tracker",
+        "src": "/images/product-hover/icons/tracker_1.svg",
+        "description": "Tracks your highly precious assets with centimeter level accuracy*",
+        "images": [
+          {
+            "name": "Tag 1",
+            "src": "/images/product-hover/asset-tracker/tag_1.webp"
+          },
+          {
+            "name": "Tag 2",
+            "src": "/images/product-hover/asset-tracker/tag2.webp"
+          },
+          {
+            "name": "Tag 3",
+            "src": "/images/product-hover/asset-tracker/tag3.webp"
+          },
+          {
+            "name": "Tag 4",
+            "src": "/images/product-hover/asset-tracker/tag_5.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "NavbarItem": "Modules",
+    "Details": [
+      {
+        "title": "LoRaWAN",
+        "src": "/images/product-hover/icons/lorawan_icon.svg",
+        "description": "For long-range, low-power IoT applications",
+        "images": [
+          {
+            "name": "MOD 011",
+            "src": "/images/modules-hover/lora_module/lora_ble_module.webp"
+          },
+          {
+            "name": "MOD 012",
+            "src": "/images/modules-hover/lora_module/lora_module.webp"
+          }
+          
+        ]
+      },
+      {
+        "title": "WiFi",
+        "src": "/images/product-hover/icons/wifi.svg",
+        "description": "Best for fast data in smart systems.",
+        "images": [
+          {
+            "name": "MOD 211",
+            "src": "/images/modules-hover/wifi_module/wbm35.webp"
+          },
+          {
+            "name": "MOD 212",
+            "src": "/images/modules-hover/wifi_module/wm34.webp"
+          }
+        ]
+      },
+      {
+        "title": "Ble",
+        "src": "/images/product-hover/icons/bluetooth_circle1.svg",
+        "description": "Low-energy, short-range connectivity made easy.",
+        "images": [
+          {
+            "name": "MOD 311",
+            "src": "/images/modules-hover/wifi_module/wbm35.webp"
+          }
+        ]
+      },
+      {
+        "title": "WiFi + Ble",
+        "src": "/images/product-hover/icons/wifi_ble_module.svg",
+        "description": "Fast Wi-Fi with BLE for seamless local access.",
+        "images": [
+          {
+            "name": "MOD 411",
+            "src": "/images/modules-hover/WiFi Module/wbm35.webp"
+          }
+        ]
+      },
+      {
+        "title": "LoRaWAN + Ble",
+        "src": "/images/product-hover/icons/lora_ble_module.svg",
+        "description": "Long-range LoRa with BLE for easy setup and control.",
+        "images": [
+          {
+            "name": "MOD 511",
+            "src": "/images/modules-hover/lora_module/lora_ble_module.webp"
+          }
+        ]
+      },
+      {
+        "title":"Evaluation kit",
+        "src": "/images/product-hover/icons/mobile_hand_2.svg",
+        "description": "Quick-start tools for testing and prototyping",
+        "images": [
+          {
+            "name": "MOD 611",
+            "src": "/images/modules-hover/lora_module/lora_ble_module.webp"
+          }
+        ]
+      },
+      {
+        "title":"Converters",
+        "src": "/images/product-hover/icons/mobile_hand_2.svg",
+        "description": "Bridge legacy protocols to IoT",
+        "images": [
+          {
+            "name": "MOD 711",
+            "src": "/images/modules-hover/lora_module/lora_ble_module.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "NavbarItem": "Applications",
+    "Details": [
+      {
+        "title": "Smart Industries",
+        "src": "/images/product-hover/icons/sewing_machine_1.svg",
+        "description": "Ideal for manufacturing units, processing plants, & industrial automation.",
+        "images": [
+          {
+            "name": "Air Quality Monitoring",
+            "src": "/images/application-hover/smart-industry/air_quality .webp"
+          },
+          {
+            "name": "Asset Tracking",
+            "src": "/images/application-hover/smart-industry/asset_tracking.webp"
+          },
+          {
+            "name": "Automated Pump Valve Control",
+            "src": "/images/application-hover/smart-industry/Automated Pump_Valve Control.webp"
+          },
+          {
+            "name": "Cold Chain Monitoring",
+            "src": "/images/application-hover/smart-industry/cold_chain_monitoring.webp"
+          },
+          {
+            "name": "Dam Automation",
+            "src": "/images/application-hover/smart-industry/dam_automation.webp"
+          },
+          {
+            "name": "Energy Optimizer",
+            "src": "/images/application-hover/smart-industry/energy_optimization.webp"
+          },
+          {
+            "name": "Air Quality",
+            "src": "/images/application-hover/smart-industry/hazard_detection.webp"
+          },
+          {
+            "name": "Predictive Health",
+            "src": "/images/application-hover/smart-industry/predictive_Health.webp"
+          },
+          {
+            "name": "Quality Control",
+            "src": "/images/application-hover/smart-industry/quality_control.webp"
+          },
+          {
+            "name": "Remote Control",
+            "src": "/images/application-hover/smart-industry/remote_control.webp"
+          },
+          {
+            "name": "remote Tank and Silo Level ",
+            "src": "/images/application-hover/smart-industry/remote_tank_&_silo_level.webp"
+          },
+          {
+            "name": "STP Plants",
+            "src": "/images/application-hover/smart-industry/stp_plants 2.webp"
+          },
+          {
+            "name": "Cold Chain Monitoring",
+            "src": "/images/application-hover/smart-industry/cold_chain_monitoring.webp"
+          }
+        ]
+      },
+      {
+        "title": "Smart City",
+        "src": "/images/product-hover/icons/school_1.svg",
+        "description": "Suited for urban infrastructure, smart governance, and city-wide automation.",
+        "images": [
+          {
+            "name": "Air Quality Monitoring",
+            "src": "/images/application-hover/smart-city/air_quality_monitoring.webp"
+          },
+          {
+            "name": "Automated Irrigation",
+            "src": "/images/application-hover/smart-city/automated_irrigation.webp"
+          },
+          {
+            "name": "Early Flood Warning",
+            "src": "/images/application-hover/smart-city/early_flood_warning.webp"
+          },
+          {
+            "name": "STP Plants",
+            "src": "/images/application-hover/smart-city/stp_plants.webp"
+          },
+          {
+            "name": "Street Lighting",
+            "src": "/images/application-hover/smart-city/street_lighting.webp"
+          },
+          {
+            "name": "Waste Collection",
+            "src": "/images/application-hover/smart-city/waste_collection.webp"
+          },
+          {
+            "name": "STP Plants",
+            "src": "/images/application-hover/smart-city/stp_plants.webp"
+          }
+        ]
+      },
+      {
+        "title": "Smart Agriculture",
+        "src": "/images/product-hover/icons/apple_crate_1.svg",
+        "description": "Perfect for modern farms, greenhouses, and agri-tech innovators.",
+        "images": [
+          {
+            "name": "Air Quality Monitoring",
+            "src": "/images/application-hover/smart-agriculture/air_quality_monitoring.webp"
+          },
+          {
+            "name": "Automated Feeding",
+            "src": "/images/application-hover/smart-agriculture/auto_feeding.webp"
+          },
+          {
+            "name": "Automated  Farms",
+            "src": "/images/application-hover/smart-agriculture/automated_farms.webp"
+          },
+          {
+            "name": "Cold Chain Monitoring",
+            "src": "/images/application-hover/smart-agriculture/cold_chain_monitoring.webp"
+          },
+          {
+            "name": "Green House",
+            "src": "/images/application-hover/smart-agriculture/green_houses.webp"
+          },
+          {
+            "name": "Level Monitoring",
+            "src": "/images/application-hover/smart-agriculture/level_monitoring.webp"
+          },
+          {
+            "name": "livestock Monitoring",
+            "src": "/images/application-hover/smart-agriculture/livestock_monitoring.webp"
+          },
+          {
+            "name": "Soil Moisture Sensor",
+            "src": "/images/application-hover/smart-agriculture/soil_moisture_sensor .webp"
+          }
+        ]
+      },
+      {
+        "title": "Smart Building",
+        "src": "/images/product-hover/icons/smart_building.svg",
+        "description": "For commercial buildings, smart homes, and critical facilities.",
+        "images": [
+          {
+            "name": "Campus Street Light",
+            "src": "/images/application-hover/smart-building/campus_street_light.webp"
+          },
+          {
+            "name": "Controlled Ventilation",
+            "src": "/images/application-hover/smart-building/controlled_ventilation.webp"
+          },
+          {
+            "name": "Parking Guidance",
+            "src": "/images/application-hover/smart-building/parking_guidance.webp"
+          },
+          {
+            "name": "Smart Washrooms",
+            "src": "/images/application-hover/smart-building/smart_washrooms.webp"
+          },
+          {
+            "name": "Waste Collection",
+            "src": "/images/application-hover/smart-building/waste_collection.webp"
+          }
+        ]
+      }
+    ],
+    "ImageSize": "cover"
+  },
+  {
+    "NavbarItem": "Resources",
+    "Details": [
+      {
+        "title": "User Manual",
+        "src": "/images/product-hover/icons/guide-alt_1.svg",
+        "description": "Step-by-step instructions to set up, use, and troubleshoot your devices.",
+        "images": [
+          {
+            "name": "4G Gateway",
+            "src": "/images/product-hover/smart-industry/4g_gateway.webp"
+          },
+          {
+            "name": "Autocore",
+            "src": "/images/product-hover/smart-industry/autocore.webp"
+          },
+          {
+            "name": "CO2 Sensor",
+            "src": "/images/product-hover/smart-industry/co2_sensor.webp"
+          },
+          {
+            "name": "Flow Convertor ",
+            "src": "/images/product-hover/smart-industry/flow_converter.webp"
+          },
+          {
+            "name": "LoRaWan Outdoor Gateway",
+            "src": "/images/product-hover/smart-industry/lorawan_outdoor_gateway.webp"
+          },
+          {
+            "name": "Macset",
+            "src": "/images/product-hover/smart-industry/macset.webp"
+          },
+          {
+            "name": "Macsync",
+            "src": "/images/product-hover/smart-industry/macsync.webp"
+          },
+          {
+            "name": "Noise sensor",
+            "src": "/images/product-hover/smart-industry/noise_sensor.webp"
+          },
+          {
+            "name": "Pressure sensor",
+            "src": "/images/product-hover/smart-industry/pressure_sensor.webp"
+          },
+          {
+            "name": "Setu SD",
+            "src": "/images/product-hover/smart-industry/setu_sd.webp"
+          },
+          {
+            "name": "Setu",
+            "src": "/images/product-hover/smart-industry/setu.webp"
+          },
+          {
+            "name": "Temperature Sensor",
+            "src": "/images/product-hover/smart-industry/temperature_sensor.webp"
+          },
+          {
+            "name": "Viberation Sensor",
+            "src": "/images/product-hover/smart-industry/viberation_sensor.webp"
+          }
+        ]
+      },
+      {
+        "title": "Datasheets",
+        "src": "/images/newspaper.svg",
+        "description": "Quick access to key specs, performance details, and usage notes.",
+        "images": [
+          {
+            "name": "4G Gateway",
+            "src": "/images/product-hover/smart-industry/4g_gateway.webp"
+          },
+          {
+            "name": "Autocore",
+            "src": "/images/product-hover/smart-industry/autocore.webp"
+          },
+          {
+            "name": "CO2 Sensor",
+            "src": "/images/product-hover/smart-industry/co2_sensor.webp"
+          },
+          {
+            "name": "Flow Convertor ",
+            "src": "/images/product-hover/smart-industry/flow_converter.webp"
+          },
+          {
+            "name": "LoRaWan Outdoor Gateway",
+            "src": "/images/product-hover/smart-industry/lorawan_outdoor_gateway.webp"
+          },
+          {
+            "name": "Macset",
+            "src": "/images/product-hover/smart-industry/macset.webp"
+          },
+          {
+            "name": "Macsync",
+            "src": "/images/product-hover/smart-industry/macsync.webp"
+          },
+          {
+            "name": "Noise sensor",
+            "src": "/images/product-hover/smart-industry/noise_sensor.webp"
+          },
+          {
+            "name": "Pressure sensor",
+            "src": "/images/product-hover/smart-industry/pressure_sensor.webp"
+          },
+          {
+            "name": "Setu SD",
+            "src": "/images/product-hover/smart-industry/setu_sd.webp"
+          },
+          {
+            "name": "Setu",
+            "src": "/images/product-hover/smart-industry/setu.webp"
+          },
+          {
+            "name": "Temperature Sensor",
+            "src": "/images/product-hover/smart-industry/temperature_Sensor.webp"
+          },
+          {
+            "name": "viberation Sensor",
+            "src": "/images/product-hover/smart-industry/viberation_sensor.webp"
+          }
+        ]
+      },
+      {
+        "title": "Books",
+        "src": "/images/product-hover/icons/book_open_cover_1.svg",
+        "description": "In-depth insights on LoRaWAN , WiFi, 4G designed for industry professionals.",
+        "images": [
+          {
+            "name": "Macsync NB",
+            "src": "/images/product-hover/smart-city/macsync.webp"
+          }
+        ]
+      },
+      {
+        "title": "Tech Reports",
+        "src": "/images/product-hover/icons/file-medical-alt 1.svg",
+        "description": "Essential market trends and analysis for smart IoT projects.",
+        "images": [
+          {
+            "name": "NB Tag V2",
+            "src": "/images/product-hover/smart-industry/macset.webp"
+          }
+        ]
+      },
+      {
+        "title": "Blogs",
+        "src": "/images/product-hover/icons/blogs_2_1.svg",
+        "description": "Latest IoT news, expert tips, and best practices to stay ahead.",
+        "images": [
+          {
+            "name": "NB Tag V2",
+            "src": "/images/product-hover/asset-tracker/tag2.webp"
+          } 
+        ]
+      }
+    ]
+  }
+]
+
+

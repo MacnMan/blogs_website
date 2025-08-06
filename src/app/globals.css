@@ -1,6 +1,12 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
-:root {
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* /* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +29,147 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+:root {
+    /* COlor Theme of Light Pages */
+    --gradient-pink: #FF5F9B;
+    --gradient-blue: #2F67FF;
+    --gradient-blue-secondary: #5565ED;
+    --heading-gray-color: #303031;
+    --link-button: #2F67FF;
+    --secondary-bg-color: #F7F7F7;
+    --text-color-primary: #989898;
+    --text-color-secondary: #5A5C66;
+
+
+    /* Color Theme Of Dark Pages like MACSET */
+    --dark-gradient-blue: #386DFF;
+    --dark-gradient-white: #D4D9FF;
+    --dark-gray-color: #737379;
+    --dark-bg-color: #111112;
+    --dark-section-bg-color: #292929;
+    --dark-primary-text-color: #757575;
+    --dark-contact-form: #606060;
+
+
 }
+
+.concave-mask {
+    clip-path: polygon(0% 0%,
+            10% 5%,
+            20% 8%,
+            30% 10%,
+            40% 11%,
+            50% 12%,
+            60% 11%,
+            70% 10%,
+            80% 8%,
+            90% 5%,
+            100% 0%,
+            100% 100%,
+            90% 95%,
+            80% 92%,
+            70% 90%,
+            60% 89%,
+            50% 88%,
+            40% 89%,
+            30% 90%,
+            20% 92%,
+            10% 95%,
+            0% 100%);
+}
+
+/* global.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbars cleanly */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes scroll-l-r {
+    0% {
+        transform: translateX(-90%);
+    }
+
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+
+@keyframes scroll-r-l {
+    from {
+        transform: translateX(10%);
+    }
+
+    to {
+        transform: translateX(-90%);
+    }
+}
+
+
+
+.leftToRight {
+    animation: scroll-l-r 30s linear infinite alternate;
+}
+
+
+.rightToLeft {
+    animation: scroll-r-l 30s linear infinite alternate;
+}
+
+
+.tech-specs-chips-card1 {
+    box-shadow: 0px 0px 75px -15px rgba(224, 62, 70, 0.688), 0px 0px 80px -10px rgba(114, 14, 244, 0.912);
+}
+
+.tech-specs-chips-card {
+    box-shadow: 0px 0px 100px -10px rgb(224, 62, 171), 0px 0px 100px -5px rgb(112, 14, 244);
+}
+
+.tech-specs-chips-card2 {
+    box-shadow: 0px 0px 75px -15px #f7d4e3b5, 0px 0px 90px -10px #2f66ffe4;
+}
+
+
+.text-outline-gradient {
+    font-size: 100px;
+    font-weight: bolder;
+    text-transform: capitalize;
+    background: linear-gradient(to right, #C561B7 29%, #5765EC 72%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px transparent;
+}
+
+.mask-gradient {
+    mask-image: linear-gradient(to right, transparent, white 45%, white 60%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Hide scrollbars cleanly */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} 

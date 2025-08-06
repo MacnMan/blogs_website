@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import Navbar from '@/components/HomePageComponents/Navbar'
+import { ROUTES } from '@/libs/routes'
+import './globals.css';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,11 +25,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  //   const allTabs = [
+  //   { tab: 'Features', path: ROUTES.ALWG },
+  //   { tab: 'Compare', path: ROUTES.ALWG_COMPARE },
+  //   { tab: 'Tech Specs', path: ROUTES.ALWG_TECH_SPECS },
+  //   { tab: 'Documentation', path: ROUTES.ALWG_DOCUMENTATION }
+  // ]
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <Navbar allTabs={allTabs} theme='light' /> */}
         {children}
       </body>
     </html>
