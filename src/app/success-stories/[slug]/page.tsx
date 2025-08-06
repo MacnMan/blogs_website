@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import HeroSection from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
+// import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
@@ -20,10 +20,20 @@ import { Section, SectionNew, ListSection, ListSectionNew, List } from '@/compon
 export const revalidate = 60;
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
+
+// interface Props {
+//   params: { slug: string }; // ✅ CORRECT
+// };
+
+export async function generateStaticParams() {
+  const slugs: string[] = await sanityClient.fetch(
+    `*[_type == "successStory" && defined(slug.current)][].slug.current`
+  );
+
+  return slugs.map((slug) => ({ slug }));
+}
 
 const query = groq`
   *[_type == "successStory" && slug.current == $slug][0] {
@@ -82,8 +92,14 @@ const query = groq`
 
 // ✅ Must be an async server component
 export default async function SuccessStory({ params }: Props) {
+  // const query = `*[_type == "successStory" && slug.current == $slug][0]`;
+  // const data = await sanityClient.fetch(query, { slug: params.slug });
   // ✅ Use await only when params is destructured and passed as props
-  const slug = await params.slug;
+  // const slug = await params.slug;
+
+  // const { slug } = await params;
+
+  const { slug } = await params;
 
   // ✅ Provide slug properly to query
   const data = await sanityClient.fetch(query, { slug });
@@ -105,16 +121,19 @@ export default async function SuccessStory({ params }: Props) {
           </p>
         )}
 
-
-        {data.introImage?.asset?.url && (
-          <Image
-            src={data.introImage.asset.url}
-            alt={data.introImage.alt || 'Intro Image'}
-            width={1800}
-            height={400}
-            className="rounded-xl mb-4"
-          />
-        )}
+        <div className="max-w-4xl mx-auto px-4">
+          {data.introImage?.asset?.url && (
+            <div className="w-full">
+              <Image
+                src={data.introImage.asset.url}
+                alt={data.introImage.alt || 'Intro Image'}
+                width={1200} // Large width for responsiveness
+                height={600} // Adjusted for aspect ratio
+                className="rounded-xl mb-4 w-full h-auto object-cover"
+              />
+            </div>
+          )}
+        </div>
 
 
         <Section title={data.problemTitle} description={data.problemDescription} items={data.problems} />
@@ -136,7 +155,7 @@ export default async function SuccessStory({ params }: Props) {
                 className="rounded-xl mb-4"
               />
             )}
-            <List items={data.architectureComponents} labelField="label" />
+            <List items={data.architectureComponents} />
           </section>
         )}
 
@@ -209,7 +228,7 @@ export default async function SuccessStory({ params }: Props) {
 
               {/* Right: Text Block */}
               <div className="w-full md:w-1/2 text-gray-700 space-y-6 text-md leading-relaxed">
-                {data.conclusionDescription?.split('\n\n').map((para: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined, i: Key | null | undefined) => (
+                {data.conclusionDescription?.split('\n\n').map((para: string, i: number) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>

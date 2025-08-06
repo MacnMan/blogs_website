@@ -62,11 +62,11 @@
 // app/page.tsx
 
 import { sanityClient } from '@/lib/sanity.client';
-import { blogPostsQuery } from '@/lib/queries';
+// import { blogPostsQuery } from '@/lib/queries';
 import { successStoriesQuery } from '@/lib/queries';
 import Hero from '@/components/HomePageComponents/Hero';
-import BlogList from '@/components/HomePageComponents/BlogList';
-import { PortableTextBlock } from '@portabletext/types';
+// import BlogList from '@/components/HomePageComponents/BlogList';
+// import { PortableTextBlock } from '@portabletext/types';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import SuccessStoriesList from '@/components/HomePageComponents/SuccessStoriesList';
 import NewlyAddedStories from '@/components/HomePageComponents/NewlyAddedStories';
@@ -75,19 +75,19 @@ import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditio
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
 
-type BlogPost = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  mainImage?: {
-    asset: { url: string };
-    alt?: string;
-  };
-  body: PortableTextBlock[];
-};
+// type BlogPost = {
+//   _id: string;
+//   title: string;
+//   slug: { current: string };
+//   mainImage?: {
+//     asset: { url: string };
+//     alt?: string;
+//   };
+//   body: PortableTextBlock[];
+// };
 
 export default async function HomePage() {
-  const posts: BlogPost[] = await sanityClient.fetch(blogPostsQuery);
+  // const posts: BlogPost[] = await sanityClient.fetch(blogPostsQuery);
   const stories = await sanityClient.fetch(successStoriesQuery);
 
   return (
@@ -96,12 +96,14 @@ export default async function HomePage() {
       <div className="pt-[-80px]"> {/* Adjust this based on your navbar height */}
         <Hero />
       </div>
-      <main className="px-6 py-10 max-w-7xl mx-auto space-y-12 overflow-x-hidden">
+      <main className="ml-12 py-8 max-w-8xl mx-auto space-y-12 overflow-x-hidden">
         {/* Success Stories Section */}
         <section className='overflow-x-hidden'>
           <SuccessStoriesList stories={stories} />
         </section>
-
+      </main>
+      
+      <main className="px-16 py-2 max-w-8xl mx-auto space-y-12 overflow-x-hidden">
         <NewlyAddedStories stories={stories} />
 
         {/* Blog Posts Section */}

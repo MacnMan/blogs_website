@@ -18,7 +18,7 @@ type BlogPost = {
 };
 
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
-  const [visiblePosts, setVisiblePosts] = useState(posts); // or any dynamic filtering logic
+  const [visiblePosts] = useState(posts); // or any dynamic filtering logic
 
   return (
     <div className="space-y-6">

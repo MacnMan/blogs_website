@@ -5,7 +5,13 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
+      },
+    }
   },
   plugins: [],
 }

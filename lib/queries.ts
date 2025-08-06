@@ -1,5 +1,5 @@
 // lib/queries.ts
-import groq from 'groq';
+// import groq from 'groq';
 
 export const blogPostsQuery = `
   *[_type == "post"] | order(_createdAt desc){
