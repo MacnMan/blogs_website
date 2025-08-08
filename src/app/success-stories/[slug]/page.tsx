@@ -7,14 +7,15 @@ import { sanityClient } from '../../../../lib/sanity.client';
 import { groq } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import HeroSection from '@/components/HomePageComponents/Hero';
+// import HeroSection from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 // import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import { Section, SectionNew, ListSection, ListSectionNew, List, ListNew } from '@/components/HomePageComponents/StorySections';
+import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
+import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
 // import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react';
 
 
@@ -40,6 +41,18 @@ const query = groq`
   *[_type == "successStory" && slug.current == $slug][0] {
     title,
     slug,
+    topImage {
+      image {
+        asset->{
+          _id,
+          _ref,
+          url
+        },
+        alt
+      },
+      title,
+      location
+    },
     overview,
     introImage { asset->{ _id, url }, alt },
     problemTitle,
@@ -111,16 +124,10 @@ export default async function SuccessStory({ params }: Props) {
   return (
     <>
       <NavbarWrapper />
-      <HeroSection />
+      <TopHeroSectionSuccess topImage={data.topImage} />
       <main className="p-1 w-full px-10 2xl:px-32">
 
-        <h1 className="text-3xl font-semibold my-8 text-center">{data.title}</h1>
-
-        {/* {data.overview && (
-          <p className="text-gray-400 text-base sm:text-md leading-relaxed text-wrap mb-12 max-w-4xl mx-auto">
-            {data.overview}
-          </p>
-        )} */}
+        <h1 className="text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
 
         {data.overview && (() => {
           const sentences = data.overview
@@ -169,7 +176,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Architecture */}
         {data.architectureTitle && (
           <section className="mt-20">
-            <h2 className="text-3xl sm:font-3xl font-semibold text-center my-4">{data.architectureTitle}</h2>
+            <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center my-4">{data.architectureTitle}</h2>
             {/* <p className="mb-16 text-center sm:text-lg text-gray-400">{data.architectureDescription}</p> */}
             <div className="max-w-6xl mx-auto px-4">
               {data.architectureDiagram?.asset?.url && (
@@ -191,7 +198,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Deployment */}
         {data.deploymentTitle && (
           <section className="mt-10">
-            <h2 className="text-2xl font-semibold text-center mb-4">{data.deploymentTitle}</h2>
+            <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">{data.deploymentTitle}</h2>
             <p className="mb-10  mx-64 text-center text-md text-gray-400 leading-[16px] tracking-[0.3px]">{data.deploymentDescription}</p>
             <div className="max-w-6xl mx-auto px-4 mt-16">
               {data.deploymentDiagram?.asset?.url && (
@@ -226,7 +233,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Validation */}
         {data.validationTitle && (
           <section className="mt-24 ">
-            <h2 className="text-2xl font-semibold text-center mb-16">{data.validationTitle}</h2>
+            <h2 className="text-2xl text-gray-800 font-semibold text-center mb-16">{data.validationTitle}</h2>
             <div className="max-w-6xl mx-auto px-4">
               {data.validationImage?.asset?.url && (
                 <div className="w-full">
@@ -247,7 +254,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Conclusion */}
         {data.conclusionTitle && (
           <section className="mt-20">
-            <h2 className="text-3xl font-semibold text-center mb-12">{data.conclusionTitle}</h2>
+            <h2 className="text-2xl text-gray-800 font-semibold text-center mb-12">{data.conclusionTitle}</h2>
             <div className="flex flex-col md:flex-row items-center gap-10 mt-4 mx-20">
               {/* Left: Image */}
               {data.conclusionImage?.asset?.url && (

@@ -19,7 +19,7 @@ export function Section({
 
   return (
     <section className="mt-14 max-w-8xl mx-auto px-4 text-center mb-20">
-      {title && <h2 className="text-xl sm:text-3xl font-semibold text-gray-900 mb-6">{title}</h2>}
+      {title && <h2 className="text-2xl sm:text-2xl font-semibold text-gray-800 mb-6">{title}</h2>}
       <div className='px-16 left-4 right-4'>
         {description && (
           <p className="mb-6 px-52 text-gray-400 text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
@@ -62,7 +62,7 @@ export function SectionNew({
 
   return (
     <section className="mt-10 max-w-8xl mx-auto px-4 text-center">
-      {title && <h2 className="text-xl sm:text-3xl font-semibold tracking-tighter text-gray-900 mb-6">{title}</h2>}
+      {title && <h2 className="text-2xl sm:text-2xl font-semibold tracking-tighter text-gray-800 mb-6">{title}</h2>}
       <div className='px-16 left-4 right-4'>
         {description && (
           <p className="mb-14 px-52 text-gray-400 text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
@@ -94,7 +94,7 @@ export function ListSection({
 
   return (
     <section className="m-20">
-      {title && <h2 className="text-2xl font-semibold text-center mb-8">{title}</h2>}
+      {title && <h2 className="text-2xl text-gray-800 font-semibold  text-center mb-8">{title}</h2>}
       <div className="grid grid-cols-3 gap-4 w-full mx-auto">
         {[0, 1].map((i) => (
           <div key={i} className="col-span-1 row-span-2">
@@ -150,7 +150,7 @@ export function ListSectionNew({
   return (
     <section className="mt-12">
       {title && (
-        <h2 className="text-2xl font-semibold mb-20 mt-16 text-center">{title}</h2>
+        <h2 className="text-2xl text-gray-800 font-semibold mb-20 mt-16 text-center">{title}</h2>
       )}
 
       <div className="flex flex-col lg:flex-row gap-14 mx-4 lg:mx-20">
@@ -194,7 +194,7 @@ export function ListSectionNew({
 // 🔧 Simple list component
 export function List({
   items,
-  labelField = 'title',
+  // labelField = 'title',
 }: {
   items: ListItem[];
   labelField?: keyof ListItem;
@@ -215,7 +215,7 @@ export function List({
 
 export function ListNew({
   items,
-  labelField = 'title',
+  // labelField = 'title',
 }: {
   items: ListItem[];
   labelField?: keyof ListItem;

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { urlFor } from '@/lib/sanityImageUrl';
+import { urlFor } from '../../../lib/sanityImageUrl';
 import { PortableTextBlock } from '@portabletext/react';
 import { useEffect, useRef } from 'react';
 
@@ -10,7 +10,7 @@ type successStory = {
   _id: string;
   title: string;
   slug: { current: string };
-  introImage?: {
+  homeImage?: {
     asset: {
       _ref: string;
     };
@@ -28,7 +28,7 @@ export default function SuccessStoriesList({ stories }: { stories: successStory[
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    let speed = 0.5; // pixels per frame
+    const speed = 0.5; // pixels per frame
 
     const animate = () => {
       if (!container) return;
@@ -110,12 +110,12 @@ export default function SuccessStoriesList({ stories }: { stories: successStory[
             href={`/success-stories/${story.slug.current}`}
             className="w-[320px] flex-shrink-0 rounded-4xl transition bg-white overflow-hidden"
           >
-            {story.introImage?.asset && (
+            {story.homeImage?.asset && (
               <div className="mb-2">
                 <div className="w-[320px] h-[230px] overflow-hidden rounded-4xl">
                   <Image
-                    src={urlFor(story.introImage).url()}
-                    alt={story.introImage.alt || story.title}
+                    src={urlFor(story.homeImage).url()}
+                    alt={story.homeImage.alt || story.title}
                     width={320}
                     height={230}
                     className="w-full h-full object-cover rounded-4xl"

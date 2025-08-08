@@ -25,7 +25,7 @@ export const successStoriesQuery = `
     title,
     slug,
     overview,
-    introImage {
+    homeImage {
       asset->{
         _ref,
         _type,
@@ -43,7 +43,7 @@ export const storiesQuery = `
     title,
     slug,
     overview,
-    introImage {
+    homeImage  {
       asset->{
         _ref,
         _type,
@@ -68,5 +68,23 @@ export const newlyAddedStoriesQuery = `
     alt
   }
 }
+`;
+
+
+
+export const topHeroSectionBySlugQuery = (slug: string) => `
+  *[_type == "successStory" && slug.current == "${slug}"][0]{
+    topImage {
+      image {
+        asset->{
+          _id,
+          url
+        },
+        alt
+      },
+      title,
+      location
+    }
+  }
 `;
 

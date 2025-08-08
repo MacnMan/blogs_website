@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '@/lib/sanityImageUrl';
+import { urlFor } from '../.../../../../lib/sanityImageUrl';
 import { PortableTextBlock } from '@portabletext/react';
 
 type successStory = {
@@ -10,7 +10,7 @@ type successStory = {
     title: string;
     slug: { current: string };
     publishedAt: string;
-    introImage?: {
+    homeImage?: {
         asset: { _ref: string };
         alt?: string;
     };
@@ -34,11 +34,11 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
                         href={`/success-stories/${story.slug.current}`}
                         className="w-[250px] rounded-3xl shadow-sm transition bg-gray-100 overflow-hidden"
                     >
-                        {story.introImage?.asset && (
+                        {story.homeImage?.asset && (
                             <div className="w-[250px] h-[230px] relative  overflow-hidden">
                                 <Image
-                                    src={urlFor(story.introImage).url()}
-                                    alt={story.introImage.alt || story.title}
+                                    src={urlFor(story.homeImage).url()}
+                                    alt={story.homeImage.alt || story.title}
                                     fill
                                     className="object-cover"
                                 />

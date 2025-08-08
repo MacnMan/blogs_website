@@ -61,14 +61,14 @@
 
 // app/page.tsx
 
-import { sanityClient } from '@/lib/sanity.client';
+import { sanityClient } from './../../lib/sanity.client';
 // import { blogPostsQuery } from '@/lib/queries';
-import { successStoriesQuery } from '@/lib/queries';
+import { successStoriesQuery } from './../../lib/queries';
 import Hero from '@/components/HomePageComponents/Hero';
 // import BlogList from '@/components/HomePageComponents/BlogList';
 // import { PortableTextBlock } from '@portabletext/types';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-import SuccessStoriesList from '@/components/HomePageComponents/SuccessStoriesList';
+import SuccessStoriesList from '@/components/successStoriesComponents/SuccessStoriesList';
 import NewlyAddedStories from '@/components/HomePageComponents/NewlyAddedStories';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
