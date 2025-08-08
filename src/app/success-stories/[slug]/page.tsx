@@ -16,6 +16,7 @@ import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
 import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
 import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
+import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
 // import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react';
 
 
@@ -41,6 +42,8 @@ const query = groq`
   *[_type == "successStory" && slug.current == $slug][0] {
     title,
     slug,
+    category,
+    publishedAt,
     topImage {
       image {
         asset->{
@@ -125,9 +128,10 @@ export default async function SuccessStory({ params }: Props) {
     <>
       <NavbarWrapper />
       <TopHeroSectionSuccess topImage={data.topImage} />
+      <SectionNavigator />
       <main className="p-1 w-full px-10 2xl:px-32">
 
-        <h1 className="text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
+        <h1 id="overview" className=" scroll-mt-24 text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
 
         {data.overview && (() => {
           const sentences = data.overview
@@ -143,7 +147,7 @@ export default async function SuccessStory({ params }: Props) {
           }
 
           return (
-            <div className="text-gray-400 text-md leading-snug space-y-6 text-center max-w-3xl mx-auto mb-12">
+            <div id="overview" className="text-gray-400 text-md leading-snug space-y-6 text-left max-w-3xl mx-auto mb-12">
               {paragraphs.map((para, idx) => (
                 <p key={idx}>{para}</p>
               ))}
@@ -175,7 +179,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Architecture */}
         {data.architectureTitle && (
-          <section className="mt-20">
+          <section id="architecture" className="scroll-mt-24  mt-20">
             <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center my-4">{data.architectureTitle}</h2>
             {/* <p className="mb-16 text-center sm:text-lg text-gray-400">{data.architectureDescription}</p> */}
             <div className="max-w-6xl mx-auto px-4">
@@ -197,7 +201,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Deployment */}
         {data.deploymentTitle && (
-          <section className="mt-10">
+          <section id="deployment" className="scroll-mt-24 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">{data.deploymentTitle}</h2>
             <p className="mb-10  mx-64 text-center text-md text-gray-400 leading-[16px] tracking-[0.3px]">{data.deploymentDescription}</p>
             <div className="max-w-6xl mx-auto px-4 mt-16">
@@ -206,7 +210,7 @@ export default async function SuccessStory({ params }: Props) {
                   <Image
                     src={data.deploymentDiagram.asset.url}
                     alt={data.deploymentDiagram.alt || 'Deployment'}
-                    width={1200}
+                    width={1900}
                     height={500}
                     className="w-full h-[625px] rounded-xl mb-4 object-contain"
                   />
@@ -232,7 +236,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Validation */}
         {data.validationTitle && (
-          <section className="mt-24 ">
+          <section id="validation" className=" scroll-mt-24 mt-24 ">
             <h2 className="text-2xl text-gray-800 font-semibold text-center mb-16">{data.validationTitle}</h2>
             <div className="max-w-6xl mx-auto px-4">
               {data.validationImage?.asset?.url && (
@@ -253,7 +257,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Conclusion */}
         {data.conclusionTitle && (
-          <section className="mt-20">
+          <section id="conclusion" className="scroll-mt-24 mt-20">
             <h2 className="text-2xl text-gray-800 font-semibold text-center mb-12">{data.conclusionTitle}</h2>
             <div className="flex flex-col md:flex-row items-center gap-10 mt-4 mx-20">
               {/* Left: Image */}
@@ -282,7 +286,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Links */}
         {(data.linksTitle || data.exploreMore || data.readMoreLink) && (
-          <section className="mt-10 mx-16">
+          <section id="links" className="scroll-mt-24 mt-10 mx-16">
             <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-12 py-4 rounded-xl shadow-sm">
               {/* Title text */}
               {data.linksTitle && (

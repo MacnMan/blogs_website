@@ -108,7 +108,7 @@ export default function SuccessStoriesList({ stories }: { stories: successStory[
           <Link
             key={`${story._id}-${index}`}
             href={`/success-stories/${story.slug.current}`}
-            className="w-[320px] flex-shrink-0 rounded-4xl transition bg-white overflow-hidden"
+            className="w-[320px] flex-shrink-0 transition bg-white overflow-hidden"
           >
             {story.homeImage?.asset && (
               <div className="mb-2">
@@ -123,8 +123,8 @@ export default function SuccessStoriesList({ stories }: { stories: successStory[
                 </div>
               </div>
             )}
-            <div className="p-1">
-              <h3 className="text-lg font-semibold break-words whitespace-normal">
+            <div className="p-2">
+              <h3 className="text-md font-semibold break-words whitespace-normal">
                 {story.title}
               </h3>
             </div>
