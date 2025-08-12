@@ -66,7 +66,7 @@ export default function Navbar({
           onClick={() => (window.location.href = ROUTES.HOME)}
         >
           <Image
-            src='/logo.png'
+            src='/blogs/logo.png'
             fill
             alt='MacnMan Logo'
             sizes='(max-width: 425px): 500px,500px'
@@ -85,7 +85,7 @@ export default function Navbar({
           >
             <div className="relative w-8 mt-1 h-6 flex items-center justify-center">
               <Image
-                src="/logo_small_red.webp"
+                src="/blogs/logo_small_red.webp"
                 alt="Small Logo"
                 fill
                 className="object-contain"
@@ -175,7 +175,7 @@ export default function Navbar({
 
         {/* Cart Icon */}
         <Image
-          src='/shopping-bag 1.svg'
+          src='/blogs/shopping-bag.svg'
           alt='Shopping Bag'
           width={16}
           height={16}

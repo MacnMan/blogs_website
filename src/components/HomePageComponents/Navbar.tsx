@@ -38,7 +38,7 @@ function Navbar({ allTabs, theme }: NavbarProps) {
           }}
         >
           <Image
-            src="/assets/home/logo.png"
+            src="/blogs/assets/home/logo.png"
             alt="Macnman Logo"
             width={400}
             height={200}
@@ -71,7 +71,7 @@ function Navbar({ allTabs, theme }: NavbarProps) {
                 onClick={() => (window.location.href = ROUTES.HOME)}
               >
                 <Image
-                  src="/assets/home/logo_small_red.webp"
+                  src="/blogs/assets/home/logo_small_red.webp"
                   alt="Mini Macnman"
                   width={30}
                   height={40}

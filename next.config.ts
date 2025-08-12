@@ -30,8 +30,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-
   // This makes your Next.js site run under /blogs
   basePath: "/blogs",
   assetPrefix: "/blogs/",
