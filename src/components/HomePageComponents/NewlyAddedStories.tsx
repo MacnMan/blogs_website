@@ -93,7 +93,7 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
               )}
               <div className="p-4">
                 <h3 className="text-sm font-semibold">{story.title}</h3>
-                {story.category ? (
+                {/* {story.category ? (
                   <p className="text-xs text-blue-600 mt-1 capitalize">
                     {story.category.replace('-', ' ')}
                   </p>
@@ -108,7 +108,7 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
                       day: 'numeric',
                     })}
                   </p>
-                )}
+                )} */}
               </div>
             </Link>
           );
