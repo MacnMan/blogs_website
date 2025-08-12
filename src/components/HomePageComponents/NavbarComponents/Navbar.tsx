@@ -179,7 +179,7 @@ export default function Navbar({
           alt='Shopping Bag'
           width={16}
           height={16}
-          className=' cursor-pointer'
+          className=' cursor-pointer, text-white, fill="white"'
           sizes='(max-width:425px): 1000px,1000px'
           style={{ width: 'auto', height: 'auto' }}
         />

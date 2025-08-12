@@ -26,7 +26,7 @@ function Navbar({ allTabs, theme }: NavbarProps) {
 
   return (
     <nav
-      className={`hidden sm:flex items-center fixed top-0 left-0 w-full z-50 py-6 px-4 transition-all duration-300 
+      className={`hidden sm:flex items-center fixed top-0 left-0 w-full z-50 py-6 px-4 transition-all duration-300  
         }`}
     >
       {/* 🧠 Logo only visible BEFORE scroll */}
@@ -60,7 +60,7 @@ function Navbar({ allTabs, theme }: NavbarProps) {
             backdrop-saturate-150"
         >
           <div
-            className={`flex  space-x-4 max-w-2xl rounded-full items-center ${
+            className={`flex  space-x-4 max-w-2xl rounded-full items-center text-white ${
               theme === "dark" ? "text-white" : "text-black"
             }`}
           >
@@ -87,7 +87,7 @@ function Navbar({ allTabs, theme }: NavbarProps) {
             {allTabs.map((obj) => (
               <li
                 key={obj.tab}
-                className={`list-none px-2 py-1 rounded-full relative ${
+                className={`list-none px-2 py-1 rounded-full relative text-white ${
                   currentPath === obj.path
                     ? 'after:absolute after:content-[" "] after:w-[90%] after:self-center after:-bottom-[1px] after:left-1/2 after:-translate-x-1/2 after:h-2 after:bg-gradient-to-r after:from-pink-700 after:to-indigo-700 after:[filter:blur(12px)] after:opacity-90 after:rounded-full font-semibold'
                     : ""

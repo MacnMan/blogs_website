@@ -164,7 +164,7 @@ export function ListSectionNew({
                 alt={img.alt || title || ''}
                 width={900}
                 height={500}
-                className="rounded-xl shadow-2xl object-contain w-full h-[500px] max-w-[100%]"
+                className="rounded-xl object-contain w-full h-[500px] max-w-[100%]"
               />
             ) : null
           )}

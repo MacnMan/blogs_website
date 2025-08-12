@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '../.../../../../lib/sanityImageUrl';
+// import { urlFor } from '../.../../../../lib/sanityImageUrl';
 import { PortableTextBlock } from '@portabletext/react';
 import { groq } from 'next-sanity';
 

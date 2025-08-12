@@ -96,7 +96,7 @@ export default function SectionNavigator() {
   // Highlight active tab on scroll
   useEffect(() => {
     const handleScroll = () => {
-      for (let sec of sections) {
+      for (const sec of sections) {
         const el = document.getElementById(sec.id);
         if (el) {
           const rect = el.getBoundingClientRect();
@@ -130,6 +130,6 @@ export default function SectionNavigator() {
       ))}
     </div>
   </div>
-);
+);  
 
 }
