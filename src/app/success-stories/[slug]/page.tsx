@@ -2,14 +2,11 @@
 // app/success-stories/[slug]/page.tsx
 
 export const dynamic = 'force-dynamic';
-
 import { sanityClient } from '../../../../lib/sanity.client';
 import { groq } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-// import HeroSection from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-// import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
@@ -17,8 +14,6 @@ import Authority from '@/components/HomePageComponents/Authority';
 import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
 import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
-// import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react';
-
 
 export const revalidate = 60;
 
@@ -26,15 +21,10 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-// interface Props {
-//   params: { slug: string }; // ✅ CORRECT
-// };
-
 export async function generateStaticParams() {
   const slugs: string[] = await sanityClient.fetch(
     `*[_type == "successStory" && defined(slug.current)][].slug.current`
   );
-
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -105,31 +95,19 @@ const query = groq`
   }
 `;
 
-
-
-// ✅ Must be an async server component
 export default async function SuccessStory({ params }: Props) {
-  // const query = `*[_type == "successStory" && slug.current == $slug][0]`;
-  // const data = await sanityClient.fetch(query, { slug: params.slug });
-  // ✅ Use await only when params is destructured and passed as props
-  // const slug = await params.slug;
-
-  // const { slug } = await params;
-
   const { slug } = await params;
 
-  // ✅ Provide slug properly to query
   const data = await sanityClient.fetch(query, { slug });
 
   if (!data) return notFound();
-
 
   return (
     <>
       <NavbarWrapper />
       <TopHeroSectionSuccess topImage={data.topImage} />
-      <SectionNavigator />
-      <main className="p-1 w-full px-10 2xl:px-32">
+      {/* <SectionNavigator /> */}
+      <main className="p-1 w-full md:w-full px-10 2xl:px-32">
 
         <h1 id="overview" className=" scroll-mt-24 text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
 
@@ -182,7 +160,7 @@ export default async function SuccessStory({ params }: Props) {
           <section id="architecture" className="scroll-mt-24  mt-20">
             <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center my-4">{data.architectureTitle}</h2>
             {/* <p className="mb-16 text-center sm:text-lg text-gray-400">{data.architectureDescription}</p> */}
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="sm:max-w-6xl sm:mx-auto sm:px-4">
               {data.architectureDiagram?.asset?.url && (
                 <div className="w-full">
                   <Image

@@ -516,7 +516,7 @@
     "NavbarItem": "Resources",
     "Details": [
       {
-        "title": "User Manual",
+        "title": "Datasheet",
         "src": "/blogs/images/product-hover/icons/guide-alt_1.svg",
         "description": "Step-by-step instructions to set up, use, and troubleshoot your devices.",
         "images": [
@@ -574,65 +574,7 @@
           }
         ]
       },
-      {
-        "title": "Datasheets",
-        "src": "/blogs/images/newspaper.svg",
-        "description": "Quick access to key specs, performance details, and usage notes.",
-        "images": [
-          {
-            "name": "4G Gateway",
-            "src": "/blogs/images/product-hover/smart-industry/4g_gateway.webp"
-          },
-          {
-            "name": "Autocore",
-            "src": "/blogs/images/product-hover/smart-industry/autocore.webp"
-          },
-          {
-            "name": "CO2 Sensor",
-            "src": "/blogs/images/product-hover/smart-industry/co2_sensor.webp"
-          },
-          {
-            "name": "Flow Convertor ",
-            "src": "/blogs/images/product-hover/smart-industry/flow_converter.webp"
-          },
-          {
-            "name": "LoRaWan Outdoor Gateway",
-            "src": "/images/product-hover/smart-industry/lorawan_outdoor_gateway.webp"
-          },
-          {
-            "name": "Macset",
-            "src": "/blogs/images/product-hover/smart-industry/macset.webp"
-          },
-          {
-            "name": "Macsync",
-            "src": "/blogs/images/product-hover/smart-industry/macsync.webp"
-          },
-          {
-            "name": "Noise sensor",
-            "src": "/blogs/images/product-hover/smart-industry/noise_sensor.webp"
-          },
-          {
-            "name": "Pressure sensor",
-            "src": "/blogs/images/product-hover/smart-industry/pressure_sensor.webp"
-          },
-          {
-            "name": "Setu SD",
-            "src": "/blogs/images/product-hover/smart-industry/setu_sd.webp"
-          },
-          {
-            "name": "Setu",
-            "src": "/blogs/images/product-hover/smart-industry/setu.webp"
-          },
-          {
-            "name": "Temperature Sensor",
-            "src": "/blogs/images/product-hover/smart-industry/temperature_Sensor.webp"
-          },
-          {
-            "name": "viberation Sensor",
-            "src": "/blogs/images/product-hover/smart-industry/viberation_sensor.webp"
-          }
-        ]
-      },
+
       {
         "title": "Books",
         "src": "/blogs/images/product-hover/icons/book_open_cover_1.svg",

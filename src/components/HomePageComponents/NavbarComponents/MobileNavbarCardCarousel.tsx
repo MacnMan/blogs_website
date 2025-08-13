@@ -46,7 +46,7 @@ export default function MobileNavbarCardCarousel ({ images }: propTypes) {
   })
 
   return (
-    <div className='relative w-full flex justify-between items-center space-x-2 px-3 pb-6 lg:px-6 rounded-2xl overflow-hidden'>
+    <div className='relative w-full  flex justify-between items-center space-x-2 px-3 pb-6 lg:px-6 rounded-2xl overflow-hidden'>
       {/* Carousel Scrollable Area */}
       <div
         ref={scrollRef}

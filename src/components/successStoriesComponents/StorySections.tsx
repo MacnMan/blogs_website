@@ -20,12 +20,12 @@ export function Section({
   return (
     <section id="problem" className="scroll-mt-24 mt-14 max-w-8xl mx-auto px-4 text-center mb-20">
       {title && <h2 className="text-2xl sm:text-2xl font-semibold text-gray-800 mb-6">{title}</h2>}
-      <div className='px-16 left-4 right-4'>
+      <div className='px-4 sm:px-16'>
         {description && (
-          <p className="mb-6 px-52 text-gray-400 text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
+          <p className="mb-6 sm:px-52 text-gray-400 sm:text-center text-left sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
         )}
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-4 gap-2 text-left mx-32">
+      <ul className="grid grid-cols-2 md:grid-cols-4 gap-1 gap-y-[-4] sm:gap-2 text-left sm:mx-32">
         {items?.map((item, i) => (
           <li key={i} className="p-4 my-8">
             {item.icon?.asset?.url && (
@@ -63,12 +63,12 @@ export function SectionNew({
   return (
     <section id="solution" className="scroll-mt-24 mt-10 max-w-8xl mx-auto px-4 text-center">
       {title && <h2 className="text-2xl sm:text-2xl font-semibold tracking-tighter text-gray-800 mb-6">{title}</h2>}
-      <div className='px-16 left-4 right-4'>
+      <div className='px-4 sm:px-16'>
         {description && (
-          <p className="mb-14 px-52 text-gray-400 text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
+          <p className="mb-8 sm:mb-14 sm:px-52 text-gray-400 text-left sm:text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
         )}
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-7 text-left mx-44">
+      <ul className="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
         {items?.map((item, i) => (
           <li key={i} className="p-4 mt-2 border rounded-xl border-gray-400 ">
             <h3 className="text-md font-semibold mb-2">{item.title}</h3>

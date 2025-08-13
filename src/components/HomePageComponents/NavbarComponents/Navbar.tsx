@@ -75,7 +75,7 @@ export default function Navbar({
       )}
 
       {/* Navbar Items */}
-      <div className='h-10 flex justify-center items-center backdrop-blur-md space-x-3 shadow-[0_4px_20px_rgba(0,0,0,0.15)] list-none bg-gray-80 rounded-full px-8'>
+      <div className='h-10 flex justify-center items-center  bg-white   space-x-3 shadow-[0_4px_20px_rgba(0,0,0,0.15)] list-none bg-gray-80 rounded-full px-8'>
 
         {/* Show small logo after scroll */}
         {hasMounted && isScrolled && (
@@ -131,9 +131,9 @@ export default function Navbar({
 
             {activeDropdownIndex === index && (
               <div
-                className={`
+                className={` mt-6
                     absolute top-14 left-1/2 -translate-x-1/2 
-                    w-[calc(100vw-170px)] z-[200] pb-4 
+                    w-[calc(100vw-170px)] pb-4 
                     overflow-y-auto shadow-[0_4px_16px_rgba(0,0,0,0.2)] 
                     rounded-3xl backdrop-blur-3xl
                     transition-all duration-300 ease-in-out

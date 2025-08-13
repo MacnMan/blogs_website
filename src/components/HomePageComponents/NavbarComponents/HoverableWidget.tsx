@@ -14,6 +14,7 @@ interface HoverableWidgetDetailsProps {
   title: string;
   src: string;
   description: string;
+   link?: string;
   images: ImagesProps[];
 }
 
@@ -68,13 +69,14 @@ export default function HoverableWidget({
       : activeTabImages.filter((img) => img.filterTags?.includes(activeFilter));
 
   return (
-    <section>
+    <section >
       {/* 🔼 Top Tabs */}
       <div className="flex flex-wrap gap-x-10 -gap-y-8 px-8">
         {HoverableWidgetDetails.map((card) => (
           <SubMenuCard
             key={card.title}
             title={card.title}
+            link={card.link}
             src={card.src}
             description={card.description}
             activeTab={activeTab}

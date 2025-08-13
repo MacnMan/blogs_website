@@ -84,7 +84,6 @@ const sections = [
 export default function SectionNavigator() {
   const [activeSection, setActiveSection] = useState('overview');
 
-  // Handle scroll into view
   const handleClick = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -93,7 +92,6 @@ export default function SectionNavigator() {
     }
   };
 
-  // Highlight active tab on scroll
   useEffect(() => {
     const handleScroll = () => {
       for (const sec of sections) {
@@ -113,23 +111,24 @@ export default function SectionNavigator() {
   }, []);
 
   return (
-  <div className="sticky mx-20 rounded-3xl top-6 z-50 backdrop-blur bg-transparent border-gray-100 flex justify-center items-center px-4 py-2">
-    <div className="flex space-x-4">
-      {sections.map(({ id, label }) => (
-        <button
-          key={id}
-          onClick={() => handleClick(id)}
-          className={`whitespace-nowrap text-sm px-3 py-1 rounded-full transition-all duration-300 ${
-            activeSection === id
-              ? 'bg-gray-400 text-white font-semibold shadow-md'
-              : 'bg-gray-50 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          {label}
-        </button>
-      ))}
+    <div
+      className="top-20 z-0 mx-20 rounded-3xl backdrop-blur-3xl bg-transparent border-gray-100 flex justify-center items-center px-4 py-2"
+    >
+      <div className="flex space-x-4">
+        {sections.map(({ id, label }) => (
+          <button
+            key={id}
+            onClick={() => handleClick(id)}
+            className={`whitespace-nowrap text-sm px-3 py-1 rounded-full transition-all duration-300 ${
+              activeSection === id
+                ? 'bg-gray-400 text-white font-semibold shadow-md'
+                : 'bg-gray-50 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
     </div>
-  </div>
-);  
-
+  );
 }
