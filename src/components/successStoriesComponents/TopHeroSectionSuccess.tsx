@@ -30,7 +30,7 @@ export default function TopHeroSectionSuccess({ topImage }: { topImage?: TopImag
   }
 
   return (
-    <section className="md:w-full w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[540px] overflow-hidden relative">
+    <section className="md:w-full w-full h-[600px] sm:h-[450px] md:h-[500px] lg:h-[540px] overflow-hidden relative">
   {/* Background image */}
   <Image
     src={imageUrl}
@@ -41,7 +41,7 @@ export default function TopHeroSectionSuccess({ topImage }: { topImage?: TopImag
   />
 
   {/* Bottom gradient blur overlay */}
-  <div className="absolute bottom-0 left-0 right-0 h-[30%] sm:h-[32%] md:h-[34%] lg:h-[34%] backdrop-blur bg-gradient-to-t from-black/10 to-transparent z-10" />
+  <div className="absolute bottom-0 left-0 right-0 h-[25%] sm:h-[32%] md:h-[34%] lg:h-[34%] backdrop-blur bg-gradient-to-t from-black/10 to-transparent z-10" />
 
   {/* Text content */}
   <div className="absolute bottom-0 left-4 sm:left-6 md:left-8 right-4 sm:right-6 md:right-8 p-4 sm:p-6 md:p-8 z-20 flex flex-col justify-end">

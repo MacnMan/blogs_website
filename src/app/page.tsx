@@ -16,16 +16,16 @@
 		return (
 			<>
 				<NavbarWrapper />
-				<div className="pt-[-80px]">
+				<div className="md:pt-[-80px]">
 					<Hero />
 				</div>
-				<main className="ml-12 py-8 max-w-8xl mx-auto space-y-12 overflow-x-hidden">
+				<main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
 					{/* Success Stories Section */}
 					<section className='overflow-x-hidden'>
 						<SuccessStoriesList stories={stories} />
 					</section>
 				</main>
-				<main className="px-16 py-2 max-w-8xl mx-auto space-y-12 overflow-x-hidden">
+				<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
 					<NewlyAddedStories stories={stories} />
 				</main>
 				<MainContactUs theme='light' />

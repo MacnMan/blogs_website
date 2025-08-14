@@ -107,7 +107,7 @@ export default async function SuccessStory({ params }: Props) {
       <NavbarWrapper />
       <TopHeroSectionSuccess topImage={data.topImage} />
       {/* <SectionNavigator /> */}
-      <main className="p-1 w-full md:w-full px-10 2xl:px-32">
+      <main className="p-1 w-full md:w-full px-4 md:px-10 2xl:px-32">
 
         <h1 id="overview" className=" scroll-mt-24 text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
 
@@ -125,24 +125,28 @@ export default async function SuccessStory({ params }: Props) {
           }
 
           return (
-            <div id="overview" className="text-gray-400 text-md leading-snug space-y-6 text-left max-w-3xl mx-auto mb-12">
-              {paragraphs.map((para, idx) => (
-                <p key={idx}>{para}</p>
-              ))}
-            </div>
+            <div
+  id="overview"
+  className="text-gray-400 text-md leading-tight space-y-4 sm:leading-snug sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
+>
+  {paragraphs.map((para, idx) => (
+    <p key={idx}>{para}</p>
+  ))}
+</div>
+
           );
         })()}
 
 
-        <div className="w-full px-4">
+        <div className="sm:w-full sm:px-4">
           {data.introImage?.asset?.url && (
-            <div className="w-full">
+            <div className="sm:w-full">
               <Image
                 src={data.introImage.asset.url}
                 alt={data.introImage.alt || 'Intro Image'}
                 width={1900}
                 height={1200}
-                className="w-full md:h-[500px] 2xl:h-[850px] rounded-4xl mb-4 object-cover "
+                className="sm:w-full sm:h-[500px] 2xl:h-[850px] rounded-4xl sm:mb-4 mt-4 object-cover "
               />
             </div>
           )}
@@ -157,18 +161,18 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Architecture */}
         {data.architectureTitle && (
-          <section id="architecture" className="scroll-mt-24  mt-20">
-            <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center my-4">{data.architectureTitle}</h2>
+          <section id="architecture" className="scroll-mt-24  sm:mt-20 mt-10">
+            <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center sm:my-4 my-8">{data.architectureTitle}</h2>
             {/* <p className="mb-16 text-center sm:text-lg text-gray-400">{data.architectureDescription}</p> */}
             <div className="sm:max-w-6xl sm:mx-auto sm:px-4">
               {data.architectureDiagram?.asset?.url && (
-                <div className="w-full">
+                <div className="sm:w-full">
                   <Image
                     src={data.architectureDiagram.asset.url}
                     alt={data.architectureDiagram.alt || 'Architecture'}
                     width={1900}
                     height={600}
-                    className="w-full h-[500px] rounded-xl mb-4 object-cover"
+                    className="sm:w-full sm:h-[500px] rounded-xl mb-4 object-cover"
                   />
                 </div>
               )}
@@ -181,16 +185,16 @@ export default async function SuccessStory({ params }: Props) {
         {data.deploymentTitle && (
           <section id="deployment" className="scroll-mt-24 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">{data.deploymentTitle}</h2>
-            <p className="mb-10  mx-64 text-center text-md text-gray-400 leading-[16px] tracking-[0.3px]">{data.deploymentDescription}</p>
-            <div className="max-w-6xl mx-auto px-4 mt-16">
+            <p className="mb:20 sm:mb-10 text-left sm:mx-64 sm:text-center sm:text-md sm:text-gray-400 sm:leading-[16px] sm:tracking-[0.3px] leading-snug tracking-normal">{data.deploymentDescription}</p>
+            <div className="sm:max-w-6xl sm:mx-auto sm:px-4 sm:mt-16 mt-10">
               {data.deploymentDiagram?.asset?.url && (
-                <div className="w-full">
+                <div className="sm:w-full">
                   <Image
                     src={data.deploymentDiagram.asset.url}
                     alt={data.deploymentDiagram.alt || 'Deployment'}
                     width={1900}
                     height={500}
-                    className="w-full h-[625px] rounded-xl mb-4 object-contain"
+                    className="sm:w-full sm:h-[625px] rounded-xl sm:mb-4 object-contain"
                   />
                 </div>
               )}
@@ -214,17 +218,17 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Validation */}
         {data.validationTitle && (
-          <section id="validation" className=" scroll-mt-24 mt-24 ">
-            <h2 className="text-2xl text-gray-800 font-semibold text-center mb-16">{data.validationTitle}</h2>
-            <div className="max-w-6xl mx-auto px-4">
+          <section id="validation" className=" scroll-mt-24 sm:mt-24 mt-10">
+            <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-16 mt-10">{data.validationTitle}</h2>
+            <div className="max-w-6xl mx-auto sm:px-4">
               {data.validationImage?.asset?.url && (
-                <div className="w-full">
+                <div className="sm:w-full">
                   <Image
                     src={data.validationImage.asset.url}
                     alt={data.validationImage.alt || 'Validation'}
                     width={1900}
                     height={600}
-                    className="w-full h-[450px] rounded-xl mb-4 object-cover"
+                    className="sm:w-full sm:h-[450px] rounded-xl sm:mb-4 mt-4 object-cover"
                   />
                 </div>
               )}
@@ -235,9 +239,9 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Conclusion */}
         {data.conclusionTitle && (
-          <section id="conclusion" className="scroll-mt-24 mt-20">
-            <h2 className="text-2xl text-gray-800 font-semibold text-center mb-12">{data.conclusionTitle}</h2>
-            <div className="flex flex-col md:flex-row items-center gap-10 mt-4 mx-20">
+          <section id="conclusion" className="scroll-mt-24 sm:mt-20 mt-10">
+            <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-12">{data.conclusionTitle}</h2>
+            <div className="flex flex-col md:flex-row items-center sm:gap-10 sm:mt-4 sm:mx-20 my-4">
               {/* Left: Image */}
               {data.conclusionImage?.asset?.url && (
                 <div className="flex-shrink-0 w-full md:w-1/2">
@@ -246,14 +250,14 @@ export default async function SuccessStory({ params }: Props) {
                     alt={data.conclusionImage.alt || 'Conclusion'}
                     width={600}
                     height={600}
-                    className="rounded-2xl object-cover w-full h-full"
+                    className="rounded-2xl object-cover sm:w-full sm:h-full"
                   />
                 </div>
               )}
 
               {/* Right: Text Block */}
-              <div className="w-full md:w-1/2 text-gray-500 space-y-6 text-md tracking-[0.4px] leading-[18px] ">
-                {data.conclusionDescription?.split('\n\n').map((para: string, i: number) => (
+              <div className="w-full md:w-1/2 text-gray-500 space-y-6 text-md tracking-[0.4px] leading-[18px] mt-4 ">
+                {data.conclusionDescription?.split('\n').map((para: string, i: number) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>
@@ -264,8 +268,8 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Links */}
         {(data.linksTitle || data.exploreMore || data.readMoreLink) && (
-          <section id="links" className="scroll-mt-24 mt-10 mx-16">
-            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 rounded-full shadow-sm">
+          <section id="links" className="scroll-mt-24 sm:mt-10 sm:mx-16">
+            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-lg shadow-sm">
               {/* Title text */}
               {data.linksTitle && (
                 <p className="text-xl font-semibold sm:font-xl text-gray-800 mb-2 md:mb-0">
@@ -274,7 +278,7 @@ export default async function SuccessStory({ params }: Props) {
               )}
 
               {/* Buttons */}
-              <div className="flex gap-3">
+              <div className="flex sm:gap-3 gap-10">
                 {data.readMoreLink && (
                   <a
                     href={data.readMoreLink}

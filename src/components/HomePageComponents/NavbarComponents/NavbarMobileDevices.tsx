@@ -26,7 +26,7 @@ export default function NavbarMobileDevices() {
   );
   const [openCardIndex, setOpenCardIndex] = useState<number | null>(null); // ✅ Add this
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
+  const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
 
   const openMenu = useCallback((index: number) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -40,7 +40,10 @@ const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
   }, [activeDropdownIndex]);
 
   return (
-    <section className="fixed px-4 w-full top-0 mb-4 lg:mb-12 z-50 bg-transparent flex flex-col items-start">
+    <section
+      className={`fixed px-4 w-full top-0 mb-4 lg:mb-12 z-50 flex flex-col items-start ${isOpen ? "bg-white" : "bg-transparent"
+        }`}
+    >
       {/* Search Bar Form */}
 
       <form action="" className="w-full border mt-4 bg-gray-100 rounded-2xl">
@@ -65,7 +68,7 @@ const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
           )}
 
           {!isOpen && (
-            <div className="absolute right-3  flex gap-x-4 items-center">
+            <div className="absolute right-3  flex gap-x-4 items-center ">
               <span className="cursor-pointer text-xl ">
                 <IoIosSearch />
               </span>
@@ -95,15 +98,14 @@ const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
       </form>
 
       {isOpen && (
-        <div className="w-full  z-60 flex mt-4 justify-start sm:justify-center items-center space-x-4 text-black text-xs list-none overflow-x-scroll scrollbar-hide px-2 mb-3">
+        <div className="w-full z-60 flex mt-4 justify-start sm:justify-center items-center space-x-4 text-black text-xs list-none overflow-x-scroll scrollbar-hide px-2 mb-3">
           {NavbarData.map((data, index) => (
             <div key={index} onMouseEnter={() => openMenu(index)}>
               <p
-                className={`cursor-pointer  text-base  whitespace-nowrap ${
-                  activeDropdownIndex === index
-                    ? "text-xl font-bold text-black"
-                    : "text-sm text-gray-400 font-medium"
-                }`}
+                className={`cursor-pointer  text-base  whitespace-nowrap ${activeDropdownIndex === index
+                  ? "text-xl font-bold text-black"
+                  : "text-sm text-gray-400 font-medium"
+                  }`}
               >
                 {data.NavbarItem}
               </p>
@@ -114,23 +116,22 @@ const [clickedCardIndex, setClickedCardIndex] = useState<number | null>(null);
                   onMouseEnter={() => openMenu(index)}
                 >
                   {data.NavbarItem === "Resources" ? (
-  <div className="grid gap-2 p-4">
-    {data.Details.map((resource, i) => (
-      <div
-        key={i}
-        onClick={() => {
-  setClickedCardIndex(i);
-  if ("link" in resource && typeof resource.link === "string") {
-    window.open(resource.link, "_blank");
-  } else {
-    console.warn("No valid link found on resource");
-  }
-}}
+                    <div className="grid gap-2 p-4">
+                      {data.Details.map((resource, i) => (
+                        <div
+                          key={i}
+                          onClick={() => {
+                            setClickedCardIndex(i);
+                            if ("link" in resource && typeof resource.link === "string") {
+                              window.open(resource.link, "_blank");
+                            } else {
+                              console.warn("No valid link found on resource");
+                            }
+                          }}
 
-        className={`cursor-pointer bg-white border rounded-xl p-3 shadow hover:shadow-md transition duration-300 ${
-          clickedCardIndex === i ? "grayscale-0" : "grayscale"
-        }`}
-      >
+                          className={`cursor-pointer bg-white border rounded-xl p-3 shadow hover:shadow-md transition duration-300 ${clickedCardIndex === i ? "grayscale-0" : "grayscale"
+                            }`}
+                        >
                           <div className="relative w-14 h-14 mb-2">
                             <Image
                               src={resource.src}

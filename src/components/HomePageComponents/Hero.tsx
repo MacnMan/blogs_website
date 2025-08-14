@@ -42,7 +42,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[100vh] w-full overflow-hidden bg-white">
+    <section className="relative h-[30vh] md:h-[100vh] w-full overflow-hidden bg-white">
       {heroData.map((item, index) => (
         <div
           key={index}
@@ -58,12 +58,12 @@ export default function HeroSection() {
           />
           
           {/* Content */}
-          <div className="absolute bottom-10 left-10 text-white z-30">
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-2">
+          <div className="absolute md:bottom-10 bottom-2 left-5 md:left-10 text-white z-20">
+            <h1 className="text-sm md:text-5xl font-bold md:leading-tight md:mb-2">
               {item.title}
             </h1>
-            <p className="text-xl mb-4">{item.subtitle}</p>
-            <div className="bg-white text-black rounded-full px-4 py-2 inline-block text-sm">
+            <p className="text-[10px] md:text-xl md:mb-4 mb-2">{item.subtitle}</p>
+            <div className="bg-white text-black md:rounded-full md:px-4 md:py-2 px-2 py-[2px] inline-block text-[10px] md:text-sm rounded-full">
               📍 {item.location}
             </div>
           </div>

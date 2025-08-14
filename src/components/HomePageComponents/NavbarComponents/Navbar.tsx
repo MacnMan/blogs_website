@@ -62,7 +62,7 @@ export default function Navbar({
       {/* Show large logo before scroll */}
       {hasMounted && !isScrolled && (
         <div
-          className='absolute w-32 h-20 left-4 top-1 cursor-pointer'
+          className='absolute w-32 h-24 left-4 top-[-1px] cursor-pointer'
           onClick={() => (window.location.href = ROUTES.HOME)}
         >
           <Image
@@ -75,7 +75,7 @@ export default function Navbar({
       )}
 
       {/* Navbar Items */}
-      <div className='h-10 flex justify-center items-center  bg-white   space-x-3 shadow-[0_4px_20px_rgba(0,0,0,0.15)] list-none bg-gray-80 rounded-full px-8'>
+      <div className='h-9 ml-20 flex justify-center items-center  bg-white   space-x-3 shadow-[0_4px_20px_rgba(0,0,0,0.15)] list-none bg-gray-80 rounded-full px-8'>
 
         {/* Show small logo after scroll */}
         {hasMounted && isScrolled && (
@@ -184,6 +184,26 @@ export default function Navbar({
           style={{ width: 'auto', height: 'auto' }}
         />
       </div>
+
+      {/* Maya Boards Button/Image */}
+      <div className="flex items-center pl-4">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.macnman.app&hl=en_IN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/blogs/maya.svg"
+            alt="maya logo"
+            width={130}
+            height={130}
+            className="cursor-pointer"
+            style={{ width: '130px', height: '130px' }}
+          />
+        </a>
+      </div>
+
+
     </section>
   )
 }

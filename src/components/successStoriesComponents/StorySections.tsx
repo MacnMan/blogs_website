@@ -18,27 +18,27 @@ export function Section({
   if (!title && !description && !items?.length) return null;
 
   return (
-    <section id="problem" className="scroll-mt-24 mt-14 max-w-8xl mx-auto px-4 text-center mb-20">
-      {title && <h2 className="text-2xl sm:text-2xl font-semibold text-gray-800 mb-6">{title}</h2>}
-      <div className='px-4 sm:px-16'>
+    <section id="problem" className="scroll-mt-24 mt-10 sm:mt-14 sm:max-w-8xl sm:mx-auto sm:px-4 sm:mb-20">
+      {title && <h2 className="text-2xl sm:text-2xl text-center font-semibold text-gray-800 mb-6">{title}</h2>}
+      <div className='px-2 sm:px-16'>
         {description && (
-          <p className="mb-6 sm:px-52 text-gray-400 sm:text-center text-left sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
+          <p className="mb-6 sm:px-52 text-gray-400 sm:text-center text-left sm:text-[15px] leading-tight sm:leading-[16px] sm:tracking-[0.4px]">{description}</p>
         )}
       </div>
       <ul className="grid grid-cols-2 md:grid-cols-4 gap-1 gap-y-[-4] sm:gap-2 text-left sm:mx-32">
         {items?.map((item, i) => (
-          <li key={i} className="p-4 my-8">
+          <li key={i} className="p-2 sm:my-8 mb-2">
             {item.icon?.asset?.url && (
               <Image
                 src={item.icon.asset.url}
                 alt={item.icon.alt || ''}
                 width={28}
                 height={28}
-                className="mb-6"
+                className="mb-4 sm:mb-6"
               />
             )}
-            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-400 sm:text-[15px] leading-tight tracking-tight">
+            <h3 className="text-lg font-semibold mb-2 sm:leading-[16px] leading-[18px] tracking-tight ">{item.title}</h3>
+            <p className="text-gray-400 sm:text-[15px] leading-tight sm:leading-tight tracking-tight">
               {item.description}
             </p>
           </li>
@@ -61,18 +61,18 @@ export function SectionNew({
   if (!title && !description && !items?.length) return null;
 
   return (
-    <section id="solution" className="scroll-mt-24 mt-10 max-w-8xl mx-auto px-4 text-center">
-      {title && <h2 className="text-2xl sm:text-2xl font-semibold tracking-tighter text-gray-800 mb-6">{title}</h2>}
-      <div className='px-4 sm:px-16'>
+    <section id="solution" className="scroll-mt-24 mt-10 max-w-8xl mx-auto sm:px-4">
+      {title && <h2 className="text-2xl text-center sm:text-2xl font-semibold sm:tracking-tighter text-gray-800 mb-6">{title}</h2>}
+      <div className='px-1 sm:px-16'>
         {description && (
-          <p className="mb-8 sm:mb-14 sm:px-52 text-gray-400 text-left sm:text-center sm:text-[15px] leading-[16px] tracking-[0.4px]">{description}</p>
+          <p className="mb-8 leading-tight sm:mb-14 sm:px-52 text-gray-400 text-left sm:text-center sm:text-[15px] sm:leading-[16px] sm:tracking-[0.4px]">{description}</p>
         )}
       </div>
-      <ul className="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
+      <ul className="grid grid-cols-2 gap-x-4  gap-y-1 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
         {items?.map((item, i) => (
-          <li key={i} className="p-4 mt-2 border rounded-xl border-gray-400 ">
-            <h3 className="text-md font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-400 font-[6px] tracking-[.1px] leading-[16px]">{item.description}</p>
+          <li key={i} className="p-2 sm:p-4 mt-2 border rounded-xl border-gray-400 ">
+            <h3 className="sm:text-md font-semibold sm:mb-2 text-left leading-[18px] mb-4 mt-2">{item.title}</h3>
+            <p className="text-gray-400 font-[6px] leading-[16px] sm:tracking-[.1px] sm:leading-[16px] text-left">{item.description}</p>
           </li>
         ))}
       </ul>
@@ -93,9 +93,9 @@ export function ListSection({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="challenges" className="scroll-mt-24 m-20">
-      {title && <h2 className="text-2xl text-gray-800 font-semibold  text-center mb-8">{title}</h2>}
-      <div className="grid grid-cols-3 gap-4 w-full mx-auto">
+    <section id="challenges" className="scroll-mt-24 sm:m-20 mt-10">
+      {title && <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-8 mb-4">{title}</h2>}
+      <div className="grid sm:grid-cols-3 gap-4 sm:gap-4 sm:w-full sm:mx-auto">
         {[0, 1].map((i) => (
           <div key={i} className="col-span-1 row-span-2">
             {images[i]?.asset?.url && (
@@ -104,7 +104,7 @@ export function ListSection({
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={400}
                 height={600}
-                className="w-full h-full object-cover rounded-4xl"
+                className="sm:w-full sm:h-full object-cover sm:rounded-4xl rounded-3xl"
               />
             )}
           </div>
@@ -117,17 +117,17 @@ export function ListSection({
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={300}
                 height={300}
-                className="w-full object-cover rounded-4xl"
+                className="w-full object-cover sm:rounded-4xl rounded-4xl"
               />
             )}
           </div>
         ))}
       </div>
-      <ul className="mt-8 mx-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 gap-y-5">
+      <ul className="grid grid-cols-2 gap-x-3 gap-y-4 mt-4 sm:mt-8 sm:mx-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 sm:gap-y-5">
         {items.map((c, i) => (
-          <li key={i} className="p-5 border border-gray-300 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <h2 className="font-semibold text-gray-900 mb-4 mt-2">{c.title}</h2>
-            <p className="text-gray-400 text-sm leading-[16px] tracking-[0.4px]]">{c.description}</p>
+          <li key={i} className="p-3 sm:p-5 border border-gray-300 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h2 className="font-semibold text-gray-900 sm:mb-4 sm:mt-2 mb-2 leading-[18px] ">{c.title}</h2>
+            <p className="text-gray-400 text-sm tracking-[0.1px] leading-[18px] sm:leading-[16px] sm:tracking-[0.4px]">{c.description}</p>
           </li>
         ))}
       </ul>
@@ -148,14 +148,14 @@ export function ListSectionNew({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="impact" className="scroll-mt-24 mt-12">
+    <section id="impact" className="scroll-mt-24 sm:mt-12 mt-6">
       {title && (
-        <h2 className="text-2xl text-gray-800 font-semibold mb-20 mt-16 text-center">{title}</h2>
+        <h2 className="text-2xl text-gray-800 font-semibold sm:mb-20 sm:mt-16 text-center">{title}</h2>
       )}
 
-      <div className="flex flex-col lg:flex-row gap-14 mx-4 lg:mx-20">
+      <div className="flex flex-col lg:flex-row sm:gap-14 sm:mx-4 lg:mx-20">
         {/* Image Grid */}
-        <div className="flex flex-wrap gap-4 flex-[3]">
+        <div className="flex flex-wrap sm:gap-4 sm:flex-[3]">
           {images.map((img, i) =>
             img?.asset?.url ? (
               <Image
@@ -164,7 +164,7 @@ export function ListSectionNew({
                 alt={img.alt || title || ''}
                 width={900}
                 height={500}
-                className="rounded-xl object-contain w-full h-[500px] max-w-[100%]"
+                className="rounded-xl object-contain w-full sm:my-8 my-4 sm:h-[500px] max-w-[100%]"
               />
             ) : null
           )}
@@ -174,10 +174,10 @@ export function ListSectionNew({
         <ul className="space-y-6 flex-[2] self-center">
           {items.map((c, i) => (
             <li key={i}>
-              <h4 className="font-semibold text-lg text-gray-900 mb-3">
+              <h4 className="font-semibold text-lg text-gray-900 sm:mb-3">
                 {c.title}
               </h4>
-              <p className="text-sm text-gray-400 leading-[16px] tracking-[0.4px]">
+              <p className="text-sm text-gray-400 leading-[18px] tracking-[0.1px] sm:leading-[16px] sm:tracking-[0.4px]">
                 {c.description}
               </p>
             </li>
@@ -203,8 +203,8 @@ export function List({
     <ul className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-7 text-left mx-44">
       {items?.map((item, i) => (
         <li key={i} className="p-4 mt-2 border rounded-xl border-gray-400 ">
-          <h3 className="text-md font-semibold mb-2">{item.title}</h3>
-          <p className="text-gray-400 font-[6px] tracking-[.1px] leading-[16px]">{item.description}</p>
+          <h3 className="text-md font-semibold mb-2 sm:tracking-[.1px] tracking-[.1px]">{item.title}</h3>
+          <p className="text-gray-400 sm:font-[6px] tracking-tight leading-tight sm:tracking-[.1px] sm:leading-[16px]">{item.description}</p>
         </li>
       ))}
     </ul>
@@ -221,7 +221,7 @@ export function ListNew({
   labelField?: keyof ListItem;
 }) {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-24 text-left mx-44 mt-8">
+    <ul className="grid grid-cols-2 md:grid-cols-2 sm:gap-y-3 sm:gap-x-24 text-left sm:mx-44 sm:mt-8">
       {items?.map((item, i) => (
         <li key={i} className="p-4 mt-2 rounded-x">
           <h3 className="text-md font-semibold mb-3">{item.title}</h3>
