@@ -12,19 +12,19 @@ interface HeroItem {
 
 const heroData: HeroItem[] = [
   {
-    image: '/blogs/HomePageComponents/sucess.png',
+    image: '/blogs/homepagecomponents/sucess.png',
     title: 'Enhancing Predictive Maintenance with IoT',
     subtitle: 'A Real-World Success',
     location: 'Narhe, Near Pune'
   },
   {
-    image: '/blogs/HomePageComponents/sucess.png',
+    image: '/blogs/homepagecomponents/sucess.png',
     title: 'Smart Farming Revolution',
     subtitle: 'IoT-Driven Crop Optimization',
     location: 'Baramati, Maharashtra'
   },
   {
-    image: '/blogs/HomePageComponents/sucess.png',
+    image: '/blogs/homepagecomponents/sucess.png',
     title: 'Industrial Automation Case Study',
     subtitle: 'Achieving 99% Uptime',
     location: 'Chakan MIDC'
