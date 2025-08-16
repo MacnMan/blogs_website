@@ -2,17 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-// import { urlFor } from '../.../../../../lib/sanityImageUrl';
 import { PortableTextBlock } from '@portabletext/react';
 import { groq } from 'next-sanity';
 
-// GROQ query to fetch latest 5 success stories
+// ✅ GROQ query to fetch latest 5 success stories
 export const newlyAddedQuery = groq`
-  *[
-    _type == "successStory" &&
-    defined(publishedAt) &&
-    defined(category)
-  ] | order(publishedAt desc)[0...5] {
+  *[_type == "successStory"] | order(publishedAt desc)[0...5] {
     _id,
     title,
     slug {
@@ -32,21 +27,15 @@ export const newlyAddedQuery = groq`
 `;
 
 
-// TypeScript type based on GROQ structure
-type successStory = {
+// ✅ TypeScript type based on query structure
+type SuccessStory = {
   _id: string;
   title: string;
   slug: {
     current: string;
   };
   publishedAt: string;
-  category?:
-  | 'smart-industry'
-  | 'smart-city'
-  | 'smart-building'
-  | 'smart-agriculture'
-  | 'custom-development'
-  | 'utilities';
+  category?: string; // 👈 updated to string
   homeImage?: {
     asset: {
       _id: string;
@@ -57,7 +46,7 @@ type successStory = {
   body: PortableTextBlock[];
 };
 
-export default function NewlyAddedStories({ stories }: { stories: successStory[] }) {
+export default function NewlyAddedStories({ stories }: { stories: SuccessStory[] }) {
   // Optional local sort (in case backend ordering fails)
   const sortedStories = [...stories].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -93,6 +82,8 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
               )}
               <div className="p-2 sm:p-4">
                 <h3 className="text-[12px] sm:text-sm font-semibold">{story.title}</h3>
+
+                {/* ✅ Category */}
                 {story.category ? (
                   <p className="text-xs text-blue-600 mt-1 capitalize">
                     {story.category.replace(/-/g, ' ')}
@@ -100,7 +91,9 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
                 ) : (
                   <p className="text-xs text-gray-400 mt-1 italic">No category</p>
                 )}
-                {story.publishedAt && (
+
+                {/* ✅ Published Date */}
+                {story.publishedAt ? (
                   <p className="text-sm text-gray-600 mt-1">
                     {new Date(story.publishedAt).toLocaleDateString('en-US', {
                       year: 'numeric',
@@ -108,6 +101,8 @@ export default function NewlyAddedStories({ stories }: { stories: successStory[]
                       day: 'numeric',
                     })}
                   </p>
+                ) : (
+                  <p className="text-xs italic text-gray-400 mt-1">No date</p>
                 )}
               </div>
             </Link>

@@ -56,14 +56,16 @@ export const storiesQuery = `
 
 
 // lib/queries.ts
-
 export const newlyAddedStoriesQuery = `
    *[_type == "successStory" && slug.current == $slug][0]{
     _id,
     title,
     slug,
     publishedAt,
-    category,
+    category->{
+      _id,
+      title
+    },
     homeImage {
       asset->{
         _id,
@@ -74,6 +76,7 @@ export const newlyAddedStoriesQuery = `
     body
   }
 `;
+
 
 
 
