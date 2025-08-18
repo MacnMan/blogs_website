@@ -11,6 +11,10 @@ module.exports = {
         '5xl': '3rem',
         '6xl': '4rem',
       },
+
+      fontFamily: {
+        sans: ['var(--font-roboto)', 'sans-serif'],
+      },
       variants: {
         scrollBehavior: ['responsive'],
       },

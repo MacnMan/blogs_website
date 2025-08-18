@@ -14,6 +14,7 @@ import Authority from '@/components/HomePageComponents/Authority';
 import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
 import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
+import SuccessStoriesList from '@/components/successStoriesComponents/SuccessStoriesList';
 
 export const revalidate = 60;
 
@@ -99,6 +100,18 @@ export default async function SuccessStory({ params }: Props) {
   const { slug } = await params;
 
   const data = await sanityClient.fetch(query, { slug });
+  // console.log("📌 Full Success Story Document:", data);
+
+  // updated
+  const allStories = await sanityClient.fetch(
+    groq`*[_type == "successStory" && defined(homeImage.asset._ref)]{
+    _id,
+    title,
+    slug,
+    homeImage { asset->{_ref, url}, alt },
+    body
+  }`
+  );
 
   if (!data) return notFound();
 
@@ -106,7 +119,10 @@ export default async function SuccessStory({ params }: Props) {
     <>
       <NavbarWrapper />
       <TopHeroSectionSuccess topImage={data.topImage} />
-      {/* <SectionNavigator /> */}
+      <div className="hidden md:block">
+        <SectionNavigator />
+      </div>
+
       <main className="p-1 w-full md:w-full px-4 md:px-10 2xl:px-32">
 
         <h1 id="overview" className=" scroll-mt-24 text-2xl font-semibold text-gray-800 my-8 text-center">{data.title}</h1>
@@ -126,13 +142,13 @@ export default async function SuccessStory({ params }: Props) {
 
           return (
             <div
-  id="overview"
-  className="text-gray-400 text-md leading-tight space-y-4 sm:leading-snug sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
->
-  {paragraphs.map((para, idx) => (
-    <p key={idx}>{para}</p>
-  ))}
-</div>
+              id="overview"
+              className="text-gray-400 text-md leading-tight space-y-4 sm:leading-snug sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
+            >
+              {paragraphs.map((para, idx) => (
+                <p key={idx}>{para}</p>
+              ))}
+            </div>
 
           );
         })()}
@@ -194,7 +210,7 @@ export default async function SuccessStory({ params }: Props) {
                     alt={data.deploymentDiagram.alt || 'Deployment'}
                     width={1900}
                     height={500}
-                    className="sm:w-full sm:h-[625px] rounded-xl sm:mb-4 object-contain"
+                    className="sm:w-full sm:h-[625px] rounded-4xl sm:mb-4 object-contain"
                   />
                 </div>
               )}
@@ -228,7 +244,7 @@ export default async function SuccessStory({ params }: Props) {
                     alt={data.validationImage.alt || 'Validation'}
                     width={1900}
                     height={600}
-                    className="sm:w-full sm:h-[450px] rounded-xl sm:mb-4 mt-4 object-cover"
+                    className="sm:w-full sm:h-[450px] rounded-4xl sm:mb-4 mt-4 object-cover"
                   />
                 </div>
               )}
@@ -250,7 +266,7 @@ export default async function SuccessStory({ params }: Props) {
                     alt={data.conclusionImage.alt || 'Conclusion'}
                     width={600}
                     height={600}
-                    className="rounded-2xl object-cover sm:w-full sm:h-full"
+                    className="rounded-4xl object-cover sm:w-full sm:h-full"
                   />
                 </div>
               )}
@@ -269,7 +285,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Links */}
         {(data.linksTitle || data.exploreMore || data.readMoreLink) && (
           <section id="links" className="scroll-mt-24 sm:mt-10 sm:mx-16">
-            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-lg shadow-sm">
+            <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
               {/* Title text */}
               {data.linksTitle && (
                 <p className="text-xl font-semibold sm:font-xl text-gray-800 mb-2 md:mb-0">
@@ -303,7 +319,12 @@ export default async function SuccessStory({ params }: Props) {
             </div>
           </section>
         )}
-
+        {/* Success Stories Carousel */}
+        {allStories.length > 0 && (
+          <section className="overflow-x-hidden mt-12">
+            <SuccessStoriesList stories={allStories} />
+          </section>
+        )}
       </main>
 
       <MainContactUs theme='light' />

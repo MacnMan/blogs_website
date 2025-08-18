@@ -124,69 +124,60 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { urlFor } from '../../../lib/sanityImageUrl';
+// import { urlFor } from '../../../lib/sanityImageUrl';
 import { PortableTextBlock } from '@portabletext/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
-type successStory = {
+type SuccessStory = {
   _id: string;
   title: string;
   slug: { current: string };
   homeImage?: {
-    asset: {
-      _ref: string;
-    };
+    asset: { url?: string };
     alt?: string;
   };
-  body: PortableTextBlock[];
+  body?: PortableTextBlock[];
 };
 
-export default function SuccessStoriesList({ stories }: { stories: successStory[] }) {
+export default function SuccessStoriesList({ stories }: { stories: SuccessStory[] }) {
   return (
-    <section className="sm:space-y-6 ml-10 overflow-x-hidden mt-4">
-      <h2 className="sm:text-3xl text-xl font-semibold mb-4 sm:ml-4 font-sans">
+    <div className="sm:space-y-6 mt-4 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-xl sm:text-3xl font-semibold mb-4 font-sans">
         Success Stories Videos
       </h2>
 
       <Swiper
         modules={[Autoplay]}
-        spaceBetween={16} // matches sm:gap-3
+        spaceBetween={20}
         slidesPerView="auto"
-        autoplay={{
-          delay: 0, // continuous
-          disableOnInteraction: false,
-        }}
-        speed={4000} // smooth speed
+        autoplay={{ delay: 0, disableOnInteraction: false }}
+        speed={4000}
         loop={true}
         grabCursor={true}
       >
         {stories.map((story) => (
-          <SwiperSlide
-            key={story._id}
-            style={{ width: 'auto' }} // keep Tailwind card sizes
-          >
+          <SwiperSlide key={story._id} style={{ width: 'auto' }}>
             <Link
               href={`/success-stories/${story.slug.current}`}
-              className="sm:w-[320px] w-[200px] flex-shrink-0 transition bg-white overflow-hidden"
+              className="flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition"
+              style={{ width: '90vw', maxWidth: '400px' }} // wider on all devices
             >
-              {story.homeImage?.asset && (
-                <div className="mb-2">
-                  <div className="sm:w-[320px] w-[200px] sm:h-[230px] h-[130px] overflow-hidden rounded-xl sm:rounded-4xl">
-                    <Image
-                      src={urlFor(story.homeImage).url()}
-                      alt={story.homeImage.alt || story.title}
-                      width={320}
-                      height={230}
-                      className="sm:w-full sm:h-full object-cover sm:rounded-4xl"
-                    />
-                  </div>
+              {story.homeImage?.asset?.url && (
+                <div className="w-full h-[150px] sm:h-[250px] overflow-hidden rounded-3xl">
+                  <Image
+                    src={story.homeImage.asset.url}
+                    alt={story.homeImage.alt || story.title}
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               )}
-              <div className="p-2">
-                <h3 className="sm:text-md text-sm font-semibold break-words whitespace-normal">
+              <div className="p-3">
+                <h3 className="text-sm sm:text-md font-semibold break-words">
                   {story.title}
                 </h3>
               </div>
@@ -194,6 +185,6 @@ export default function SuccessStoriesList({ stories }: { stories: successStory[
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 }

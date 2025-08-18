@@ -15,19 +15,19 @@ const heroData: HeroItem[] = [
     image: '/blogs/homepagecomponents/sucess.png',
     title: 'Enhancing Predictive Maintenance with IoT',
     subtitle: 'A Real-World Success',
-    location: 'Narhe, Near Pune'
+    location: 'Bibwewadi, Pune'
   },
   {
-    image: '/blogs/homepagecomponents/sucess.png',
     title: 'Smart Farming Revolution',
+    image: '/blogs/homepagecomponents/herothree.png',
     subtitle: 'IoT-Driven Crop Optimization',
-    location: 'Baramati, Maharashtra'
+    location: 'Baramati, Pune'
   },
   {
-    image: '/blogs/homepagecomponents/sucess.png',
     title: 'Industrial Automation Case Study',
+    image: '/blogs/homepagecomponents/heroone.png',
     subtitle: 'Achieving 99% Uptime',
-    location: 'Chakan MIDC'
+    location: 'Bibwewadi, Pune'
   }
 ];
 
@@ -56,15 +56,23 @@ export default function HeroSection() {
             className="object-cointain"
             priority
           />
-          
+
           {/* Content */}
           <div className="absolute md:bottom-10 bottom-2 left-5 md:left-10 text-white z-20">
             <h1 className="text-sm md:text-5xl font-bold md:leading-tight md:mb-2">
               {item.title}
             </h1>
             <p className="text-[10px] md:text-xl md:mb-4 mb-2">{item.subtitle}</p>
-            <div className="bg-white text-black md:rounded-full md:px-4 md:py-2 px-2 py-[2px] inline-block text-[10px] md:text-sm rounded-full">
-              📍 {item.location}
+            {/* Location with icon & text aligned */}
+            <div className="bg-white text-black inline-flex items-center gap-1 md:rounded-full md:px-3 md:py-1 px-2 py-[2px] text-[10px] md:text-sm rounded-full w-fit">
+              <Image
+                src="/blogs/location.svg"
+                alt="Location icon"
+                width={16}
+                height={16}
+                className="md:w-5 md:h-5 w-4 h-4"
+              />
+              <span>{item.location}</span>
             </div>
           </div>
         </div>

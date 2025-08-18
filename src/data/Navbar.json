@@ -516,8 +516,9 @@
     "NavbarItem": "Resources",
     "Details": [
       {
-        "title": "Datasheet",
+        "title": "Documentation",
         "src": "/blogs/images/product-hover/icons/guide-alt_1.svg",
+        "link":"https://macnman.com/docs/",
         "description": "Step-by-step instructions to set up, use, and troubleshoot your devices.",
         "images": [
           {
@@ -578,6 +579,7 @@
       {
         "title": "Books",
         "src": "/blogs/images/product-hover/icons/book_open_cover_1.svg",
+        "link":"https://macnman.com/docs/books/category/inside-lorawan",
         "description": "In-depth insights on LoRaWAN , WiFi, 4G designed for industry professionals.",
         "images": [
           {
@@ -589,6 +591,7 @@
       {
         "title": "Tech Reports",
         "src": "/blogs/images/product-hover/icons/file-medical-alt 1.svg",
+        "link":"https://macnman.com/docs/datasheets/",
         "description": "Essential market trends and analysis for smart IoT projects.",
         "images": [
           {
@@ -600,6 +603,7 @@
       {
         "title": "Blogs",
         "src": "/blogs/images/product-hover/icons/blogs_2_1.svg",
+        "link":"https://macnman.com/blogs/",
         "description": "Latest IoT news, expert tips, and best practices to stay ahead.",
         "images": [
           {

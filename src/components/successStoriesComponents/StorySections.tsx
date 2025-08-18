@@ -18,11 +18,13 @@ export function Section({
   if (!title && !description && !items?.length) return null;
 
   return (
-    <section id="problem" className="scroll-mt-24 mt-10 sm:mt-14 sm:max-w-8xl sm:mx-auto sm:px-4 sm:mb-20">
+    <section id="problem" className="scroll-mt-24 mt-10 sm:mt-14 sm:max-w-8xl sm:mx-auto sm:px-4 sm:mb-10">
       {title && <h2 className="text-2xl sm:text-2xl text-center font-semibold text-gray-800 mb-6">{title}</h2>}
       <div className='px-2 sm:px-16'>
         {description && (
-          <p className="mb-6 sm:px-52 text-gray-400 sm:text-center text-left sm:text-[15px] leading-tight sm:leading-[16px] sm:tracking-[0.4px]">{description}</p>
+          <p className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-6">
+            {description}
+          </p>
         )}
       </div>
       <ul className="grid grid-cols-2 md:grid-cols-4 gap-1 gap-y-[-4] sm:gap-2 text-left sm:mx-32">
@@ -37,7 +39,7 @@ export function Section({
                 className="mb-4 sm:mb-6"
               />
             )}
-            <h3 className="text-lg font-semibold mb-2 sm:leading-[16px] leading-[18px] tracking-tight ">{item.title}</h3>
+            <h3 className="text-lg font-semibold mb-4 sm:leading-[16px] leading-[18px] tracking-tight ">{item.title}</h3>
             <p className="text-gray-400 sm:text-[15px] leading-tight sm:leading-tight tracking-tight">
               {item.description}
             </p>
@@ -65,12 +67,14 @@ export function SectionNew({
       {title && <h2 className="text-2xl text-center sm:text-2xl font-semibold sm:tracking-tighter text-gray-800 mb-6">{title}</h2>}
       <div className='px-1 sm:px-16'>
         {description && (
-          <p className="mb-8 leading-tight sm:mb-14 sm:px-52 text-gray-400 text-left sm:text-center sm:text-[15px] sm:leading-[16px] sm:tracking-[0.4px]">{description}</p>
+          <p className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-6">
+            {description}
+          </p>
         )}
       </div>
       <ul className="grid grid-cols-2 gap-x-4  gap-y-1 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
         {items?.map((item, i) => (
-          <li key={i} className="p-2 sm:p-4 mt-2 border rounded-xl border-gray-400 ">
+          <li key={i} className="p-2 sm:p-4 mt-2 border rounded-xl border-gray-200 ">
             <h3 className="sm:text-md font-semibold sm:mb-2 text-left leading-[18px] mb-4 mt-2">{item.title}</h3>
             <p className="text-gray-400 font-[6px] leading-[16px] sm:tracking-[.1px] sm:leading-[16px] text-left">{item.description}</p>
           </li>
@@ -125,7 +129,7 @@ export function ListSection({
       </div>
       <ul className="grid grid-cols-2 gap-x-3 gap-y-4 mt-4 sm:mt-8 sm:mx-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 sm:gap-y-5">
         {items.map((c, i) => (
-          <li key={i} className="p-3 sm:p-5 border border-gray-300 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <li key={i} className="p-3 sm:p-5 border border-gray-200 rounded-xl shadow-sm transition-shadow">
             <h2 className="font-semibold text-gray-900 sm:mb-4 sm:mt-2 mb-2 leading-[18px] ">{c.title}</h2>
             <p className="text-gray-400 text-sm tracking-[0.1px] leading-[18px] sm:leading-[16px] sm:tracking-[0.4px]">{c.description}</p>
           </li>
