@@ -321,7 +321,7 @@ export default async function SuccessStory({ params }: Props) {
         )}
         {/* Success Stories Carousel */}
         {allStories.length > 0 && (
-          <section className="overflow-x-hidden mt-12">
+          <section className="overflow-x-hidden sm:mt-12">
             <SuccessStoriesList stories={allStories} />
           </section>
         )}
