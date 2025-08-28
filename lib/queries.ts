@@ -1,107 +1,3 @@
-// // lib/queries.ts
-// // import groq from 'groq';
-
-// export const blogPostsQuery = `
-//   *[_type == "post"] | order(_createdAt desc){
-//     _id,
-//     title,
-//     slug,
-//     mainImage{
-//       asset->{
-//         _id,
-//         url
-//       },
-//       alt
-//     },
-//     body
-//   }
-// `;
-
-
-// // src/lib/queries.ts
-// export const successStoriesQuery = `
-//   *[_type == "successStory"]{
-//     _id,
-//     title,
-//     slug,
-//     overview,
-//     homeImage {
-//       asset->{
-//         _ref,
-//         _type,
-//         url
-//       },
-//       alt
-//     }
-//   }
-// `;
-
-
-// export const storiesQuery = `
-//   *[_type == "story"]{
-//     _id,
-//     title,
-//     slug,
-//     overview,
-//     "publishedAt": coalesce(publishedAt, _createdAt),
-//     // If category is a reference, fetch its title, else fallback
-//     "category": coalesce(category->title, category, "uncategorized"),
-//     homeImage  {
-//       asset->{
-//         _ref,
-//         _type,
-//         url
-//       },
-//       alt
-//     }
-//   }
-// `;
-
-
-// // lib/queries.ts
-// export const newlyAddedStoriesQuery = `
-//    *[_type == "successStory" && slug.current == $slug][0]{
-//     _id,
-//     title,
-//     slug,
-//     publishedAt,
-//     category->{
-//       _id,
-//       title
-//     },
-//     homeImage {
-//       asset->{
-//         _id,
-//         url
-//       },
-//       alt
-//     },
-//     body
-//   }
-// `;
-
-
-
-
-
-// export const topHeroSectionBySlugQuery = (slug: string) => `
-//   *[_type == "successStory" && slug.current == "${slug}"][0]{
-//     topImage {
-//       image {
-//         asset->{
-//           _id,
-//           url
-//         },
-//         alt
-//       },
-//       title,
-//       location
-//     }
-//   }
-// `;
-
-
-
 // lib/queries.ts
 
 // ✅ Blog Posts
@@ -181,6 +77,62 @@ export const newlyAddedStoriesQuery = `
 // ✅ Hero Section by Slug
 export const topHeroSectionBySlugQuery = (slug: string) => `
   *[_type == "successStory" && slug.current == "${slug}"][0]{
+    topImage {
+      image {
+        asset->{
+          _id,
+          url
+        },
+        alt
+      },
+      title,
+      location
+    }
+  }
+`;
+
+
+// ✅ Success Stories V2 (for homepage or listing)
+export const successStoriesV2Query = `
+  *[_type == "successStoryVersion2"] | order(coalesce(publishedAt, _createdAt) desc){
+    _id,
+    title,
+    slug,
+    overview,
+    "publishedAt": coalesce(publishedAt, _createdAt),
+    "category": coalesce(category->title, category, "uncategorized"),
+    homeImage {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    }
+  }
+`;
+
+// ✅ Single Success Story V2 (detail page)
+export const singleSuccessStoryV2Query = `
+  *[_type == "successStoryVersion2" && slug.current == $slug][0]{
+    _id,
+    title,
+    slug,
+    "publishedAt": coalesce(publishedAt, _createdAt),
+    "category": coalesce(category->title, category, "uncategorized"),
+    homeImage {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    // include fields you need for V2 (deploymentFeatures, etc.)
+  }
+`;
+
+// ✅ Hero Section V2 by Slug
+export const topHeroSectionV2BySlugQuery = (slug: string) => `
+  *[_type == "successStoryVersion2" && slug.current == "${slug}"][0]{
     topImage {
       image {
         asset->{

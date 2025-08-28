@@ -6,7 +6,7 @@ import { IoLogoLinkedin } from 'react-icons/io5'
 export default function MobileFooterSection () {
   return (
     <div className='md:hidden'>
-      <div className='relative w-full h-96 bg-[#fafafa] mx-auto '>
+      {/* <div className='relative w-full h-96 bg-[#fafafa] mx-auto '>
         <Image
           src='/blogs/images/mobile-footer-image.svg'
           alt='Icon'
@@ -14,7 +14,7 @@ export default function MobileFooterSection () {
           className='object-fill h-full w-60'
           sizes='(max-width: 425px): 100px,100px'
         />
-      </div>
+      </div> */}
 
       <div className='text-[26px] font-bold text-center my-6'>
         <span className='bg-gradient-to-r from-[var(--gradient-pink)] to-[var(--gradient-blue)] text-transparent bg-clip-text'>
