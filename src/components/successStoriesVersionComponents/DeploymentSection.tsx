@@ -11,13 +11,16 @@ const DeploymentTitle = ({ title, description }: { title: string; description: s
 
 // 2. Single Deployment Feature
 const DeploymentFeature = ({ feature, idx }: { feature: any; idx: number }) => {
+  // Vertical shift as before
   const shiftClass = idx % 2 === 0 ? "sm:-mt-10" : "sm:mt-40";
-  const lineHeights = ["h-[197%]", "h-[60%]", "h-[185%]", "h-[66%]"];
-const lineHeight = lineHeights[idx % 4];
+  const lineHeights = ["h-[167%]", "h-[38%]", "h-[157%]", "h-[43%]"];
+  const lineHeight = lineHeights[idx % 4];
 
+  // Horizontal shift
+  const horizontalShift = idx % 2 === 0 ? "sm:ml-40" : "sm:mr-30";
 
   return (
-    <div className={`flex flex-col items-center relative ${shiftClass}`}>
+    <div className={`flex flex-col items-center relative ${shiftClass} ${horizontalShift}`}>
       <div className="flex flex-row items-start gap-4 relative">
         {/* Icon + Number */}
         <div className="flex flex-col items-center flex-shrink-0 relative">
@@ -25,23 +28,71 @@ const lineHeight = lineHeights[idx % 4];
             <Image
               src={feature.icon.asset.url}
               alt={feature.icon.alt || feature.title}
-              width={100}
+              width={110}
               height={80}
-              className="object-contain mb-2"
+              className="object-contain mb-[-30px]"
             />
           )}
-          <div className="px-8 py-1 bg-gray-200 text-gray-700 font-semibold text-sm rounded-b-full border border-gray-300 relative z-20">
-            {idx + 1}
+
+          <div className="flex justify-center w-full relative h-16">
+            {/* Trapezoid area for number */}
+            <div
+              className="px-20 py-1 text-gray-700 font-semibold text-xl text-center relative z-10 top-11"
+              style={{
+                clipPath: "polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%)"
+              }}
+            >
+              <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center mx-auto text-white/95">
+                {idx + 1}
+              </div>
+            </div>
+
+            {/* Left angled border */}
+            <div
+              className="absolute bg-gray-400"
+              style={{
+                width: ".8px",
+                height: "35%",
+                top: 48,
+                left: "21.7%",
+                transform: "rotate(-45deg)",
+                transformOrigin: "top left"
+              }}
+            ></div>
+
+            {/* Right angled border */}
+            <div
+              className="absolute bg-gray-400"
+              style={{
+                width: ".8px",
+                height: "35%",
+                top: 48,
+                right: "21.7%",
+                transform: "rotate(45deg)",
+                transformOrigin: "top right"
+              }}
+            ></div>
+
+            {/* Bottom border */}
+            <div
+              className="absolute bg-gray-400"
+              style={{
+                height: ".8px",
+                bottom: 0,
+                left: "30%",
+                right: "30%"
+              }}
+            ></div>
           </div>
+
           {/* Vertical Line */}
           <div
-            className={`absolute top-full left-1/2 -translate-x-1/2 w-[.8px] bg-gray-300 ${lineHeight} z-[-10]`}
+            className={`absolute top-full left-1/2 -translate-x-1/2 w-[.8px] bg-gray-400 ${lineHeight} z-[-10]`}
           />
-
         </div>
 
         {/* Title + Description */}
-        <div className="text-left">
+        <div className="text-left ml-[-50px] w-64">
           <h3 className="font-semibold text-gray-800 text-[14px]">{feature.title}</h3>
           <div className="text-gray-500 mt-2 space-y-1 text-[10px]">
             {feature.description
@@ -60,6 +111,7 @@ const lineHeight = lineHeights[idx % 4];
   );
 };
 
+
 // 3. Deployment Image
 const DeploymentImage = ({ diagram }: { diagram: any }) => {
   if (!diagram?.asset?.url) return null;
@@ -71,7 +123,7 @@ const DeploymentImage = ({ diagram }: { diagram: any }) => {
         alt={diagram.alt || "Deployment"}
         width={1900}
         height={500}
-        className="sm:w-full sm:h-[625px] rounded-2xl object-contain border relative z-50"
+        className="sm:w-full sm:h-[625px] rounded-2xl object-contain border border-gray-400 relative"
       />
     </div>
   );
@@ -86,7 +138,7 @@ const DeploymentSection = ({ data }: { data: any }) => {
       <DeploymentTitle title={data.deploymentTitle} description={data.deploymentDescription} />
 
       {data.deploymentFeatures?.length > 0 && (
-        <div className="relative sm:max-w-6xl mx-auto px-6 sm:px-12 z-[-10]">
+        <div className="relative sm:max-w-8xl mx-auto px-6 sm:px-12 z-[-10]">
           {/* Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative z-30">
             {data.deploymentFeatures.map((feature: any, idx: number) => (
