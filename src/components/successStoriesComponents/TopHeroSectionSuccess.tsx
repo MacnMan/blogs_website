@@ -37,6 +37,7 @@ export default function TopHeroSectionSuccess({ topImage }: { topImage?: TopImag
     alt={topImage?.image?.alt || topImage?.title || 'Success Story Image'}
     fill
     priority
+    unoptimized
     className="object-cover w-full h-full"
   />
 

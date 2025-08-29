@@ -97,11 +97,11 @@ export function ListSection({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="challenges" className="scroll-mt-24 sm:m-20 mt-10">
+    <section id="challenges" className="scroll-mt-24 sm:m-20 mt-10 ">
       {title && <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-8 mb-4">{title}</h2>}
-      <div className="grid sm:grid-cols-3 gap-4 sm:gap-4 sm:w-full sm:mx-auto">
+      <div className="grid sm:grid-cols-3 gap-4 sm:gap-4 sm:w-full sm:mx-auto z-30">
         {[0, 1].map((i) => (
-          <div key={i} className="col-span-1 row-span-2">
+          <div key={i} className="col-span-1 row-span-2 z-30">
             {images[i]?.asset?.url && (
               <Image
                 src={images[i].asset.url}
@@ -154,7 +154,7 @@ export function ListSectionNew({
   return (
     <section id="impact" className="scroll-mt-24 sm:mt-12 mt-6">
       {title && (
-        <h2 className="text-2xl text-gray-800 font-semibold sm:mb-20 sm:mt-16 text-center">{title}</h2>
+        <h2 className="text-2xl text-gray-800 font-semibold sm:mb-4 sm:mt-4 text-center">{title}</h2>
       )}
 
       <div className="flex flex-col lg:flex-row sm:gap-14 sm:mx-4 lg:mx-20">

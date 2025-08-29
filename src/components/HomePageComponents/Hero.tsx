@@ -53,6 +53,7 @@ export default function HeroSection() {
             src={item.image}
             alt={item.title}
             fill
+            unoptimized
             className="object-cointain"
             priority
           />
@@ -70,6 +71,7 @@ export default function HeroSection() {
                 alt="Location icon"
                 width={16}
                 height={16}
+                unoptimized
                 className="md:w-5 md:h-5 w-4 h-4"
               />
               <span>{item.location}</span>

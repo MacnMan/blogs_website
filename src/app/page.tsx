@@ -26,13 +26,13 @@ export default async function HomePage() {
 				<section className='overflow-x-hidden'>
 					<SuccessStoriesList stories={stories} />
 				</section>
+			</main>
+			<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
+				<NewlyAddedStories stories={stories} />
 
 				<section className='overflow-x-hidden'>
 					<SuccessStoriesV2List stories={storiesV2} />
 				</section>
-			</main>
-			<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
-				<NewlyAddedStories stories={stories} />
 			</main>
 			<MainContactUs theme='light' />
 			<div className='hidden md:block'>

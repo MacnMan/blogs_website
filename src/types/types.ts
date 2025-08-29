@@ -132,3 +132,30 @@ export type ListItem = {
   text: string;
   icon?: string;
 };
+// types/deployment.ts
+export interface DeploymentIcon {
+  asset: {
+    url: string;
+  };
+  alt?: string;
+}
+
+export interface DeploymentFeatureType {
+  icon?: DeploymentIcon;
+  title: string;
+  description: string;
+}
+
+export interface DeploymentDiagram {
+  asset: {
+    url: string;
+  };
+  alt?: string;
+}
+
+export interface DeploymentData {
+  deploymentTitle: string;
+  deploymentDescription: string;
+  deploymentFeatures: DeploymentFeatureType[];
+  deploymentDiagram?: DeploymentDiagram;
+}

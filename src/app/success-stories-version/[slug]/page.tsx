@@ -3,31 +3,22 @@
 export const dynamic = 'force-dynamic';
 
 import { sanityClient } from '../../../../lib/sanity.client';
-import { groq } from 'next-sanity';
+import { groq, PortableText } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-
+import components from "@/components/successStoriesVersionComponents/overviewText";
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
 import DeploymentSection from '@/components/successStoriesVersionComponents/DeploymentSection';
-
-
-import {
-	Section,
-	//   SectionNew,
-	ListSection,
-	ListSectionNew,
-	ListNew,
-} from '@/components/successStoriesComponents/StorySections';
+import {Section,ListSection, ListSectionNew, ListNew} from '@/components/successStoriesComponents/StorySections';
 
 import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
 import SuccessStoriesListV2 from '@/components/successStoriesVersionComponents/SuccessStoriesListV2';
 import { SectionItem } from '@/types/types';
-import { Key } from 'react';
 
 export const revalidate = 60;
 
@@ -195,6 +186,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 	if (!data) return notFound();
 
+
 	return (
 		<>
 			<NavbarWrapper />
@@ -211,15 +203,12 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 					{data.title}
 				</h1>
 
-				{/* Overview */}
 				{data.overview && (
 					<div
 						id="overview"
-						className="text-gray-400 text-md leading-tight space-y-4 sm:leading-snug sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
+						className="text-md space-y-4 sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
 					>
-						{data.overview.split('\n').map((para: string, idx: number) => (
-							<p key={idx}>{para}</p>
-						))}
+						<PortableText value={data.overview} components={components} />
 					</div>
 				)}
 
@@ -231,6 +220,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 							alt={data.introImage.alt || 'Intro Image'}
 							width={1900}
 							height={1200}
+							unoptimized
 							className="sm:w-full sm:h-[500px] 2xl:h-[850px] rounded-4xl sm:mb-4 mt-4 object-cover"
 						/>
 					</div>
@@ -267,80 +257,8 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 						)}
 					</section>
 				)}
-{/* 
-{data.deploymentTitle && (
-  <section id="deployment" className="scroll-mt-24 mt-10">
-    <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">
-      {data.deploymentTitle}
-    </h2>
 
-    <div className="sm:mx-64 text-center text-gray-400 mb-20 space-y-2">
-      {data.deploymentDescription}
-    </div>
-
-    {data.deploymentFeatures?.length > 0 && (
-      <div className="relative sm:max-w-6xl mx-auto px-6 sm:px-12 z-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
-          {data.deploymentFeatures.map((feature: any, idx: number) => {
-            const shiftClass = idx % 2 === 0 ? "sm:-mt-10" : "sm:mt-40";
-            const lineHeight = idx % 2 === 0 ? "h-[220%]" : "h-[60%]";
-
-            return (
-              <div key={idx} className={`flex flex-col items-center relative ${shiftClass}`}>
-                <div className="flex flex-row items-start gap-4 relative">
-                  <div className="flex flex-col items-center flex-shrink-0 relative">
-                    {feature.icon?.asset?.url && (
-                      <Image
-                        src={feature.icon.asset.url}
-                        alt={feature.icon.alt || feature.title}
-                        width={80}
-                        height={80}
-                        className="object-contain mb-2"
-                      />
-                    )}
-                    <div className="px-4 py-1 bg-gray-200 text-gray-700 font-semibold text-sm rounded-b-full border border-gray-300 relative z-20">
-                      {idx + 1}
-                    </div>
-
-                    <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 w-[.8px] bg-gray-300 ${lineHeight} z-0`}
-                    />
-                  </div>
-
-                  <div className="text-left max-w-xs">
-                    <h3 className="font-semibold text-gray-800 text-[14px]">{feature.title}</h3>
-                    <div className="text-gray-500 mt-2 space-y-1 text-[10px]">
-                      {feature.description
-                        .split('. ')
-                        .filter(Boolean)
-                        .map((sentence: string, i: number) => (
-                          <p key={i}>{sentence.trim()}{sentence.endsWith('.') ? '' : '.'}</p>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {data.deploymentDiagram?.asset?.url && (
-          <div id="deployment-image" className="relative sm:mt-16 mt-10 z-100">
-            <Image
-              src={data.deploymentDiagram.asset.url}
-              alt={data.deploymentDiagram.alt || "Deployment"}
-              width={1900}
-              height={500}
-              className="sm:w-full sm:h-[625px] rounded-2xl object-contain border relative z-10"
-            />
-          </div>
-        )}
-      </div>
-    )}
-  </section>
-)} */}
-
-<DeploymentSection data={data} />
+				<DeploymentSection data={data} />
 
 
 				{/* Challenges */}
@@ -359,7 +277,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 				{/* Validation */}
 				{data.validationTitle && (
-					<section id="validation" className="scroll-mt-24 sm:mt-24 mt-10">
+					<section id="validation" className="scroll-mt-24 sm:mt-4 mt-10">
 						<h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-16 mt-10">
 							{data.validationTitle}
 						</h2>
