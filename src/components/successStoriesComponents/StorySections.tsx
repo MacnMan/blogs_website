@@ -18,7 +18,7 @@ export function Section({
   if (!title && !description && !items?.length) return null;
 
   return (
-    <section id="problem" className="scroll-mt-24 mt-10 sm:mt-14 sm:max-w-8xl sm:mx-auto sm:px-4 sm:mb-10">
+    <section id="problem" className="scroll-mt-36 mt-10 sm:mt-14 sm:max-w-8xl sm:mx-auto sm:px-4 sm:mb-10">
       {title && <h2 className="text-2xl sm:text-2xl text-center font-semibold text-gray-800 mb-6">{title}</h2>}
       <div className='px-2 sm:px-16'>
         {description && (
@@ -63,7 +63,7 @@ export function SectionNew({
   if (!title && !description && !items?.length) return null;
 
   return (
-    <section id="solution" className="scroll-mt-24 mt-10 max-w-8xl mx-auto sm:px-4">
+    <section id="solution" className="scroll-mt-36 mt-10 max-w-8xl mx-auto sm:px-4">
       {title && <h2 className="text-2xl text-center sm:text-2xl font-semibold sm:tracking-tighter text-gray-800 mb-6">{title}</h2>}
       <div className='px-1 sm:px-16'>
         {description && (
@@ -97,7 +97,7 @@ export function ListSection({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="challenges" className="scroll-mt-24 sm:m-20 mt-10 ">
+    <section id="challenges" className="scroll-mt-36 sm:m-20 mt-10 ">
       {title && <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-8 mb-4">{title}</h2>}
       <div className="grid sm:grid-cols-3 gap-4 sm:gap-4 sm:w-full sm:mx-auto z-30">
         {[0, 1].map((i) => (
@@ -152,7 +152,7 @@ export function ListSectionNew({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="impact" className="scroll-mt-24 sm:mt-12 mt-6">
+    <section id="impact" className="scroll-mt-36 sm:mt-12 mt-6">
       {title && (
         <h2 className="text-2xl text-gray-800 font-semibold sm:mb-4 sm:mt-4 text-center">{title}</h2>
       )}

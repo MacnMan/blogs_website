@@ -13,7 +13,7 @@ import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditio
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
 import DeploymentSection from '@/components/successStoriesVersionComponents/DeploymentSection';
-import {Section,ListSection, ListSectionNew, ListNew} from '@/components/successStoriesComponents/StorySections';
+import { Section, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
 
 import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
@@ -118,7 +118,7 @@ export function SectionNew({
 	return (
 		<section
 			id="solution"
-			className="scroll-mt-24 max-w-8xl mx-auto sm:px-4 bg-gray-100 rounded-3xl pb-10"
+			className="scroll-mt-36 max-w-8xl mx-auto sm:px-6 bg-[#F7F7F7] rounded-3xl pb-4"
 		>
 			{title && (
 				<h2 className="text-2xl text-center sm:text-2xl font-semibold sm:tracking-tighter text-gray-800 mb-6 pt-10">
@@ -127,45 +127,41 @@ export function SectionNew({
 			)}
 			<div className="px-1 sm:px-16">
 				{description && (
-					<p className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-6">
+					<p className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-16">
 						{description}
 					</p>
 				)}
 			</div>
 			<ul className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
-				{items?.map((item, i) => (
-					<li
-						key={i}
-						className="p-4 mt-2 rounded-xl flex flex-col items-start"
-					>
-						{/* ✅ Icon at the top */}
-						{item.icon?.asset?.url && (
-							<div className="w-25 h-11 mb-3">
-								<Image
-									src={item.icon.asset.url}
-									alt={item.icon.alt || item.title}
-									width={100}
-									height={45}
-									className="object-contain"
-								/>
-							</div>
-						)}
+				{items?.map((item, i) => {
+					const num = String(i + 1).padStart(2, "0"); // 01, 02, 03...
+					return (
+						<li
+							key={i}
+							className="relative min-h-500px] p-8 mt-2 rounded-xl flex flex-col items-start bg-inherit"
+						>
+							{/* Big faint number */}
+							<span className="absolute top-[-42px] sm:top-[-56px] sm:left-8 text-[100px]  sm:text-[120px] font-extrabold text-gray-200 opacity-70 select-none leading-none">
+								{num}
+							</span>
 
-						{/* Title */}
-						<h3 className="sm:text-md font-semibold mb-2 text-left bg-inherit leading-[18px]">
-							{item.title}
-						</h3>
+							{/* Title */}
+							<h3 className="sm:text-md font-semibold mb-2 text-left leading-[18px] bg-[#F7F7F7]  relative z-50">
+								{item.title}
+							</h3>
 
-						{/* Description */}
-						<p className="text-gray-400 text-sm leading-[18px]">
-							{item.description}
-						</p>
-					</li>
-				))}
+							{/* Description */}
+							<p className="text-gray-400 text-sm leading-[18px] relative z-10 mb-5 sm:mb-0">
+								{item.description}
+							</p>
+						</li>
+					);
+				})}
 			</ul>
 		</section>
 	);
 }
+
 
 
 export default async function SuccessStoryVersion2Page({ params }: Props) {
@@ -198,7 +194,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 			<main className="p-1 w-full md:w-full px-4 md:px-10 2xl:px-32">
 				<h1
 					id="overview"
-					className="scroll-mt-24 text-2xl font-semibold text-gray-800 my-8 text-center"
+					className="scroll-mt-36 text-2xl font-semibold text-gray-800 my-8 text-center"
 				>
 					{data.title}
 				</h1>
@@ -240,7 +236,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 				{/* Architecture */}
 				{data.architectureTitle && (
-					<section id="architecture" className="scroll-mt-24 sm:mt-20 mt-10">
+					<section id="architecture" className="scroll-mt-36 sm:mt-20 mt-10">
 						<h2 className="text-2xl text-gray-800 font-semibold text-center sm:my-4 my-8">
 							{data.architectureTitle}
 						</h2>
@@ -277,7 +273,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 				{/* Validation */}
 				{data.validationTitle && (
-					<section id="validation" className="scroll-mt-24 sm:mt-4 mt-10">
+					<section id="validation" className="scroll-mt-36 sm:mt-4 mt-10">
 						<h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-16 mt-10">
 							{data.validationTitle}
 						</h2>
@@ -298,7 +294,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 				{/* Conclusion */}
 				{data.conclusionTitle && (
-					<section id="conclusion" className="scroll-mt-24 sm:mt-20 mt-10">
+					<section id="conclusion" className="scroll-mt-36 sm:mt-20 mt-10">
 						<h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-12">
 							{data.conclusionTitle}
 						</h2>

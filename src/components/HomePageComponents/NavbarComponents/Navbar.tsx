@@ -308,7 +308,7 @@ export default function Navbar({
               after:from-pink-700 after:to-indigo-700 
               after:blur-xl after:opacity-0 
               group-hover:after:opacity-90 
-              transition-all duration-300'
+              transition-all duration-300 z-90'
             >
               Store
             </a>

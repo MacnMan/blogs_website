@@ -177,7 +177,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Architecture */}
         {data.architectureTitle && (
-          <section id="architecture" className="scroll-mt-24  sm:mt-20 mt-10">
+          <section id="architecture" className="scroll-mt-[150px]  sm:mt-20 mt-10">
             <h2 className="text-2xl text-gray-800 sm:font-2xl font-semibold text-center sm:my-4 my-8">{data.architectureTitle}</h2>
             {/* <p className="mb-16 text-center sm:text-lg text-gray-400">{data.architectureDescription}</p> */}
             <div className="sm:max-w-6xl sm:mx-auto sm:px-4">
@@ -199,7 +199,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Deployment */}
         {data.deploymentTitle && (
-          <section id="deployment" className="scroll-mt-24 mt-10">
+          <section id="deployment" className="scroll-mt-32 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">{data.deploymentTitle}</h2>
             <p className="mb:20 sm:mb-10 text-left sm:mx-64 sm:text-center sm:text-md sm:text-gray-400 sm:leading-[16px] sm:tracking-[0.3px] leading-snug tracking-normal">{data.deploymentDescription}</p>
             <div className="sm:max-w-6xl sm:mx-auto sm:px-4 sm:mt-16 mt-10">
@@ -234,7 +234,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Validation */}
         {data.validationTitle && (
-          <section id="validation" className=" scroll-mt-24 sm:mt-24 mt-10">
+          <section id="validation" className=" scroll-mt-36 sm:mt-24 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-16 mt-10">{data.validationTitle}</h2>
             <div className="max-w-6xl mx-auto sm:px-4">
               {data.validationImage?.asset?.url && (
@@ -255,7 +255,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Conclusion */}
         {data.conclusionTitle && (
-          <section id="conclusion" className="scroll-mt-24 sm:mt-20 mt-10">
+          <section id="conclusion" className="scroll-mt-36 sm:mt-20 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-12">{data.conclusionTitle}</h2>
             <div className="flex flex-col md:flex-row items-center sm:gap-10 sm:mt-4 sm:mx-20 my-4">
               {/* Left: Image */}
@@ -284,7 +284,7 @@ export default async function SuccessStory({ params }: Props) {
 
         {/* Links */}
         {(data.linksTitle || data.exploreMore || data.readMoreLink) && (
-          <section id="links" className="scroll-mt-24 sm:mt-10 sm:mx-16">
+          <section id="links" className="scroll-mt-40 sm:mt-10 sm:mx-16">
             <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
               {/* Title text */}
               {data.linksTitle && (
