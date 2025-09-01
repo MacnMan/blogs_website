@@ -6,7 +6,7 @@ import { sanityClient } from '../../../../lib/sanity.client';
 import { groq, PortableText } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import components from "@/components/SuccessStoriesVersionComponents/overviewText";
+import components from "@/components/SuccessStoriesVersionComponents/OverviewText";
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
