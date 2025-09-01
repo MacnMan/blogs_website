@@ -356,7 +356,7 @@ export default function Navbar({
           {/* Success Stories */}
           <li className='cursor-pointer text-md group relative'>
             <a
-              href={ROUTES.HOME}
+              href={ROUTES.SUCCESSSTORIES}
               className='hover:text-black hover:font-semibold after:absolute after:content-[""] after:self-center after:w-full after:left-1/2 after:-translate-x-1/2 after:-bottom-[3px] after:h-2 after:bg-gradient-to-r after:from-pink-700 after:to-indigo-700 after:blur-md after:opacity-0 group-hover:after:opacity-90 transition-all duration-300'
             >
               Success Stories

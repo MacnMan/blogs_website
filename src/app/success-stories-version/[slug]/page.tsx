@@ -6,18 +6,18 @@ import { sanityClient } from '../../../../lib/sanity.client';
 import { groq, PortableText } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import components from "@/components/successStoriesVersionComponents/overviewText";
+import components from "@/components/SuccessStoriesVersionComponents/overviewText";
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import DeploymentSection from '@/components/successStoriesVersionComponents/DeploymentSection';
-import { Section, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
+import DeploymentSection from '@/components/SuccessStoriesVersionComponents/DeploymentSection';
+import { Section, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
 
-import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
-import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
-import SuccessStoriesListV2 from '@/components/successStoriesVersionComponents/SuccessStoriesListV2';
+import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
+import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
+import SuccessStoriesListV2 from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2';
 import { SectionItem } from '@/types/types';
 
 export const revalidate = 60;
@@ -321,7 +321,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 
 				{/* Links */}
 				{(data.linksTitle || data.exploreMore || data.readMoreLink) && (
-					<section id="links" className="scroll-mt-24 sm:mt-10 sm:mx-16">
+					<section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16">
 						<div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
 							{data.linksTitle && (
 								<p className="text-xl font-semibold text-gray-800 mb-2 md:mb-0">
@@ -353,6 +353,14 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 						</div>
 					</section>
 				)}
+
+				<Image
+					src={'/blogs/Group 370.svg'}
+					alt={'prodcuts image macnman'}
+					width={100}
+					height={10}
+					className='w-full mt-10 m-[-100px]'
+				/>
 
 				{/* Carousel of other Version 2 stories */}
 				{allStories.length > 0 && (

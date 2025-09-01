@@ -150,7 +150,7 @@ const DeploymentSection = ({ data }: { data: DeploymentData }) => {
   if (!data.deploymentTitle) return null;
 
   return (
-    <section id="deployment" className="scroll-mt-40 mt-10">
+    <section id="deployment" className="scroll-mt-32 mt-10">
       <DeploymentTitle
         title={data.deploymentTitle}
         description={data.deploymentDescription}

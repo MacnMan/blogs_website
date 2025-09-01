@@ -1,0 +1,94 @@
+
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+
+  variable: "--font-roboto",
+  display: "swap",
+});
+export const metadata: Metadata = {
+  title: {
+    default: "Macnman | Industrial IoT Products Manufacturer",
+    template: "%s | Macnman",
+  },
+  description:
+    "Macnman is a leading manufacturer of Industrial IoT solutions including LoRaWAN Gateways, 4G Data Loggers, WiFi & BLE Cloud Converters. We specialize in factory automation, smart monitoring, & environmental sensing across India & globe.",
+  applicationName: "Macnman IoT Devices & Cloud Solutions",
+  authors: [{ name: "Macnman", url: "https://macnman.com" }],
+  keywords: [
+    "LoRaWAN Gateways India",
+    "4G Data Loggers",
+    "Industrial IoT Sensors",
+    "WiFi IoT Modules",
+    "BLE to Cloud Converters",
+    "RS485 to Cloud IoT",
+    "IoT Products Manufacturer India",
+    "Smart City IoT Devices",
+    "Remote Monitoring Systems",
+    "IoT Controllers for Automation",
+    "Environmental Monitoring IoT",
+    "LoRaWAN Sensor Modules",
+    "Industrial Automation IoT",
+    "Building Management IoT",
+    "Asset Tracking LoRaWAN",
+    "Predictive Maintenance IoT",
+    "Energy Monitoring IoT",
+    "Water Quality Sensors",
+    "Air Quality Monitoring IoT",
+    "Secure Industrial IoT Connectivity",
+    "Custom IoT Product Design",
+    "Factory IoT Solutions India",
+  ],
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    siteName: "Macnman",
+    url: "https://macnman.com",
+    title: "Macnman | Leading manufacturer of IoT Products",
+    description:
+    " Explore advanced IoT solutions: LoRaWAN, 4G, WiFi, and BLE-based smart monitoring, data logging, and cloud integrations. Visit our Pune facility or connect with our team.",
+    images: [
+      {
+        url: "https://macnman.com/seo_homepage.png", // After deploy URL look like this
+        width: 1200,
+        height: 630,
+        alt: "Macnman IoT Solutions Overview",
+      },
+    ],
+    videos: [
+      {
+        url: "https://macnman.com/landing_page_1.webm",
+        width: 1280,
+        height: 720,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@macnman", // Our twitter handle name
+    creator: "@macnman", //Creator or smae if neded
+    title: "Leading manufacturer of IoT Products | Macnman",
+    description:
+      "Explore LoRaWAN, WiFi, and 4G IoT solutions tailored for industrial applications at Macnman.",
+    images: ["https://macnman.com/seo_homepage.png"],
+  },
+  alternates: { canonical: "/" },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${roboto.variable}`}>
+      <body className={`${roboto.variable} antialiased`}>
+        
+        {children}
+        <div id="portal-root"></div> {/* Move portal root inside the body */}
+      </body>
+    </html>
+  );
+}

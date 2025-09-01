@@ -11,10 +11,10 @@ import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/successStoriesComponents/StorySections';
-import TopHeroSectionSuccess from '@/components/successStoriesComponents/TopHeroSectionSuccess';
-import SectionNavigator from '@/components/successStoriesComponents/SectionNavigator';
-import SuccessStoriesList from '@/components/successStoriesComponents/SuccessStoriesList';
+import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
+import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
+import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
+import SuccessStoriesList from '@/components/SuccessStoriesComponents/SuccessStoriesList';
 
 export const revalidate = 60;
 

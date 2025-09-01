@@ -4,13 +4,13 @@ import { sanityClient } from './../../lib/sanity.client';
 import { successStoriesQuery, successStoriesV2Query } from './../../lib/queries';
 import Hero from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-import SuccessStoriesList from '@/components/successStoriesComponents/SuccessStoriesList';
+import SuccessStoriesList from '@/components/SuccessStoriesComponents/SuccessStoriesList';
 import NewlyAddedStories from '@/components/HomePageComponents/NewlyAddedStories';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import SuccessStoriesV2List from '@/components/successStoriesVersionComponents/SuccessStoriesListV2'
+import SuccessStoriesV2List from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2'
 
 export default async function HomePage() {
 	const stories = await sanityClient.fetch(successStoriesQuery);
