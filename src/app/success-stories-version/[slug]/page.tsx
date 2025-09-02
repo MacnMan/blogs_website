@@ -6,17 +6,25 @@ import { sanityClient } from '../../../../lib/sanity.client';
 import { groq, PortableText } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import components from "@/components/SuccessStoriesVersionComponents/OverviewTextDisplay";
+
+// SuccessStoriesVersionComponents
+import components from '@/components/SuccessStoriesVersionComponents/OverviewTextDisplay';
+import DeploymentSectionDisplay from '@/components/SuccessStoriesVersionComponents/DeploymentSectionDisplay';
+import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New';
+
+// HomePageComponents
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import DeploymentSectionDisplay from '@/components/SuccessStoriesVersionComponents/DeploymentSectionDisplay';
+
+// SuccessStoriesComponents
 import { Section, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
-import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New';
+
+// Types
 import { SectionItem } from '@/types/types';
 
 export const revalidate = 60;

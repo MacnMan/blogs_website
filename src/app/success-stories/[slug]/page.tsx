@@ -2,10 +2,13 @@
 // app/success-stories/[slug]/page.tsx
 
 export const dynamic = 'force-dynamic';
+
 import { sanityClient } from '../../../../lib/sanity.client';
 import { groq } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+
+// Components (note lowercase folder)
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
@@ -15,6 +18,8 @@ import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/com
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
 import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
+
+// rest of your code stays the same
 
 export const revalidate = 60;
 
