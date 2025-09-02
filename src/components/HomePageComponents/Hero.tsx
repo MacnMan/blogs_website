@@ -192,7 +192,7 @@ export default function HeroSection() {
             key={i}
             onClick={() => setCurrentIndex(i)} // 👈 Jump to clicked slide
             className={`h-2 rounded-full transition-all duration-500 ${
-              i === currentIndex ? 'bg-[#303031] w-10' : 'bg-[#9D9D9D] w-2'
+              i === currentIndex ? 'bg-[#9D9D9D] w-10' : 'bg-[#9D9D9D] w-2'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
