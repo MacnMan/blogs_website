@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import FilterBar from './FilterBar'
 import CardCarousel from './CardCarousel'
-import jsonData from '@/data/Navbar.json'
+import jsonData from '../../../data/Navbar.json'
 
 interface ImageData {
   name?: string
