@@ -20,9 +20,9 @@ import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
 
 // SuccessStoriesComponents
-import { Section, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
-import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
-import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
+import { Section, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySectionsPage';
+import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccessPage';
+import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigatorPage';
 
 // Types
 import { SectionItem } from '@/types/types';

@@ -14,9 +14,9 @@ import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
-import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
-import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
+import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySectionsPage';
+import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccessPage';
+import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigatorPage';
 import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
 
 // rest of your code stays the same
