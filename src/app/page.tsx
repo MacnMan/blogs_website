@@ -10,7 +10,7 @@ import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import SuccessStoriesV2List from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2'
+import SuccessStoriesListV2 from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2'
 
 export default async function HomePage() {
 	const stories = await sanityClient.fetch(successStoriesQuery);
@@ -31,7 +31,7 @@ export default async function HomePage() {
 				<NewlyAddedStories stories={stories} />
 
 				<section className='overflow-x-hidden'>
-					<SuccessStoriesV2List stories={storiesV2} />
+					<SuccessStoriesListV2 stories={storiesV2} />
 				</section>
 			</main>
 			<MainContactUs theme='light' />
