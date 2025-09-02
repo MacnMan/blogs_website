@@ -21,7 +21,7 @@ type SuccessStory = {
   body?: PortableTextBlock[];
 };
 
-export default function SuccessStoriesList({ stories }: { stories: SuccessStory[] }) {
+export default function SuccessStoriesListHome({ stories }: { stories: SuccessStory[] }) {
   return (
     <div className="sm:space-y-6 mt-4 px-4 sm:px-6 lg:px-8">
       <h2 className="text-xl sm:text-3xl font-semibold mb-4 font-sans">

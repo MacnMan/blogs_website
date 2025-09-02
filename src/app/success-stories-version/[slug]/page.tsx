@@ -17,7 +17,7 @@ import { Section, ListSection, ListSectionNew, ListNew } from '@/components/Succ
 
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
-import SuccessStoriesListV2 from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2';
+import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New';
 import { SectionItem } from '@/types/types';
 
 export const revalidate = 60;
@@ -365,7 +365,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 				{/* Carousel of other Version 2 stories */}
 				{allStories.length > 0 && (
 					<section className="overflow-x-hidden sm:mt-12">
-						<SuccessStoriesListV2 stories={allStories} />
+						<SuccessStoriesListV2New stories={allStories} />
 					</section>
 				)}
 			</main>

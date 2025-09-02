@@ -9,7 +9,7 @@ import Sitemap from "@/components/HomePageComponents/Sitemap";
 import Authority from "@/components/HomePageComponents/Authority";
 import HeroSection from "@/components/HomePageComponents/Hero";
 import BlogSuccessStoriesList from "@/components/BlogSuccessComponents/BlogSuccessStories";
-import SuccessStoriesListV2 from "@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2";
+import SuccessStoriesListV2New from "@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New";
 import { groq } from "next-sanity";
 import NewlyAddedBlogs from "@/components/BlogSuccessComponents/NewlyAddedBlogStories";
 
@@ -88,7 +88,7 @@ export default async function BlogSuccessPage() {
       {/* Carousel of other Version 2 stories */}
       {allStories.length > 0 && (
         <section className="overflow-x-hidden sm:mt-12 mx-10">
-          <SuccessStoriesListV2 stories={allStories} />
+          <SuccessStoriesListV2New stories={allStories} />
         </section>
       )}
       <main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden"></main>

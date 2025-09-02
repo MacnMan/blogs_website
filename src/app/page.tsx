@@ -4,13 +4,13 @@ import { sanityClient } from './../../lib/sanity.client';
 import { successStoriesQuery, successStoriesV2Query } from './../../lib/queries';
 import Hero from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-import SuccessStoriesList from '@/components/SuccessStoriesComponents/SuccessStoriesList';
+import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
 import NewlyAddedStories from '@/components/HomePageComponents/NewlyAddedStories';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import SuccessStoriesListV2 from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2'
+import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New'
 
 export default async function HomePage() {
 	const stories = await sanityClient.fetch(successStoriesQuery);
@@ -24,14 +24,14 @@ export default async function HomePage() {
 			<main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
 				{/* Success Stories Section */}
 				<section className='overflow-x-hidden'>
-					<SuccessStoriesList stories={stories} />
+					<SuccessStoriesListHome stories={stories} />
 				</section>
 			</main>
 			<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
 				<NewlyAddedStories stories={stories} />
 
 				<section className='overflow-x-hidden'>
-					<SuccessStoriesListV2 stories={storiesV2} />
+					<SuccessStoriesListV2New stories={storiesV2} />
 				</section>
 			</main>
 			<MainContactUs theme='light' />

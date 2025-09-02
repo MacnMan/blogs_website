@@ -14,7 +14,7 @@ import Authority from '@/components/HomePageComponents/Authority';
 import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
-import SuccessStoriesList from '@/components/SuccessStoriesComponents/SuccessStoriesList';
+import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
 
 export const revalidate = 60;
 
@@ -322,7 +322,7 @@ export default async function SuccessStory({ params }: Props) {
         {/* Success Stories Carousel */}
         {allStories.length > 0 && (
           <section className="overflow-x-hidden sm:mt-12">
-            <SuccessStoriesList stories={allStories} />
+            <SuccessStoriesListHome stories={allStories} />
           </section>
         )}
       </main>
