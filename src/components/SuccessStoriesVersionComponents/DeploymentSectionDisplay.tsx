@@ -146,7 +146,7 @@ const DeploymentImage = ({ diagram }: { diagram?: DeploymentDiagram }) => {
 
 
 // 4. Deployment Section
-const DeploymentSection = ({ data }: { data: DeploymentData }) => {
+const DeploymentSectionDisplay = ({ data }: { data: DeploymentData }) => {
   if (!data.deploymentTitle) return null;
 
   return (
@@ -173,4 +173,4 @@ const DeploymentSection = ({ data }: { data: DeploymentData }) => {
   );
 };
 
-export default DeploymentSection;
+export default DeploymentSectionDisplay;

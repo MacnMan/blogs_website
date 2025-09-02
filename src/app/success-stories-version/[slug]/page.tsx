@@ -6,15 +6,14 @@ import { sanityClient } from '../../../../lib/sanity.client';
 import { groq, PortableText } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import components from "@/components/SuccessStoriesVersionComponents/OverviewText";
+import components from "@/components/SuccessStoriesVersionComponents/OverviewTextDisplay";
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
 import Authority from '@/components/HomePageComponents/Authority';
-import DeploymentSection from '@/components/SuccessStoriesVersionComponents/DeploymentSection';
+import DeploymentSectionDisplay from '@/components/SuccessStoriesVersionComponents/DeploymentSectionDisplay';
 import { Section, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySections';
-
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccess';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigator';
 import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New';
@@ -254,7 +253,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 					</section>
 				)}
 
-				<DeploymentSection data={data} />
+				<DeploymentSectionDisplay data={data} />
 
 
 				{/* Challenges */}
