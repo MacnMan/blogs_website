@@ -325,13 +325,21 @@ export default async function SuccessStory({ params }: Props) {
           </section>
         )}
         {/* Success Stories Carousel */}
-        {allStories.length > 0 && (
-          <section className="overflow-x-hidden sm:mt-12">
-            <SuccessStoriesListHome stories={allStories} />
-          </section>
-        )}
       </main>
 
+      <Image
+        src={'/blogs/Group 370.svg'}
+        alt={'prodcuts image macnman'}
+        width={100}
+        height={10}
+        className='w-full mt-10'
+      />
+
+      {allStories.length > 0 && (
+        <section className="overflow-x-hidden sm:mt-12 mx-16">
+          <SuccessStoriesListHome stories={allStories} />
+        </section>
+      )}
       <MainContactUs theme='light' />
 
       <div className='hidden md:block'>

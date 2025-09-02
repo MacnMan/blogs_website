@@ -62,9 +62,10 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                     )}
                 </header>
 
-                <div className="flex gap-8 px-20">
-                    {/* Main Content */}
-                    <article className="prose prose-lg max-w-none w-[70%]">
+                {/* Layout wrapper */}
+                <div className="grid grid-cols-12 gap-8 pl-20 pr-8">
+                    {/* Main Content - 60% */}
+                    <article className="prose prose-lg max-w-none col-span-8">
                         {["sectionOne", "sectionTwo", "sectionThree", "sectionFour"].map((sectionKey) => {
                             const section = post[sectionKey as keyof BlogSuccessPost] as BlogSuccessPost["sectionOne"];
                             if (!section) return null;
@@ -88,11 +89,11 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                         })}
                     </article>
 
-                    {/* Sidebar */}
-                    <aside className="w-[30%]">
-                        <div className="sticky top-20 px-4 border-l-[1.5px] ">
+                    {/* Sidebar - 20% */}
+                    <aside className="col-span-3">
+                        <div className="sticky top-20 px-4 border-l-[1.5px]">
                             <h3 className="font-semibold mb-4">On this page</h3>
-                            <ul className="space-y-2 text-sm">
+                            <ul className="space-y-2 text-sm mb-6">
                                 {sidebarItems.map((item) => (
                                     <li key={item.id} className="cursor-pointer">
                                         <a href={`#${item.id}`}>{item.title}</a>
@@ -101,10 +102,56 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                             </ul>
                         </div>
                     </aside>
+
+                    {/* Social icons - 20% */}
+
+                    <aside className="col-span-1">
+                        <div className="sticky top-56 ">
+                            <div className="bg-white shadow-[0_-6px_20px_rgba(0,0,0,0.04),0_6px_20px_rgba(0,0,0,0.10),-6px_0_25px_rgba(0,0,0,0.1),6px_0_25px_rgba(0,0,0,0.1)] py-4 rounded-full flex flex-col items-center space-y-4 2xl:w-20">
+
+                                <a
+                                    href="https://wa.me/1234567890"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-[#45A756] rounded-full shadow-md transition-transform"
+                                >
+                                    <Image src="/blogs/whatsapp.svg" alt="WhatsApp" width={22} height={22} />
+                                </a>
+
+                                <a
+                                    href="https://www.linkedin.com/company/your-company"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-[#2F67FF] rounded-full shadow-md  transition-transform"
+                                >
+                                    <Image src="/blogs/linkedin.svg" alt="LinkedIn" width={22} height={22} />
+                                </a>
+
+                                <a
+                                    href="mailto:info@yourcompany.com"
+                                    className="p-3 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md  transition-transform"
+                                >
+                                    <Image src="/blogs/envelope.svg" alt="Email" width={22} height={22} />
+                                </a>
+
+                                <a
+                                    href="https://maps.google.com/?q=Your+Location"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md  transition-transform"
+                                >
+                                    <Image src="/blogs/marker 2.svg" alt="Location" width={22} height={22} />
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+
                 </div>
 
+
+
                 {/* Links */}
-                {(post.linksTitle || post.exploreMore || post.readMoreLink) && (
+                {post.linksTitle || post.exploreMore || post.readMoreLink ? (
                     <section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16">
                         <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
                             {post.linksTitle && <p className="text-xl font-semibold text-gray-800 mb-2 md:mb-0">{post.linksTitle}</p>}
@@ -132,19 +179,18 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                             </div>
                         </div>
                     </section>
-                )}
+                ) : null}
 
                 {/* Decorative image */}
                 <div className="w-full my-10">
                     <Image
                         src="/blogs/Group 370.svg"
                         alt="products image macnman"
-                        width={1920}   // set a large width for full coverage
-                        height={200}   // adjust height as needed
+                        width={1920}
+                        height={200}
                         className="w-full h-auto"
                     />
                 </div>
-
 
                 {posts.length > 0 && (
                     <section className="overflow-x-hidden sm:mt-12 mx-10">

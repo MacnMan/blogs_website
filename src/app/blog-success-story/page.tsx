@@ -30,15 +30,20 @@ export default async function BlogSuccessPage() {
 
   return (
     <>
-      <HeroSection />
+      <div className="mx-12 mt-24">
+        <div className="rounded-[2rem] overflow-hidden">
+          <HeroSection />
+        </div>
+      </div>
+
       <NavbarWrapper />
-      <main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
+      <main className="sm:mx-6 sm:py-8 sm:max-w-8xl sm:space-y-12 overflow-x-hidden">
         <section className="overflow-x-hidden">
           <BlogSuccessStoriesList posts={posts} />
         </section>
       </main>
 
-      <section className="rounded-3xl my-8 px-2 mx-10">
+      <section className="rounded-3xl my-8 px-2 mx-6">
         <NewlyAddedBlogs blogs={blogs} />
       </section>
 
@@ -85,9 +90,10 @@ export default async function BlogSuccessPage() {
           className="w-full h-auto"
         />
       </div>
+
       {/* Carousel of other Version 2 stories */}
       {allStories.length > 0 && (
-        <section className="overflow-x-hidden sm:mt-12 mx-10">
+        <section className="overflow-x-hidden sm:mt-12 mx-6">
           <SuccessStoriesListV2New stories={allStories} />
         </section>
       )}

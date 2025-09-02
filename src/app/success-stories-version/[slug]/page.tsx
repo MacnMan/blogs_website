@@ -360,22 +360,22 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 						</div>
 					</section>
 				)}
-
-				<Image
-					src={'/blogs/Group 370.svg'}
-					alt={'prodcuts image macnman'}
-					width={100}
-					height={10}
-					className='w-full mt-10 m-[-100px]'
-				/>
-
-				{/* Carousel of other Version 2 stories */}
-				{allStories.length > 0 && (
-					<section className="overflow-x-hidden sm:mt-12">
-						<SuccessStoriesListV2New stories={allStories} />
-					</section>
-				)}
 			</main>
+
+			<Image
+				src={'/blogs/Group 370.svg'}
+				alt={'prodcuts image macnman'}
+				width={100}
+				height={10}
+				className='w-full mt-10'
+			/>
+
+			{/* Carousel of other Version 2 stories */}
+			{allStories.length > 0 && (
+				<section className="overflow-x-hidden sm:mt-10 mx-16">
+					<SuccessStoriesListV2New stories={allStories} />
+				</section>
+			)}
 
 			<MainContactUs theme="light" />
 

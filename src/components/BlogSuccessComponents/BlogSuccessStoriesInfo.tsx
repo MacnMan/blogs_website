@@ -3,12 +3,6 @@
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { BlogSuccessPost } from "@/types/typesBlog";
-import {
-  Facebook,
-  Linkedin,
-  Twitter,
-  Mail,
-} from "lucide-react";
 
 type Props = {
   post: BlogSuccessPost;
@@ -76,47 +70,44 @@ export default function BlogSuccessStoriesInfo({ post }: Props) {
         )}
       </div>
 
-      {/* ✅ Social Share Buttons */}
-      <div className="fixed right-4 top-1/3 flex flex-col space-y-3 z-50">
+      {/* ✅ Floating Social Share Buttons with custom icons */}
+      <div className="fixed right-4 top-1/3 flex flex-col space-y-4 z-50">
+        {/* WhatsApp */}
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
+          href="https://wa.me/1234567890" // replace with your real WhatsApp number
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 bg-blue-600 rounded-full shadow-md text-white hover:bg-blue-700"
+          className="p-3 bg-white rounded-full shadow-lg hover:scale-110 transition-transform"
         >
-          <Facebook size={20} />
+          <Image src="/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
         </a>
+
+        {/* LinkedIn */}
         <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
+          href="https://www.linkedin.com/company/your-company" // replace with your LinkedIn page
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 bg-blue-700 rounded-full shadow-md text-white hover:bg-blue-800"
+          className="p-3 bg-white rounded-full shadow-lg hover:scale-110 transition-transform"
         >
-          <Linkedin size={20} />
+          <Image src="/linkedin.svg" alt="LinkedIn" width={20} height={20} />
         </a>
+
+        {/* Email */}
         <a
-          href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}&text=${encodeURIComponent(post.title)}`}
+          href="mailto:info@yourcompany.com" // replace with your email
+          className="p-3 bg-white rounded-full shadow-lg hover:scale-110 transition-transform"
+        >
+          <Image src="/envelope.svg" alt="Email" width={20} height={20} />
+        </a>
+
+        {/* Location Marker */}
+        <a
+          href="https://maps.google.com/?q=Your+Location" // replace with your actual location link
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 bg-sky-500 rounded-full shadow-md text-white hover:bg-sky-600"
+          className="p-3 bg-white rounded-full shadow-lg hover:scale-110 transition-transform"
         >
-          <Twitter size={20} />
-        </a>
-        <a
-          href={`mailto:?subject=${encodeURIComponent(
-            post.title
-          )}&body=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
-          className="p-3 bg-gray-600 rounded-full shadow-md text-white hover:bg-gray-700"
-        >
-          <Mail size={20} />
+          <Image src="/marker 2.svg" alt="Location" width={20} height={20} />
         </a>
       </div>
     </article>

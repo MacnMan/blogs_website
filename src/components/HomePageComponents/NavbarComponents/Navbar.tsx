@@ -266,7 +266,7 @@ export default function Navbar({
             onClick={() => (window.location.href = ROUTES.HOME)}
           >
             <Image
-              src='/blogs/logo_white.png'
+              src='/blogs/logo.png'
               fill
               alt='MacnMan Logo'
               sizes='(max-width: 425px): 500px,700px'
