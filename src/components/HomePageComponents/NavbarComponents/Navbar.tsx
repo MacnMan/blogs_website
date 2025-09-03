@@ -263,7 +263,7 @@ export default function Navbar({
         {hasMounted && !isScrolled && (
           <div
             className='absolute w-32 h-20 left-4 top-1 cursor-pointer'
-            onClick={() => (window.location.href = ROUTES.HOME)}
+            onClick={() => (window.location.href = "https://macnman.com/")}
           >
             <Image
               src='/blogs/logo.png'
@@ -281,7 +281,7 @@ export default function Navbar({
           {hasMounted && isScrolled && (
             <div
               className="flex items-center justify-center gap-5 cursor-pointer h-full"
-              onClick={() => (window.location.href = ROUTES.HOME)}
+              onClick={() => (window.location.href = "https://macnman.com/")}
             >
               <div className="relative w-8 mt-1 h-6 flex items-center justify-center">
                 <Image

@@ -19,7 +19,7 @@ export default async function HomePage() {
 	return (
 		<>
 			<NavbarWrapper />
-			<div className="md:pt-[-80px] rounded-b-3xl overflow-hidden">
+			<div className="md:pt-[-80px] overflow-hidden">
 				<Hero />
 			</div>
 			<main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">

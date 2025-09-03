@@ -17,7 +17,6 @@ import Authority from '@/components/HomePageComponents/Authority';
 import { Section, SectionNew, ListSection, ListSectionNew, ListNew } from '@/components/SuccessStoriesComponents/StorySectionsPage';
 import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHeroSectionSuccessPage';
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigatorPage';
-import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
 
 // rest of your code stays the same
 
@@ -108,15 +107,15 @@ export default async function SuccessStory({ params }: Props) {
   // console.log("📌 Full Success Story Document:", data);
 
   // updated
-  const allStories = await sanityClient.fetch(
-    groq`*[_type == "successStory" && defined(homeImage.asset._ref)]{
-    _id,
-    title,
-    slug,
-    homeImage { asset->{_ref, url}, alt },
-    body
-  }`
-  );
+  // const allStories = await sanityClient.fetch(
+  //   groq`*[_type == "successStory" && defined(homeImage.asset._ref)]{
+  //   _id,
+  //   title,
+  //   slug,
+  //   homeImage { asset->{_ref, url}, alt },
+  //   body
+  // }`
+  // );
 
   if (!data) return notFound();
 
@@ -335,11 +334,11 @@ export default async function SuccessStory({ params }: Props) {
         className='w-full mt-10'
       />
 
-      {allStories.length > 0 && (
+      {/* {allStories.length > 0 && (
         <section className="overflow-x-hidden sm:mt-12 mx-16">
           <SuccessStoriesListHome stories={allStories} />
         </section>
-      )}
+      )} */}
       <MainContactUs theme='light' />
 
       <div className='hidden md:block'>

@@ -88,7 +88,7 @@ export default function SectionNavigator() {
             : "relative mt-2"
           }`}
       >
-        <div className="mx-2 rounded-3xl backdrop-blur-3xl flex justify-center items-center px-4 py-2">
+        <div className="mx-6 rounded-3xl backdrop-blur-3xl flex justify-center items-center py-2">
           <div className="flex flex-wrap gap-3">
             {sections.map(({ id, label, image }) => (
               <button

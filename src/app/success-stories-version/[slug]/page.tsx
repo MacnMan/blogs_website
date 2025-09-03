@@ -10,7 +10,6 @@ import Image from 'next/image';
 // SuccessStoriesVersionComponents
 import components from '@/components/SuccessStoriesVersionComponents/OverviewTextDisplay';
 import DeploymentSectionDisplay from '@/components/SuccessStoriesVersionComponents/DeploymentSectionDisplay';
-import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New';
 
 // HomePageComponents
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
@@ -25,7 +24,7 @@ import TopHeroSectionSuccess from '@/components/SuccessStoriesComponents/TopHero
 import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavigatorPage';
 
 // Types
-import { SectionItem } from '@/types/types';
+import { SectionItem, SanityImage } from '@/types/types';
 
 export const revalidate = 60;
 
@@ -74,6 +73,7 @@ const query = groq`
     },
     architectureTitle,
     architectureDiagram { asset->{ _id, url }, alt },
+    architectureImages[] { asset->{ _id, url }, alt },
     architectureDescription,
     architectureComponents[] {
       label,
@@ -153,7 +153,7 @@ export function SectionNew({
 							</span>
 
 							{/* Title */}
-							<h3 className="sm:text-md font-semibold mb-2 text-left leading-[18px] bg-[#F7F7F7]  relative z-50">
+							<h3 className="sm:text-md font-semibold mb-2 text-left leading-[18px] bg-[#F7F7F7]  relative z-30">
 								{item.title}
 							</h3>
 
@@ -177,15 +177,15 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 	const data = await sanityClient.fetch(query, { slug });
 
 	// 👉 Also fetch all other V2 stories for carousel
-	const allStories = await sanityClient.fetch(
-		groq`*[_type == "successStoryVersion2" && defined(homeImage.asset._ref)]{
-      _id,
-      title,
-      slug,
-      homeImage { asset->{url}, alt },
-      body
-    }`
-	);
+	// const allStories = await sanityClient.fetch(
+	// 	groq`*[_type == "successStoryVersion2" && defined(homeImage.asset._ref)]{
+    //   _id,
+    //   title,
+    //   slug,
+    //   homeImage { asset->{url}, alt },
+    //   body
+    // }`
+	// );
 
 	if (!data) return notFound();
 
@@ -241,25 +241,45 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 					items={data.solutionFeatures}
 				/>
 
-				{/* Architecture */}
+				{/* Architecture Section */}
 				{data.architectureTitle && (
 					<section id="architecture" className="scroll-mt-36 sm:mt-20 mt-10">
 						<h2 className="text-2xl text-gray-800 font-semibold text-center sm:my-4 my-8">
 							{data.architectureTitle}
 						</h2>
+
+						{/* ✅ Main required image */}
 						{data.architectureDiagram?.asset?.url && (
 							<div className="sm:max-w-6xl sm:mx-auto sm:px-4">
 								<Image
 									src={data.architectureDiagram.asset.url}
-									alt={data.architectureDiagram.alt || 'Architecture'}
+									alt={data.architectureDiagram.alt || "Architecture"}
 									width={1900}
 									height={600}
-									className="sm:w-full sm:h-[500px] rounded-xl mb-4 object-cover"
+									className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl mb-4"
 								/>
 							</div>
 						)}
+
+						{/* ✅ Optional extra images */}
+						{data.architectureImages?.length > 0 && (
+							<div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:max-w-6xl sm:mx-auto sm:px-4">
+								{data.architectureImages.map((img: SanityImage, idx: number) => (
+									<Image
+										key={idx}
+										src={img.asset?.url || ""}
+										alt={img.alt || `Architecture image ${idx + 1}`}
+										width={1900}
+										height={600}
+										className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl"
+									/>
+								))}
+							</div>
+						)}
+
 					</section>
 				)}
+
 
 				<DeploymentSectionDisplay data={data} />
 
@@ -329,7 +349,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 				{/* Links */}
 				{(data.linksTitle || data.exploreMore || data.readMoreLink) && (
 					<section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16">
-						<div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
+						<div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-lg shadow-sm">
 							{data.linksTitle && (
 								<p className="text-xl font-semibold text-gray-800 mb-2 md:mb-0">
 									{data.linksTitle}
@@ -369,13 +389,6 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 				height={10}
 				className='w-full mt-10'
 			/>
-
-			{/* Carousel of other Version 2 stories */}
-			{allStories.length > 0 && (
-				<section className="overflow-x-hidden sm:mt-10 mx-16">
-					<SuccessStoriesListV2New stories={allStories} />
-				</section>
-			)}
 
 			<MainContactUs theme="light" />
 

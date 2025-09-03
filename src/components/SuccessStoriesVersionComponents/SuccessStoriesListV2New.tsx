@@ -43,40 +43,77 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
   return (
     <div className="sm:space-y-6 mt-0 px-4 sm:px-6 lg:px-8">
       {/* ✅ Centered Filter Bar */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
-        {FILTERS.map((filter) => {
-          const isActive = activeFilter === filter.value;
-          return (
-            <button
-              key={filter.value}
-              onClick={() => setActiveFilter(filter.value)}
-              className="flex items-center gap-2 text-sm font-medium focus:outline-none"
-            >
-              <Image
-                src={
-                  isActive
-                    ? "/blogs/images/check-blue.svg"
-                    : "/blogs/images/check-gray.svg"
-                }
-                alt={isActive ? "Selected" : "Unselected"}
-                width={14}
-                height={14}
-              />
-              <span
-                className={`${
-                  isActive
-                    ? "text-[#303031] font-semibold"
-                    : "text-gray-500"
-                }`}
+      {/* ✅ Filter Bar */}
+      <div className="mb-[-14px]">
+        {/* Mobile: Horizontal scroll but same style as laptop */}
+        <div className="flex sm:hidden overflow-x-auto gap-6 pb-2 scrollbar-hide mt-4">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter.value;
+            return (
+              <button
+                key={filter.value}
+                onClick={() => setActiveFilter(filter.value)}
+                className="flex items-center gap-2 text-sm font-medium flex-shrink-0 focus:outline-none"
               >
-                {filter.title}
-              </span>
-            </button>
-          );
-        })}
+                <Image
+                  src={
+                    isActive
+                      ? "/blogs/images/check-blue.svg"
+                      : "/blogs/images/check-gray.svg"
+                  }
+                  alt={isActive ? "Selected" : "Unselected"}
+                  width={14}
+                  height={14}
+                />
+                <span
+                  className={`${isActive ? "text-[#303031] font-semibold" : "text-gray-500"
+                    }`}
+                >
+                  {filter.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Desktop/Laptop: Original filter bar */}
+        <div className="hidden sm:flex flex-wrap justify-start items-center gap-6">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter.value;
+            return (
+              <button
+                key={filter.value}
+                onClick={() => setActiveFilter(filter.value)}
+                className="flex items-center gap-2 text-sm font-medium focus:outline-none"
+              >
+                <Image
+                  src={
+                    isActive
+                      ? "/blogs/images/check-blue.svg"
+                      : "/blogs/images/check-gray.svg"
+                  }
+                  alt={isActive ? "Selected" : "Unselected"}
+                  width={14}
+                  height={14}
+                />
+                <span
+                  className={`${isActive ? "text-[#303031] font-semibold" : "text-gray-500"
+                    }`}
+                >
+                  {filter.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <h2 className="text-xl sm:text-3xl font-semibold mb-4text-start">
+
+      {/* Horizontal line below filters */}
+      <div className="border-b border-gray-300 sm:mb-6 mb-6 mt-3 "></div>
+
+
+      <h2 className="text-xl sm:text-3xl font-semibold mb-4 text-start">
         Success Stories (V2)
       </h2>
 

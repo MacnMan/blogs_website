@@ -49,12 +49,12 @@ export interface SuccessStory {
   };
   publishedAt: string;
   category:
-    | 'smart-industry'
-    | 'smart-city'
-    | 'smart-building'
-    | 'smart-agriculture'
-    | 'custom-development'
-    | 'utilities';
+  | 'smart-industry'
+  | 'smart-city'
+  | 'smart-building'
+  | 'smart-agriculture'
+  | 'custom-development'
+  | 'utilities';
   overview?: string;
   introImage?: SanityImage;
 
@@ -71,6 +71,7 @@ export interface SuccessStory {
   // Architecture Section
   architectureTitle?: string;
   architectureDiagram?: SanityImage;
+  architectureImages?: SanityImage[];
   architectureDescription?: string;
   architectureComponents?: ArchitectureComponent[];
 

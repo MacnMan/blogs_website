@@ -29,52 +29,95 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
       : posts.filter((post) => post.category === activeFilter);
 
   return (
-    <div className="sm:space-y-6 mt-4 px-4 sm:px-6 lg:px-8">
-      {/* Filter Bar */}
-      <div className="flex flex-wrap items-center gap-6 mb-[-10px]">
-        {FILTERS.map((filter) => {
-          const isActive = activeFilter === filter.value;
-          return (
-            <button
-              key={filter.value}
-              onClick={() => setActiveFilter(filter.value)}
-              className="flex items-center gap-2 text-sm font-medium focus:outline-none"
-            >
-              <Image
-                src={isActive ? "/blogs/images/check-blue.svg" : "/blogs/images/check-gray.svg"}
-                alt={isActive ? "Selected" : "Unselected"}
-                width={14}
-                height={14}
-              />
-              <span
-                className={`${isActive ? "text-[#303031] font-semibold" : "text-gray-500"
-                  }`}
+    <div className="sm:space-y-6 px-4 sm:px-6 lg:px-8">
+      {/* ✅ Filter Bar */}
+      <div className="mb-[-14px]">
+        {/* Mobile: Horizontal scroll filter bar (same style as desktop) */}
+        <div className="flex sm:hidden overflow-x-auto gap-6 pb-2 scrollbar-hide mt-4">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter.value;
+            return (
+              <button
+                key={filter.value}
+                onClick={() => setActiveFilter(filter.value)}
+                className="flex items-center gap-2 text-sm font-medium flex-shrink-0 focus:outline-none"
               >
-                {filter.title}
-              </span>
-            </button>
-          );
-        })}
+                <Image
+                  src={
+                    isActive
+                      ? "/blogs/images/check-blue.svg"
+                      : "/blogs/images/check-gray.svg"
+                  }
+                  alt={isActive ? "Selected" : "Unselected"}
+                  width={14}
+                  height={14}
+                />
+                <span
+                  className={`${isActive ? "text-[#303031] font-semibold" : "text-gray-500"
+                    }`}
+                >
+                  {filter.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Desktop/Laptop: Original filter bar */}
+        <div className="hidden sm:flex flex-wrap items-center gap-6">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter.value;
+            return (
+              <button
+                key={filter.value}
+                onClick={() => setActiveFilter(filter.value)}
+                className="flex items-center gap-2 text-sm font-medium focus:outline-none"
+              >
+                <Image
+                  src={
+                    isActive
+                      ? "/blogs/images/check-blue.svg"
+                      : "/blogs/images/check-gray.svg"
+                  }
+                  alt={isActive ? "Selected" : "Unselected"}
+                  width={14}
+                  height={14}
+                />
+                <span
+                  className={`${isActive ? "text-[#303031] font-semibold" : "text-gray-500"
+                    }`}
+                >
+                  {filter.title}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Horizontal line below filters */}
-      <div className="border-b border-gray-200 mb-6 mr-64"></div>
+      <div className="border-b border-gray-300 sm:mb-6 mb-6 mt-3"></div>
 
       <h2 className="text-xl sm:text-3xl font-semibold mb-4 font-sans">
         Success Stories Videos
       </h2>
 
+      {/* ✅ Stories Carousel */}
       <Swiper
         modules={[Autoplay]}
-        spaceBetween={30}
-        slidesPerView={3}
+        spaceBetween={20}
+        // slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 }, // tablet ≥640px → 2 cards
+          1024: { slidesPerView: 3 }, // laptop ≥1024px → 3 cards
+        }}
         autoplay={{ delay: 0, disableOnInteraction: false }}
         speed={4000}
         loop={true}
         grabCursor={true}
       >
         {filteredPosts.map((post) => (
-          <SwiperSlide key={post._id} style={{ width: "w-[30vw] sm:w-[300px]" }}>
+          <SwiperSlide key={post._id} style={{ width: "auto" }}>
             <Link
               href={`/blog-success-story/${post.slug.current}`}
               className="flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition"
@@ -102,7 +145,9 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
                   <span className="text-xs text-[#989898] tracking-wide font-medium block mb-1">
                     {post.category
                       .split("-")
-                      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                      .map(
+                        (word) => word.charAt(0).toUpperCase() + word.slice(1)
+                      )
                       .join(" ")}
                   </span>
                 )}

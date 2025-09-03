@@ -5,6 +5,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import MobileNavbarMenuCard from "./MobileNavbarMenuCard";
 import { IoIosSearch } from "react-icons/io";
 import { useEffect } from "react";
+import { ROUTES } from "@/libs/routes";
 
 export default function NavbarMobileDevices() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,13 +50,16 @@ export default function NavbarMobileDevices() {
       <form action="" className="w-full border mt-4 bg-gray-100 rounded-2xl">
         <div className="relative  mx-auto flex justify-center items-center my-[20px]">
           <span className="absolute left-3">
-            <Image
-              src="/blogs/images/macnman-small-logo.svg"
-              alt="logo"
-              width={30}
-              height={30}
-              loading="lazy"
-            />
+            <a href="https://macnman.com/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/blogs/images/macnman-small-logo.svg"
+                alt="logo"
+                width={30}
+                height={30}
+                loading="lazy"
+              />
+            </a>
+
           </span>
 
           {isOpen && (
@@ -172,7 +176,7 @@ export default function NavbarMobileDevices() {
           ))}
 
           <li className="cursor-pointer text-base text-gray-400 font-medium whitespace-nowrap">
-            <a href="#">Success Stories</a>
+            <a href={ROUTES.SUCCESSSTORIES}>Success Stories</a>
           </li>
         </div>
       )}

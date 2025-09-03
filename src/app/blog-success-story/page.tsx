@@ -9,51 +9,38 @@ import Sitemap from "@/components/HomePageComponents/Sitemap";
 import Authority from "@/components/HomePageComponents/Authority";
 import HeroSection from "@/components/HomePageComponents/Hero";
 import BlogSuccessStoriesList from "@/components/BlogSuccessComponents/BlogSuccessStories";
-import SuccessStoriesListV2New from "@/components/SuccessStoriesVersionComponents/SuccessStoriesListV2New";
-import { groq } from "next-sanity";
 import NewlyAddedBlogs from "@/components/BlogSuccessComponents/NewlyAddedBlogStories";
 
 export default async function BlogSuccessPage() {
   const posts = await sanityClient.fetch(allBlogSuccessPostsQuery);
   // 👉 Also fetch all other V2 stories for carousel
-  const allStories = await sanityClient.fetch(
-    groq`*[_type == "successStoryVersion2" && defined(homeImage.asset._ref)]{
-      _id,
-      title,
-      slug,
-      homeImage { asset->{url}, alt },
-      body
-    }`
-  );
 
   const blogs = await sanityClient.fetch(allBlogSuccessPostsQuery);
 
   return (
     <>
-      <div className="mx-12 mt-24">
-        <div className="rounded-[2rem] overflow-hidden">
-          <HeroSection />
-        </div>
+      <div className="">
+        <HeroSection />
       </div>
 
       <NavbarWrapper />
-      <main className="sm:mx-6 sm:py-8 sm:max-w-8xl sm:space-y-12 overflow-x-hidden">
+      <main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
         <section className="overflow-x-hidden">
           <BlogSuccessStoriesList posts={posts} />
         </section>
+        <section className="overflow-x-hidden">
+          <NewlyAddedBlogs blogs={blogs} />
+        </section>
       </main>
 
-      <section className="rounded-3xl my-8 px-2 mx-6">
-        <NewlyAddedBlogs blogs={blogs} />
-      </section>
 
 
 
       {/* Links Section (above decorative image) */}
-      <section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-xl rounded-lg shadow-sm">
+      <section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16 mx-10">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-3xl shadow-sm">
           {/* Title */}
-          <p className="text-xl font-semibold text-gray-800 mb-2 md:mb-0">
+          <p className="text-[14px] sm:text-xl font-semibold text-gray-800 mb-2 md:mb-0">
             Transforming Industries: The Story of Sunita - Supervisor view on automation
           </p>
 
@@ -63,7 +50,7 @@ export default async function BlogSuccessPage() {
               href="https://macnman.com/docs/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-[14px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition"
+              className="px-4 py-2 text-[10px] sm:text-[14px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition"
             >
               Read Now
             </a>
@@ -71,7 +58,7 @@ export default async function BlogSuccessPage() {
               href="https://macnman.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-[14px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+              className="px-1 py-2 sm:px-4 sm:py-2 text-[10px] sm:text-[14px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
             >
               Explore More
             </a>
@@ -81,7 +68,7 @@ export default async function BlogSuccessPage() {
 
 
       {/* Decorative image */}
-      <div className="w-full my-10">
+      <div className="w-full my-10 mb-[-10px]">
         <Image
           src="/blogs/Group 370.svg"
           alt="products image macnman"
@@ -92,12 +79,12 @@ export default async function BlogSuccessPage() {
       </div>
 
       {/* Carousel of other Version 2 stories */}
-      {allStories.length > 0 && (
+      {/* {allStories.length > 0 && (
         <section className="overflow-x-hidden sm:mt-12 mx-6">
           <SuccessStoriesListV2New stories={allStories} />
         </section>
-      )}
-      <main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden"></main>
+      )} */}
+      <main className="sm:px-16 sm:max-w-8xl sm:mx-auto sm:space-y-6 overflow-x-hidden"></main>
       <MainContactUs theme="light" />
       <div className="hidden md:block">
         <TermsAndConditions theme="light" />
