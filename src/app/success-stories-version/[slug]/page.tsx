@@ -3,12 +3,13 @@
 export const dynamic = 'force-dynamic';
 
 import { sanityClient } from '../../../../lib/sanity.client';
-import { groq, PortableText } from 'next-sanity';
+import { groq, } from 'next-sanity';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { PortableText, PortableTextBlock, PortableTextComponents } from "@portabletext/react";
 
 // SuccessStoriesVersionComponents
-import components from '@/components/SuccessStoriesVersionComponents/OverviewTextDisplay';
+// import components from '@/components/SuccessStoriesVersionComponents/OverviewTextDisplay';
 import DeploymentSectionDisplay from '@/components/SuccessStoriesVersionComponents/DeploymentSectionDisplay';
 
 // HomePageComponents
@@ -25,6 +26,7 @@ import SectionNavigator from '@/components/SuccessStoriesComponents/SectionNavig
 
 // Types
 import { SectionItem, SanityImage } from '@/types/types';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
@@ -111,15 +113,84 @@ const query = groq`
 `;
 
 
-export function SectionNew({
-	title,
-	description,
-	items,
-}: {
+export const portableTextComponents: PortableTextComponents = {
+  // 🔹 Custom rendering for marks (inline text styles)
+  marks: {
+    strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+    em: ({ children }) => <em className="italic">{children}</em>,
+    underline: ({ children }) => <span className="underline">{children}</span>,
+    "strike-through": ({ children }) => <span className="line-through">{children}</span>,
+    code: ({ children }) => <code className="bg-gray-100 px-1 rounded">{children}</code>,
+
+    // 🔹 Custom text color
+    textColor: ({ children, value }) => {
+      return <span style={{ color: value?.color || "inherit" }}>{children}</span>;
+    },
+
+    // 🔹 External links
+    link: ({ children, value }) => (
+      <a
+        href={value?.href || "#"}
+        target={value?.openInNewTab ? "_blank" : "_self"}
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
+      >
+        {children}
+      </a>
+    ),
+
+    // 🔹 Internal references to other pages
+    internalLink: ({ children, value }) => {
+      if (!value?.reference?.slug?.current) return <>{children}</>;
+      return (
+        <Link href={`/success-stories-version/${value.reference.slug.current}`} className="text-blue-600 hover:underline">
+          {children}
+        </Link>
+      );
+    },
+  },
+
+  // 🔹 Custom rendering for block types
+  block: {
+    h1: ({ children }) => <h1 className="text-4xl font-bold my-4">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-3xl font-semibold my-3">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-2xl font-semibold my-2">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-xl font-semibold my-2">{children}</h4>,
+    h5: ({ children }) => <h5 className="text-lg font-semibold my-1">{children}</h5>,
+    h6: ({ children }) => <h6 className="text-base font-semibold my-1">{children}</h6>,
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-500 my-2">{children}</blockquote>
+    ),
+    normal: ({ children }) => <p className="text-gray-600 my-2">{children}</p>,
+  },
+
+  // 🔹 Lists
+  list: {
+    bullet: ({ children }) => <ul className="list-disc list-inside ml-4">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal list-inside ml-4">{children}</ol>,
+    checkmarks: ({ children }) => <ul className="list-inside ml-4">{children}</ul>, // customize as needed
+  },
+
+  listItem: {
+    bullet: ({ children }) => <li className="mb-1">{children}</li>,
+    number: ({ children }) => <li className="mb-1">{children}</li>,
+    checkmarks: ({ children }) => (
+      <li className="mb-1 flex items-center gap-2">
+        <span className="text-green-600">✔</span> {children}
+      </li>
+    ),
+  },
+};
+
+
+
+type SectionNewProps = {
 	title?: string;
-	description?: string;
+	description?: string | PortableTextBlock[]; // ✅ accept both
 	items?: SectionItem[];
-}) {
+};
+
+export function SectionNew({ title, description, items }: SectionNewProps) {
 	if (!title && !description && !items?.length) return null;
 
 	return (
@@ -132,28 +203,34 @@ export function SectionNew({
 					{title}
 				</h2>
 			)}
+
 			<div className="px-1 sm:px-16">
 				{description && (
-					<p className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-16">
-						{description}
-					</p>
+					<div className="text-gray-400 text-md leading-tight sm:leading-snug text-left sm:text-center max-w-3xl mx-auto mb-16">
+						{typeof description === "string" ? (
+							description.split("\n").map((p, i) => <p key={i}>{p}</p>) // ✅ plain string
+						) : (
+							<PortableText value={description} /> // ✅ rich text
+						)}
+					</div>
 				)}
 			</div>
+
 			<ul className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-3 sm:gap-y-5 sm:gap-x-7 sm:text-left sm:mx-44">
 				{items?.map((item, i) => {
-					const num = String(i + 1).padStart(2, "0"); // 01, 02, 03...
+					const num = String(i + 1).padStart(2, "0");
 					return (
 						<li
 							key={i}
-							className="relative min-h-500px] p-8 mt-2 rounded-xl flex flex-col items-start bg-inherit"
+							className="relative min-h-[200px] p-8 mt-2 rounded-xl flex flex-col items-start bg-inherit"
 						>
 							{/* Big faint number */}
-							<span className="absolute top-[-42px] sm:top-[-56px] sm:left-8 text-[100px]  sm:text-[120px] font-extrabold text-gray-200 opacity-70 select-none leading-none">
+							<span className="absolute top-[-42px] sm:top-[-56px] sm:left-8 text-[100px] sm:text-[120px] font-extrabold text-gray-200 opacity-70 select-none leading-none">
 								{num}
 							</span>
 
 							{/* Title */}
-							<h3 className="sm:text-md font-semibold mb-2 text-left leading-[18px] bg-[#F7F7F7]  relative z-30">
+							<h3 className="sm:text-md font-semibold mb-2 text-left leading-[18px] bg-[#F7F7F7] relative z-30">
 								{item.title}
 							</h3>
 
@@ -170,7 +247,6 @@ export function SectionNew({
 }
 
 
-
 export default async function SuccessStoryVersion2Page({ params }: Props) {
 	const { slug } = await params;
 
@@ -179,12 +255,12 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 	// 👉 Also fetch all other V2 stories for carousel
 	// const allStories = await sanityClient.fetch(
 	// 	groq`*[_type == "successStoryVersion2" && defined(homeImage.asset._ref)]{
-    //   _id,
-    //   title,
-    //   slug,
-    //   homeImage { asset->{url}, alt },
-    //   body
-    // }`
+	//   _id,
+	//   title,
+	//   slug,
+	//   homeImage { asset->{url}, alt },
+	//   body
+	// }`
 	// );
 
 	if (!data) return notFound();
@@ -211,7 +287,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 						id="overview"
 						className="text-md space-y-4 sm:space-y-6 text-left sm:max-w-3xl sm:mx-auto sm:mb-12"
 					>
-						<PortableText value={data.overview} components={components} />
+						<PortableText value={data.overview} components={portableTextComponents} />
 					</div>
 				)}
 
@@ -337,10 +413,16 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
 									/>
 								</div>
 							)}
-							<div className="w-full md:w-1/2 text-gray-500 space-y-6 text-md tracking-[0.4px] leading-[18px] mt-4">
+							{/* <div className="w-full md:w-1/2 text-gray-500 space-y-6 text-md tracking-[0.4px] leading-[18px] mt-4">
 								{data.conclusionDescription
 									?.split('\n')
 									.map((para: string, i: number) => <p key={i}>{para}</p>)}
+							</div> */}
+
+							<div className="w-full md:w-1/2 text-gray-500 space-y-6 text-md tracking-[0.4px] leading-[18px] mt-4">
+								{data.conclusionDescription && (
+									<PortableText value={data.conclusionDescription} components={portableTextComponents} />
+								)}
 							</div>
 						</div>
 					</section>

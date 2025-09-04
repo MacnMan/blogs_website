@@ -1,5 +1,5 @@
 // src/types/types.ts
-import { ReactNode } from 'react';
+import { PortableTextBlock } from '@portabletext/react';
 
 // ✅ Avoid unused type
 // Removed: type MyType (was unused)
@@ -106,6 +106,8 @@ export interface SuccessStory {
   readMoreLink?: string;
 }
 
+
+
 // ✅ Section item type
 export type SectionItem = {
   icon: SanityImage; // 👈 replaced `any` with `SanityImage`
@@ -127,12 +129,17 @@ export type GridImage = {
 };
 
 // ✅ List item with JSX support
-export type ListItem = {
-  title: ReactNode | Iterable<ReactNode>;
-  description: ReactNode | Iterable<ReactNode>;
-  text: string;
-  icon?: string;
-};
+// export type ListItem = {
+//   title: ReactNode | Iterable<ReactNode>;
+//   description: ReactNode | Iterable<ReactNode> | PortableTextBlock[];
+//   text: string;
+//   icon?: string;
+// };
+
+export interface ListItem {
+  title?: string;
+  description?: string | PortableTextBlock[]; // keep only valid Sanity outputs
+}
 // types/deployment.ts
 export interface DeploymentIcon {
   asset: {

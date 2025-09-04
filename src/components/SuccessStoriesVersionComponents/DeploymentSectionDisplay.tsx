@@ -5,23 +5,35 @@ import {
   DeploymentDiagram,
 } from "@/types/types";
 
+import { PortableText } from "@portabletext/react";
+import { PortableTextBlock } from "sanity";
+
 // 1. Deployment Title + Description
 const DeploymentTitle = ({
   title,
   description,
 }: {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string | PortableTextBlock[];
 }) => (
   <>
-    <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">
-      {title}
-    </h2>
-    <div className="sm:mx-64 text-center text-gray-400 mb-20 space-y-2">
-      {description}
-    </div>
+    {title && (
+      <h2 className="text-2xl text-gray-800 font-semibold text-center mb-4">
+        {title}
+      </h2>
+    )}
+    {description && (
+      <div className="sm:mx-64 text-center text-gray-400 mb-20 space-y-2">
+        {typeof description === "string" ? (
+          description.split("\n").map((p, i) => <p key={i}>{p}</p>)
+        ) : (
+          <PortableText value={description} />
+        )}
+      </div>
+    )}
   </>
 );
+
 
 // 2. Single Deployment Feature
 const DeploymentFeature = ({
