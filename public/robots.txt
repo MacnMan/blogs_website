@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.macnman.com
+
+# Sitemaps
+Sitemap: https://www.macnman.com/sitemap.xml
