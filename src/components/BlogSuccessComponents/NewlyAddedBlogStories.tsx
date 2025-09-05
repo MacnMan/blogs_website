@@ -19,7 +19,7 @@ export default function NewlyAddedBlogs({ blogs }: NewlyAddedBlogsProps) {
     .slice(0, 5); // Show latest 5 blogs
 
   return (
-    <section className="rounded-3xl sm:mr-16 px-8">
+    <section className="rounded-3xl sm:mr-12 px-8">
       <h2 className="sm:text-3xl text-xl font-semibold sm:mb-8 mb-4 ml-4">
         Newly Added Blogs
       </h2>

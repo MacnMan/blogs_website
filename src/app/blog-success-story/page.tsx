@@ -19,16 +19,16 @@ export default async function BlogSuccessPage() {
 
   return (
     <>
-      <div className="">
+      <div className="sm:mx-20 sm:mt-20 overflow-hidden sm:rounded-3xl">
         <HeroSection />
       </div>
 
       <NavbarWrapper />
-      <main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
-        <section className="overflow-x-hidden">
+      <main className="sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
+        <section className="overflow-x-hidden sm:mx-12">
           <BlogSuccessStoriesList posts={posts} />
         </section>
-        <section className="overflow-x-hidden">
+        <section className="sm:ml-12 overflow-x-hidden">
           <NewlyAddedBlogs blogs={blogs} />
         </section>
       </main>

@@ -77,7 +77,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
         </div>
 
         {/* Desktop/Laptop: Original filter bar */}
-        <div className="hidden sm:flex flex-wrap justify-start items-center gap-6">
+        <div className="hidden sm:flex flex-wrap justify-start items-center gap-6 sm:ml-6">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter.value;
             return (
@@ -110,7 +110,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
 
 
       {/* Horizontal line below filters */}
-      <div className="border-b border-gray-300 sm:mb-6 mb-6 mt-3 "></div>
+      <div className="border-b border-gray-300 sm:mb-6 mb-6 mt-3 sm:ml-6"></div>
 
 
       <h2 className="text-xl sm:text-3xl font-semibold mb-4 text-start">

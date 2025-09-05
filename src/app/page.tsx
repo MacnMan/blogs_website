@@ -19,10 +19,10 @@ export default async function HomePage() {
 	return (
 		<>
 			<NavbarWrapper />
-			<div className="md:pt-[-80px] overflow-hidden">
+			<div className="md:pt-[-80px] sm:mx-20 sm:mt-20 overflow-hidden sm:rounded-3xl">
 				<Hero />
 			</div>
-			<main className="sm:ml-12 sm:py-8 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
+			<main className="sm:mx-12  sm:py-8 sm:max-w-8xl sm:space-y-12 overflow-x-hidden">
 				{/* Success Stories Section */}
 				<section className='overflow-x-hidden'>
 					<SuccessStoriesListV2New stories={storiesV2} />
@@ -31,7 +31,7 @@ export default async function HomePage() {
 			<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
 				<NewlyAddedStories stories={stories} />
 
-				<section className='overflow-x-hidden'>
+				<section className='overflow-x-hidden px-4 sm:px-0'>
 					<SuccessStoriesListHome stories={stories} />
 				</section>
 			</main>

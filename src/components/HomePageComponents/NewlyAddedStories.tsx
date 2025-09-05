@@ -56,7 +56,7 @@ export default function NewlyAddedStories({ stories }: { stories: SuccessStory[]
   );
 
   return (
-    <section className="rounded-3xl my-2 px-8">
+    <section className="rounded-3xl my-2 px-8 sm:px-4">
       <h2 className="sm:text-3xl text-xl font-semibold sm:mb-8 mb-4">Newly Added</h2>
 
       <div className="md:gap-6 gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4">

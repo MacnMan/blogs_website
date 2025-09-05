@@ -35,38 +35,33 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
 
   return (
     <>
-      <div className="max-full mx-auto">
+      <div className="max-full sm:mx-4 sm:mt-4">
         {/* Header */}
-        <header className="mb-4 rounded-3xl">
+        <header className="mb-4 sm:rounded-3xl">
           <NavbarWrapper />
           {post.mainImage && (
-            <div className="relative w-full h-[300px] sm:h-[560px] mb-6">
-              {/* ✅ Mobile: shorter hero */}
+            <div className="relative w-full h-[300px] sm:h-[560px] mb-6 sm:rounded-3xl sm:overflow-hidden">
               <Image
                 src={post.mainImage.asset.url}
                 alt={post.mainImage.alt || post.title}
                 fill
-                className="object-cover"
+                className="object-cover sm:rounded-3xl"
                 sizes="100vw"
               />
               <div className="absolute inset-0 flex flex-col justify-end items-start">
-                <div className="bg-white/20 backdrop-blur-md p-4 sm:p-6 w-full">
+                <div className="bg-white/20 backdrop-blur-md p-4 sm:p-6 w-full sm:rounded-b-3xl">
                   <h1 className="text-xl sm:text-4xl font-bold text-white mb-2 sm:mb-4">
                     {post.title}
                   </h1>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 bg-white/30 rounded-full text-gray-800 shadow">
                       {post.category
-                        ? post.category
-                            .replace(/-/g, " ")
-                            .replace(/\b\w/g, (c) => c.toUpperCase())
+                        ? post.category.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
                         : "Unknown"}
                     </span>
                     <span className="text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 bg-white/30 rounded-full text-gray-800 shadow">
                       {post.type
-                        ? post.type
-                            .replace(/-/g, " ")
-                            .replace(/\b\w/g, (c) => c.toUpperCase())
+                        ? post.type.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
                         : "Unknown"}
                     </span>
                   </div>
@@ -74,6 +69,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               </div>
             </div>
           )}
+
         </header>
 
         {/* Layout wrapper */}
