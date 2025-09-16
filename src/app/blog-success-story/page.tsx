@@ -19,7 +19,7 @@ export default async function BlogSuccessPage() {
 
   return (
     <>
-      <div className="sm:mx-20 sm:mt-20 overflow-hidden sm:rounded-3xl">
+      <div className="sm:mx-20 sm:mt-20 overflow-hidden sm:rounded-5xl">
         <HeroSection />
       </div>
 

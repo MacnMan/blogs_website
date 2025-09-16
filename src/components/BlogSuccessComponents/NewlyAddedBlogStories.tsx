@@ -29,7 +29,7 @@ export default function NewlyAddedBlogs({ blogs }: NewlyAddedBlogsProps) {
           <Link
             key={blog._id}
             href={`/blog-success-story/${blog.slug.current}`}
-            className="rounded-xl sm:rounded-3xl shadow-sm transition overflow-hidden"
+            className="rounded-xl sm:rounded-3xl transition overflow-hidden"
           >
             {/* Image */}
             {blog.mainImage?.asset && (
