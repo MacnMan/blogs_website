@@ -1,11 +1,11 @@
 // app/page.tsx
 
 import { sanityClient } from './../../lib/sanity.client';
-import { successStoriesQuery, successStoriesV2Query } from './../../lib/queries';
+import {successStoriesV2Query } from './../../lib/queries';
 import Hero from '@/components/HomePageComponents/Hero';
 import NavbarWrapper from '@/components/HomePageComponents/NavbarWrapper';
-import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
-import NewlyAddedStories from '@/components/HomePageComponents/NewlyAddedStories';
+// import SuccessStoriesListHome from '@/components/SuccessStoriesComponents/SuccessStoriesListHome';
+import NewlyAddedStories from '@/components/SuccessStoriesVersionComponents/NewlyAddedStoriesV2';
 import MainContactUs from '@/components/HomePageComponents/MainContactUs';
 import TermsAndConditions from '@/components/HomePageComponents/TermsAndConditions';
 import Sitemap from '@/components/HomePageComponents/Sitemap';
@@ -14,7 +14,7 @@ import SuccessStoriesListV2New from '@/components/SuccessStoriesVersionComponent
 import Image from "next/image";
 
 export default async function HomePage() {
-	const stories = await sanityClient.fetch(successStoriesQuery);
+	// const stories = await sanityClient.fetch(successStoriesQuery);
 	const storiesV2 = await sanityClient.fetch(successStoriesV2Query);
 	return (
 		<>
@@ -29,11 +29,11 @@ export default async function HomePage() {
 				</section>
 			</main>
 			<main className="sm:px-16 sm:py-2 sm:max-w-8xl sm:mx-auto sm:space-y-12 overflow-x-hidden">
-				<NewlyAddedStories stories={stories} />
+				<NewlyAddedStories stories={storiesV2} />
 
-				<section className='overflow-x-hidden px-4 sm:px-0'>
+				{/* <section className='overflow-x-hidden px-4 sm:px-0'>
 					<SuccessStoriesListHome stories={stories} />
-				</section>
+				</section> */}
 			</main>
 			{/* Decorative image */}
 			<div className="w-full my-10">

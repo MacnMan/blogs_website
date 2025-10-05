@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { PortableTextBlock } from '@portabletext/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { useState } from 'react';
+import SafeImage from './SafeImage';
 
 type SuccessStoryV2 = {
   _id: string;
@@ -55,7 +55,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
                 onClick={() => setActiveFilter(filter.value)}
                 className="flex items-center gap-2 text-sm font-medium flex-shrink-0 focus:outline-none"
               >
-                <Image
+                <SafeImage
                   src={
                     isActive
                       ? "/blogs/images/check-blue.svg"
@@ -86,7 +86,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
                 onClick={() => setActiveFilter(filter.value)}
                 className="flex items-center gap-2 text-sm font-medium focus:outline-none"
               >
-                <Image
+                <SafeImage
                   src={
                     isActive
                       ? "/blogs/images/check-blue.svg"
@@ -114,7 +114,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
 
 
       <h2 className="text-xl sm:text-3xl font-semibold mb-4 text-start">
-        Success Stories (V2)
+        Success Stories
       </h2>
 
       {/* ✅ Stories Carousel */}
@@ -136,7 +136,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
             >
               {story.homeImage?.asset?.url && (
                 <div className="w-full h-[150px] sm:h-[250px] overflow-hidden rounded-3xl">
-                  <Image
+                  <SafeImage
                     src={story.homeImage.asset.url}
                     alt={story.homeImage.alt || story.title}
                     width={400}

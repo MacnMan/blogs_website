@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   DeploymentData,
   DeploymentFeatureType,
@@ -7,6 +6,7 @@ import {
 
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "sanity";
+import SafeImage from "./SafeImage";
 
 // 1. Deployment Title + Description
 const DeploymentTitle = ({
@@ -57,7 +57,7 @@ const DeploymentFeature = ({
         {/* Icon + Number */}
         <div className="flex flex-col items-center flex-shrink-0 relative">
           {feature.icon?.asset?.url && (
-            <Image
+            <SafeImage
               src={feature.icon.asset.url}
               alt={feature.icon.alt || feature.title}
               width={110}
@@ -145,7 +145,7 @@ const DeploymentImage = ({ diagram }: { diagram?: DeploymentDiagram }) => {
 
   return (
     <div id="deployment-image" className="relative sm:mt-16 mt-10 bg-white">
-      <Image
+      <SafeImage
         src={diagram.asset.url}
         alt={diagram.alt || "Deployment"}
         width={1900}
