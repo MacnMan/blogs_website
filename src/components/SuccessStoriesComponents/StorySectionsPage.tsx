@@ -7,6 +7,7 @@ import { SectionItem, GridImage, ListItem } from '@/types/types';
 
 import { PortableText, PortableTextBlock } from "@portabletext/react";
 import { ReactNode } from 'react';
+import SafeImage from '../SuccessStoriesVersionComponents/SafeImage';
 
 // 🔧 Section with icons and description
 export function Section({
@@ -47,7 +48,7 @@ export function Section({
         {items?.map((item, i) => (
           <li key={i} className="p-2 sm:my-8 mb-2">
             {item.icon?.asset?.url && (
-              <Image
+              <SafeImage
                 src={item.icon.asset.url}
                 alt={item.icon.alt || ""}
                 width={28}
@@ -58,7 +59,7 @@ export function Section({
             <h3 className="text-lg font-semibold mb-4 sm:leading-[16px] leading-[18px] tracking-tight ">
               {item.title}
             </h3>
-            <p className="text-gray-400 sm:text-[15px] leading-tight sm:leading-tight tracking-tight">
+            <p className="text-gray-400 sm:text-[16px] leading-tight sm:leading-tight tracking-tight">
               {item.description}
             </p>
           </li>
@@ -128,7 +129,7 @@ export function ListSection({
         {[0, 1].map((i) => (
           <div key={i} className="col-span-1 row-span-2 z-30">
             {images[i]?.asset?.url && (
-              <Image
+              <SafeImage
                 src={images[i].asset.url}
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={400}
@@ -141,7 +142,7 @@ export function ListSection({
         {[2, 3].map((i) => (
           <div key={i} className="col-span-1">
             {images[i]?.asset?.url && (
-              <Image
+              <SafeImage
                 src={images[i].asset.url}
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={300}
@@ -201,7 +202,7 @@ export function ListSectionNew({
         <div className="flex flex-wrap sm:gap-4 sm:flex-[3]">
           {images.map((img, i) =>
             img?.asset?.url ? (
-              <Image
+              <SafeImage
                 key={i}
                 src={img.asset.url}
                 alt={img.alt || title || ""}
