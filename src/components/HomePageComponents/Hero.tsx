@@ -133,6 +133,13 @@ const heroData: HeroItem[] = [
     subtitle: 'Achieving 99% Uptime',
     tag: ["Smart City", "Lorawan"],
     location: 'Bibwewadi, Pune'
+  },
+  {
+    title: 'Industrial Automation Case Study',
+    image: '/blogs/homepagecomponents/heroone.png',
+    subtitle: 'Achieving 99% Uptime',
+    tag: ["Smart City", "Lorawan"],
+    location: 'Bibwewadi, Pune'
   }
 ];
 
