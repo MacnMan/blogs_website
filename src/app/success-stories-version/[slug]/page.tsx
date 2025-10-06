@@ -800,7 +800,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
         <SafeImage
           src={data.introImage?.asset?.url}
           alt={data.introImage?.alt || "Intro Image"}
-          width={1900}
+          width={1800}
           height={1200}
           className="sm:w-full sm:h-[500px] 2xl:h-[850px] rounded-4xl sm:mb-4 mt-4 object-cover"
           unoptimized

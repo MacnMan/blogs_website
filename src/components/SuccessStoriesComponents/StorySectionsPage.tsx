@@ -2,7 +2,7 @@
 
 'use client';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import { SectionItem, GridImage, ListItem } from '@/types/types';
 
 import { PortableText, PortableTextBlock } from "@portabletext/react";
