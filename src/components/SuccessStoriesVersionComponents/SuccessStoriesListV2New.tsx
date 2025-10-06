@@ -141,7 +141,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
                     alt={story.homeImage.alt || story.title}
                     width={400}
                     height={250}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-cover"
                   />
                 </div>
               )}
