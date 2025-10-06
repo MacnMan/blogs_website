@@ -830,7 +830,8 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
               alt={data.architectureDiagram?.alt || "Architecture"}
               width={1900}
               height={600}
-              className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl mb-4"
+              className="w-full object-cover rounded-xl mb-4"
+              // className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl mb-4"
             />
 
             {data.architectureImages?.length > 0 && (
