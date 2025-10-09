@@ -10,6 +10,7 @@ interface SafeImageProps {
     fill?: boolean;
     className?: string;
     unoptimized?: boolean;
+    lazy?: boolean; // ✅ Added lazy loading toggle
 }
 
 export default function SafeImage({
@@ -20,6 +21,7 @@ export default function SafeImage({
     fill = false,
     className = "",
     unoptimized = false,
+    lazy = true, // ✅ Default to true
 }: SafeImageProps) {
     const [error, setError] = useState(false);
 
@@ -45,6 +47,7 @@ export default function SafeImage({
             unoptimized={unoptimized}
             className={className}
             onError={() => setError(true)}
+            loading={lazy ? "lazy" : "eager"} // ✅ Conditionally enable/disable lazy loading
         />
     );
 }

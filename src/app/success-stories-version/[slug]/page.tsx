@@ -831,7 +831,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
               width={1900}
               height={600}
               className="w-full object-cover rounded-xl mb-4"
-              // className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl mb-4"
+            // className="w-full h-[300px] sm:h-[400px] object-cover rounded-xl mb-4"
             />
 
             {data.architectureImages?.length > 0 && (
@@ -859,12 +859,6 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
           items={data.challenges || []}
         />
 
-        <ListSectionNew
-          title={data.impactTitle}
-          images={data.inspectImage?.asset?.url ? [data.inspectImage] : []}
-          items={data.impacts || []}
-        />
-
         {data.validationTitle && (
           <section id="validation" className="scroll-mt-36 sm:mt-4 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-16 mt-10">
@@ -881,8 +875,14 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
           </section>
         )}
 
+        <ListSectionNew
+          title={data.impactTitle}
+          images={data.inspectImage?.asset?.url ? [data.inspectImage] : []}
+          items={data.impacts || []}
+        />
+
         {data.conclusionTitle && (
-          <section id="conclusion" className="scroll-mt-36 sm:mt-20 mt-10">
+          <section id="conclusion" className="scroll-mt-36 sm:mt-10 mt-10">
             <h2 className="text-2xl text-gray-800 font-semibold text-center sm:mb-12">
               {data.conclusionTitle}
             </h2>

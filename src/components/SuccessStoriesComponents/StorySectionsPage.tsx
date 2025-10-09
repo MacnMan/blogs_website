@@ -190,7 +190,7 @@ export function ListSectionNew({
   if (!title && !images.length && !items.length) return null;
 
   return (
-    <section id="impact" className="scroll-mt-36 sm:mt-12 mt-6">
+    <section id="impact" className="scroll-mt-36 sm:mt-20 mt-6">
       {title && (
         <h2 className="text-2xl text-gray-800 font-semibold sm:mb-4 sm:mt-4 text-center">
           {title}
@@ -208,7 +208,7 @@ export function ListSectionNew({
                 alt={img.alt || title || ""}
                 width={900}
                 height={500}
-                className="rounded-xl object-contain w-full sm:my-8 my-4 sm:h-[500px] max-w-[100%]"
+                className="rounded-xl object-contain w-full sm:my-1 my-4 sm:h-[500px] max-w-[100%]"
               />
             ) : null
           )}

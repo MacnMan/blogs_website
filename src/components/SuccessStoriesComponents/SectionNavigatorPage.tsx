@@ -18,8 +18,8 @@ const sections: Section[] = [
   { id: "architecture", label: "Architecture", image: "/blogs/images/section-navigator/architecture.svg" },
   { id: "deployment", label: "Deployment", image: "/blogs/images/section-navigator/deployment.svg" },
   { id: "challenges", label: "Challenges", image: "/blogs/images/section-navigator/solution.svg" },
-  { id: "impact", label: "Impact", image: "/blogs/images/section-navigator/impact.svg" },
   { id: "validation", label: "Validation", image: "/blogs/images/section-navigator/quiz-alt.svg" },
+  { id: "impact", label: "Impact", image: "/blogs/images/section-navigator/impact.svg" },
   { id: "conclusion", label: "Conclusion", image: "/blogs/images/section-navigator/confetti.svg" },
   { id: "links", label: "Link", image: "/blogs/images/section-navigator/solution.svg" },
 ];
