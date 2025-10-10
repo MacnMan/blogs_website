@@ -25,7 +25,7 @@ const sections: Section[] = [
 ];
 
 // ✅ Active state icon
-const activeIcon = "/blogs/images/section-navigator/check-circle.svg";
+const activeIcon = "/blogs/images/section-navigator/check-circle1.svg";
 
 export default function SectionNavigator() {
   const [activeSection, setActiveSection] = useState("overview");
@@ -95,7 +95,7 @@ export default function SectionNavigator() {
                 key={id}
                 onClick={() => handleClick(id)}
                 className={`flex items-center space-x-2 whitespace-nowrap text-sm px-2 py-1 rounded-full transition-all duration-300 ${activeSection === id
-                  ? "bg-gray-400 text-white font-semibold shadow-md"
+                  ? "bg-[#2F67FF] text-white font-semibold shadow-md"
                   : "bg-gray-50 text-gray-700 hover:bg-gray-200"
                   }`}
               >
