@@ -1,0 +1,210 @@
+// next-sitemap.config.js
+const { createClient } = require('@sanity/client');
+
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: '2025-10-11',
+  useCdn: false,
+});
+
+async function getAllDynamicPaths() {
+  try {
+    const query = `{
+      "posts": *[_type == "post"]{
+        "slug": slug.current,
+        "imageUrl": mainImage.asset->url
+      },
+      "blogSuccess": *[_type == "blogSuccess"]{
+        "slug": slug.current,
+        "imageUrl": mainImage.asset->url
+      },
+      "successStories": *[_type == "successStories"]{
+        "slug": slug.current,
+        "imageUrl": mainImage.asset->url,
+        "images": images[].asset->url,
+        "videos": videos[].asset->url
+      },
+      "successStoriesVersion": *[_type == "successStoriesVersion"]{
+        "slug": slug.current,
+        "imageUrl": mainImage.asset->url
+      }
+    }`;
+
+    const results = await client.fetch(query);
+      "files": body[] {
+        _type == "file" => {
+          "url": asset->url
+        }
+      }
+    },
+    "blogSuccess": *[_type == "blogSuccess"] {
+      slug,
+      mainImage {
+        asset->{ url }
+      }
+    },
+    "successStories": *[_type == "successStories"] {
+      slug,
+      mainImage {
+        asset->{ url }
+      },
+      "images": images[].asset->url,
+      "videos": videos[].asset->url
+    },
+    "successStoriesVersion": *[_type == "successStoriesVersion"] {
+      slug,
+      mainImage {
+        asset->{ url }
+      }
+    }
+  }`;
+
+  const results = await client.fetch(query);
+  
+  const urls = [];
+
+  // Add static routes
+  urls.push({ 
+    loc: '/',
+    changefreq: 'daily',
+    priority: 1.0,
+    lastmod: new Date().toISOString()
+  });
+
+  // Process blog posts
+  results.posts?.forEach(post => {
+    const url = {
+      loc: `/post/${post.slug.current}`,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      images: []
+    };
+    
+    if (post.mainImage?.asset?.url) {
+      url.images.push({
+        loc: post.mainImage.asset.url,
+        title: post.title || ''
+      });
+    }
+
+    // Add any files from the body
+    post.files?.forEach(file => {
+      if (file?.url) {
+        url.images.push({
+          loc: file.url,
+          title: 'File attachment'
+        });
+      }
+    });
+
+    urls.push(url);
+  });
+
+  // Process blog success stories
+  results.blogSuccess?.forEach(story => {
+    urls.push({
+      loc: `/blog-success-story/${story.slug.current}`,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      images: story.mainImage?.asset?.url ? [{
+        loc: story.mainImage.asset.url,
+        title: story.title || ''
+      }] : []
+    });
+  });
+
+  // Process success stories
+  results.successStories?.forEach(story => {
+    const url = {
+      loc: `/success-stories/${story.slug.current}`,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      images: [],
+      videos: []
+    };
+
+    // Add main image
+    if (story.mainImage?.asset?.url) {
+      url.images.push({
+        loc: story.mainImage.asset.url,
+        title: story.title || ''
+      });
+    }
+
+    // Add additional images
+    story.images?.forEach(imageUrl => {
+      url.images.push({
+        loc: imageUrl,
+        title: 'Story image'
+      });
+    });
+
+    // Add videos
+    story.videos?.forEach(videoUrl => {
+      url.videos.push({
+        loc: videoUrl,
+        title: 'Story video',
+        thumbnail_loc: videoUrl.replace(/\.[^/.]+$/, '_thumb.jpg')
+      });
+    });
+
+    urls.push(url);
+  });
+
+  // Process success stories versions
+  results.successStoriesVersion?.forEach(version => {
+    urls.push({
+      loc: `/success-stories-version/${version.slug.current}`,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      images: version.mainImage?.asset?.url ? [{
+        loc: version.mainImage.asset.url,
+        title: version.title || ''
+      }] : []
+    });
+  });
+
+  return urls;
+}
+
+module.exports = {
+  siteUrl: 'https://www.macnman.in',
+  generateRobotsTxt: true,
+  sitemapSize: 5000,
+  changefreq: 'weekly',
+  priority: 1.0,
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: path === '/' ? 'daily' : 'weekly',
+      priority: path === '/' ? 1.0 : 0.7,
+      lastmod: new Date().toISOString()
+    }
+  },
+  additionalPaths: async (config) => {
+    try {
+      const paths = await getAllDynamicPaths();
+      return paths.map(path => ({
+        loc: path.loc,
+        lastmod: path.lastmod,
+        changefreq: path.changefreq,
+        priority: path.priority,
+        ...(path.images && { img: path.images }),
+        ...(path.videos && { video: path.videos })
+      }));
+    } catch (error) {
+      console.error('Error generating additional paths:', error);
+      return [];
+    }
+  }
+}
+      changefreq: 'daily',
+      priority: 0.9,
+    }));
+  },
+};
