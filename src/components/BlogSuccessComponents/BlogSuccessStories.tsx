@@ -99,7 +99,7 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
       <div className="border-b border-gray-300 sm:mb-6 mb-6 mt-3 sm:ml-6"></div>
 
       <h2 className="text-xl sm:text-3xl font-semibold mb-4 font-sans">
-        Success Stories Videos
+        Blogs
       </h2>
 
       {/* ✅ Stories Carousel */}
@@ -108,8 +108,8 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
         spaceBetween={20}
         // slidesPerView={1}
         breakpoints={{
-          640: { slidesPerView: 2 }, // tablet ≥640px → 2 cards
-          1024: { slidesPerView: 3 }, // laptop ≥1024px → 3 cards
+          0: { slidesPerView: 1.5, spaceBetween: 15 }, // mobile: 1.5 cards
+          640: { slidesPerView: 2.7, spaceBetween: 20 }, // tablet & desktop: original behavior
         }}
         autoplay={{ delay: 0, disableOnInteraction: false }}
         speed={4000}

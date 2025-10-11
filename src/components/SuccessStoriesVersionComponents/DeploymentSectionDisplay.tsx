@@ -53,7 +53,7 @@ const DeploymentFeature = ({
     <div
       className={`flex flex-col items-center relative ${shiftClass} ${horizontalShift}`}
     >
-      <div className="flex flex-row items-start gap-4 relative">
+      <div className="flex flex-row items-start gap-4 relative my-[-20px] sm:my-0">
         {/* Icon + Number */}
         <div className="flex flex-col items-center flex-shrink-0 relative">
           {feature.icon?.asset?.url && (

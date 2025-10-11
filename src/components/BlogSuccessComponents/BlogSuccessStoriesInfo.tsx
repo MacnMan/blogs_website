@@ -40,33 +40,61 @@ export default function BlogSuccessStoriesInfo({ post }: Props) {
 
       {/* ✅ Content Sections */}
       <div className="px-6 sm:px-12 py-8 space-y-12">
-        {[post.sectionOne, post.sectionTwo, post.sectionThree, post.sectionFour].map(
+        {[post.sectionOne, post.sectionTwo, post.sectionThree, post.sectionFour].flat().map(
           (section, idx) =>
-            section?.title && (
-              <div key={idx} className="grid md:grid-cols-2 gap-6 items-center">
-                {/* Text */}
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-semibold mb-3">
-                    {section.title}
-                  </h2>
-                  <div className="prose max-w-none text-gray-700">
-                    <PortableText value={section.description} />
-                  </div>
-                </div>
+            Array.isArray(section)
+              ? section.map((subSection, subIdx) =>
+                  subSection?.title && (
+                    <div key={`${idx}-${subIdx}`} className="grid md:grid-cols-2 gap-6 items-center">
+                      {/* Text */}
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-semibold mb-3">
+                          {subSection.title}
+                        </h2>
+                        <div className="prose max-w-none text-gray-700">
+                          <PortableText value={subSection.description} />
+                        </div>
+                      </div>
 
-                {/* Image */}
-                {section.image?.asset?.url && (
-                  <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden">
-                    <Image
-                      src={section.image.asset.url}
-                      alt={section.image.alt || section.title}
-                      fill
-                      className="object-cover"
-                    />
+                      {/* Image */}
+                      {subSection.image?.asset?.url && (
+                        <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden">
+                          <Image
+                            src={subSection.image.asset.url}
+                            alt={subSection.image.alt || subSection.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )
+                )
+              : section?.title && (
+                  <div key={idx} className="grid md:grid-cols-2 gap-6 items-center">
+                    {/* Text */}
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-semibold mb-3">
+                        {section.title}
+                      </h2>
+                      <div className="prose max-w-none text-gray-700">
+                        <PortableText value={section.description} />
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    {section.image?.asset?.url && (
+                      <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden">
+                        <Image
+                          src={section.image.asset.url}
+                          alt={section.image.alt || section.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            )
+                )
         )}
       </div>
 

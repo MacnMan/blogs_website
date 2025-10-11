@@ -121,11 +121,15 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
       <Swiper
         modules={[Autoplay]}
         spaceBetween={20}
-        slidesPerView="auto"
+        slidesPerView="auto" // default for desktop
         autoplay={{ delay: 0, disableOnInteraction: false }}
         speed={4000}
         loop={true}
         grabCursor={true}
+        breakpoints={{
+          0: { slidesPerView: 1.5, spaceBetween: 15 }, // mobile: 1.5 cards
+          640: { slidesPerView: 2.7, spaceBetween: 20 }, // tablet & desktop: original behavior
+        }}
       >
         {filteredStories.map((story) => (
           <SwiperSlide key={story._id} style={{ width: 'auto' }}>
@@ -135,15 +139,16 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
               style={{ width: '90vw', maxWidth: '400px' }}
             >
               {story.homeImage?.asset?.url && (
-                <div className="w-full h-[150px] sm:h-[250px] overflow-hidden rounded-3xl">
+                <div className="w-full aspect-[16/10] sm:aspect-[16/10] overflow-hidden rounded-3xl">
                   <SafeImage
                     src={story.homeImage.asset.url}
                     alt={story.homeImage.alt || story.title}
                     width={400}
                     height={250}
-                    className="max-w-full max-h-full object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
+
               )}
               <div className="p-3">
                 <h3 className="text-sm sm:text-md font-semibold break-words">
@@ -154,6 +159,8 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
           </SwiperSlide>
         ))}
       </Swiper>
+
+
     </div>
   );
 }

@@ -35,12 +35,11 @@ export default async function BlogSuccessPage() {
 
 
 
-
       {/* Links Section (above decorative image) */}
       <section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16 mx-10">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-3xl shadow-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-lg shadow-sm">
           {/* Title */}
-          <p className="text-[14px] sm:text-xl font-semibold text-gray-800 mb-2 md:mb-0">
+          <p className="text-sm sm:text-xl ml-3 font-semibold text-gray-800 mb-2 md:mb-0">
             Transforming Industries: The Story of Sunita - Supervisor view on automation
           </p>
 
@@ -50,7 +49,7 @@ export default async function BlogSuccessPage() {
               href="https://macnman.com/docs/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-[10px] sm:text-[14px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition"
+              className="text-[12px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition sm:px-4 sm:py-2 px-3 py-1"
             >
               Read Now
             </a>
@@ -58,11 +57,12 @@ export default async function BlogSuccessPage() {
               href="https://macnman.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-1 py-2 sm:px-4 sm:py-2 text-[10px] sm:text-[14px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+              className="text-[12px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition sm:px-4 sm:py-2 px-3 py-1"
             >
               Explore More
             </a>
           </div>
+
         </div>
       </section>
 
