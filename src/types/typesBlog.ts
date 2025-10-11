@@ -78,7 +78,7 @@ export type BlogSuccessPost = {
   sectionOne?: Section;
   sectionTwo?: Section;
   sectionThree?: Section;
-  sectionFour?: Section;
+  sectionFour?: Section[]; // ✅ updated to array
 
   // Links Section
   linksTitle?: string;

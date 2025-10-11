@@ -174,7 +174,7 @@ export default function HeroSection() {
           {/* Content Box */}
           <div className="absolute bottom-0 left-0 right-0 z-20">
             <div className="bg-white/20 backdrop-blur-md p-3 md:p-6 text-white w-full max-w-full">
-              <h1 className="text-sm md:text-5xl font-bold md:leading-tight md:mb-2">
+              <h1 className="text-lg md:text-5xl font-bold md:leading-tight md:mb-2">
                 {item.title}
               </h1>
               <p className="text-[10px] md:text-xl md:mb-4 mb-2">

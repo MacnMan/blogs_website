@@ -134,7 +134,7 @@ export function ListSection({
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={400}
                 height={600}
-                className="sm:w-full sm:h-full object-cover sm:rounded-4xl rounded-3xl"
+                className="sm:w-full h-[450px] sm:h-full object-cover sm:rounded-4xl rounded-3xl"
               />
             )}
           </div>
@@ -147,7 +147,7 @@ export function ListSection({
                 alt={images[i].alt || `Image ${i + 1}`}
                 width={300}
                 height={300}
-                className="w-full object-cover sm:rounded-4xl rounded-4xl"
+                className="w-full object-cover h-[450px] sm:h-[250px] sm:rounded-4xl rounded-4xl"
               />
             )}
           </div>

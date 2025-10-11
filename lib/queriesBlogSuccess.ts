@@ -165,7 +165,7 @@ export const allBlogSuccessPostsQuery = groq`
         alt
       }
     },
-    sectionFour {
+    sectionFour[] {
       title,
       description,
       image {
@@ -178,18 +178,13 @@ export const allBlogSuccessPostsQuery = groq`
     }
   }
 `
-
-// ✅ Single post with all sections
 export const blogSuccessPostBySlugQuery = groq`
-  *[_type == "blogSuccessPost" && slug.current == $slug][0]{
+  *[_type == "blogSuccessPost" && slug.current == $slug][0] {
     _id,
     title,
     "slug": slug,
     mainImage {
-      asset->{
-        _id,
-        url
-      },
+      asset-> { _id, url },
       alt
     },
     type,
@@ -201,10 +196,7 @@ export const blogSuccessPostBySlugQuery = groq`
       title,
       description,
       image {
-        asset->{
-          _id,
-          url
-        },
+        asset-> { _id, url },
         alt
       }
     },
@@ -212,10 +204,7 @@ export const blogSuccessPostBySlugQuery = groq`
       title,
       description,
       image {
-        asset->{
-          _id,
-          url
-        },
+        asset-> { _id, url },
         alt
       }
     },
@@ -223,21 +212,15 @@ export const blogSuccessPostBySlugQuery = groq`
       title,
       description,
       image {
-        asset->{
-          _id,
-          url
-        },
+        asset-> { _id, url },
         alt
       }
     },
-    sectionFour {
+    sectionFour[] {
       title,
       description,
       image {
-        asset->{
-          _id,
-          url
-        },
+        asset-> { _id, url },
         alt
       }
     },
