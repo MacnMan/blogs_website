@@ -424,7 +424,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
           <section id="links" className="scroll-mt-32 sm:mt-10 sm:mx-16">
             <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 px-4 py-3 sm:rounded-full rounded-lg shadow-sm">
               {data.linksTitle && (
-                <p className="text-md sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-0 sl-0 sm:ml-2">
+                <p className="text-sm sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-0 ml-0 sm:ml-2">
                   {data.linksTitle}
                 </p>
               )}
@@ -434,7 +434,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
                     href={data.readMoreLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition sm:px-4 sm:py-2 px-3 py-1"
+                    className="text-[12px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition sm:px-4 sm:py-2 px-3 py-1"
                   >
                     Read Now
                   </a>
@@ -444,7 +444,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
                     href={data.exploreMore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition sm:px-4 sm:py-2 px-3 py-1"
+                    className="text-[12px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition sm:px-4 sm:py-2 px-3 py-1"
                   >
                     Explore More
                   </a>
