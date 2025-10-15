@@ -50,7 +50,7 @@ export default function NavbarMobileDevices() {
       <form action="" className="w-full border mt-4 bg-gray-100 rounded-2xl">
         <div className="relative  mx-auto flex justify-center items-center my-[20px]">
           <span className="absolute left-3">
-            <a href="https://macnman.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://macnman.in/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/blogs/images/macnman-small-logo.svg"
                 alt="logo"

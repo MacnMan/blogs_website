@@ -162,7 +162,7 @@
 //         <li className='cursor-pointer text-md group relative'>
 //           <a
 //             target='_blank'
-//             href='https://macnman.com/blogs'
+//             href='https://macnman.in/blogs'
 //             className='hover:text-black hover:font-semibold after:absolute after:content-[""] after:self-center after:w-full after:left-1/2 after:-translate-x-1/2 after:-bottom-[3px] after:h-2 after:bg-gradient-to-r after:from-pink-700 after:to-indigo-700 after:blur-md after:opacity-0 group-hover:after:opacity-90 transition-all duration-300'
 //           >
 //             Success Stories
@@ -263,7 +263,7 @@ export default function Navbar({
         {hasMounted && !isScrolled && (
           <div
             className='absolute w-32 h-20 left-4 top-1 cursor-pointer'
-            onClick={() => (window.location.href = "https://macnman.com/")}
+            onClick={() => (window.location.href = "https://macnman.in/")}
           >
             <Image
               src='/blogs/logo.png'
@@ -281,7 +281,7 @@ export default function Navbar({
           {hasMounted && isScrolled && (
             <div
               className="flex items-center justify-center gap-5 cursor-pointer h-full"
-              onClick={() => (window.location.href = "https://macnman.com/")}
+              onClick={() => (window.location.href = "https://macnman.in/")}
             >
               <div className="relative w-8 mt-1 h-6 flex items-center justify-center">
                 <Image

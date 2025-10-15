@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   description:
     "Macnman is a leading manufacturer of Industrial IoT solutions including LoRaWAN Gateways, 4G Data Loggers, WiFi & BLE Cloud Converters. We specialize in factory automation, smart monitoring, & environmental sensing across India & globe.",
   applicationName: "Macnman IoT Devices & Cloud Solutions",
-  authors: [{ name: "Macnman", url: "https://macnman.com/blogs" }],
+  authors: [{ name: "Macnman", url: "https://macnman.in/blogs" }],
   keywords: [
     "LoRaWAN Gateways India",
     "4G Data Loggers",
@@ -108,13 +108,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Macnman",
-    url: "https://macnman.com/blogs/",
+    url: "https://macnman.in/blogs/",
     title: "Macnman | Leading manufacturer of IoT Products",
     description:
     " Explore advanced IoT solutions: LoRaWAN, 4G, WiFi, and BLE-based smart monitoring, data logging, and cloud integrations. Visit our Pune facility or connect with our team.",
     images: [
       {
-        url: "https://macnman.com/blogs/seo_homepage.png", // After deploy URL look like this
+        url: "https://macnman.in/blogs/seo_homepage.png", // After deploy URL look like this
         width: 1200,
         height: 630,
         alt: "Macnman IoT Solutions Overview",
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
     ],
     videos: [
       {
-        url: "https://macnman.com/blogs/landing_page_1.webm",
+        url: "https://macnman.in/blogs/landing_page_1.webm",
         width: 1280,
         height: 720,
       },
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     title: "Leading manufacturer of IoT Products | Macnman",
     description:
       "Explore LoRaWAN, WiFi, and 4G IoT solutions tailored for industrial applications at Macnman.",
-    images: ["https://macnman.com/blogs/seo_homepage.png"],
+    images: ["https://macnman.in/blogs/seo_homepage.png"],
   },
   alternates: { canonical: "/blogs/" },
 };

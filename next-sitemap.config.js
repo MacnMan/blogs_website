@@ -244,3 +244,127 @@ module.exports = {
     return paths;
   }
 };
+
+
+
+
+
+
+
+// next-sitemap.config.js
+// next-sitemap.config.js
+// const { createClient } = require('@sanity/client');
+
+// const client = createClient({
+//   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+//   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+//   apiVersion: '2025-10-11',
+//   useCdn: false,
+// });
+
+// async function getAllDynamicPaths() {
+//   try {
+//     const results = await client.fetch(`{
+//       "posts": *[_type == "post"]{ "slug": slug.current },
+//       "blogSuccess": *[_type == "blogSuccess"]{ "slug": slug.current },
+//       "successStories": *[_type == "successStories"]{ "slug": slug.current },
+//       "successStoriesVersion": *[_type == "successStoriesVersion"]{ "slug": slug.current }
+//     }`);
+
+//     const urls = [];
+
+//     // Blog posts
+//     results.posts?.forEach((post) => {
+//       if (post.slug) urls.push(`/blogs/${post.slug}`);
+//     });
+
+//     // Blog success stories
+//     results.blogSuccess?.forEach((story) => {
+//       if (story.slug) urls.push(`/blogs/blog-success-story/${story.slug}`);
+//     });
+
+//     // Success stories
+//     results.successStories?.forEach((story) => {
+//       if (story.slug) urls.push(`/blogs/success-stories/${story.slug}`);
+//     });
+
+//     // Success stories versions
+//     results.successStoriesVersion?.forEach((version) => {
+//       if (version.slug) urls.push(`/blogs/success-stories-version/${version.slug}`);
+//     });
+
+//     return urls;
+//   } catch (err) {
+//     console.error('Error fetching dynamic paths:', err);
+//     return [];
+//   }
+// }
+
+// module.exports = {
+//   siteUrl: 'https://www.macnman.in',
+//   generateRobotsTxt: true,
+//   sitemapSize: 5000,
+//   changefreq: 'weekly',
+//   priority: 0.7,
+//   transform: async (config, path) => {
+//     // path can be string (from additionalPaths) or object
+//     return {
+//       loc: typeof path === 'string' ? path : path.loc,
+//       lastmod: new Date().toISOString(),
+//       changefreq: 'weekly',
+//       priority: 0.7,
+//     };
+//   },
+//   additionalPaths: async (config) => {
+//     const paths = await getAllDynamicPaths();
+//     return paths;
+//   },
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // next-sitemap.config.js
+// const { getAllDynamicPaths } = require('./sanity-sitemap');
+
+// module.exports = {
+//   siteUrl: 'https://www.macnman.in',  // your main domain
+//   generateRobotsTxt: true,
+//   sitemapSize: 5000, // optional, splits sitemap if too big
+//   changefreq: 'weekly',
+//   priority: 0.7,
+  
+//   // transform paths into proper sitemap format
+//   transform: async (config, path) => {
+//     return {
+//       loc: path.startsWith('http') ? path : `${config.siteUrl}${path}`,
+//       lastmod: new Date().toISOString(),
+//       changefreq: path === '/' ? 'daily' : 'weekly',
+//       priority: path === '/' ? 1.0 : 0.7,
+//     };
+//   },
+
+//   // add dynamic paths from Sanity CMS
+//   additionalPaths: async (config) => {
+//     const dynamicPaths = await getAllDynamicPaths();
+
+//     // map dynamic paths to sitemap format
+//     return dynamicPaths.map((path) => ({
+//       loc: `${config.siteUrl}${path}`,
+//       lastmod: new Date().toISOString(),
+//       changefreq: 'weekly',
+//       priority: 0.7,
+//     }));
+//   },
+// };

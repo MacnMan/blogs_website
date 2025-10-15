@@ -118,7 +118,7 @@ function MainContactUs({ theme }: propTypes) {
         <ContactCard
           title="Contact to Sales"
           description="Talk to our friendly team"
-          contactInfo="chat@macnman.com"
+          contactInfo="chat@macnman.in"
           src="/blogs/images/contact-us/smile-beam.svg"
           theme={theme ?? "light"}
         />
@@ -134,7 +134,7 @@ function MainContactUs({ theme }: propTypes) {
         <ContactCard
           title="Contact to Support"
           description="We are here to help"
-          contactInfo="support@macnman.com"
+          contactInfo="support@macnman.in"
           src="/blogs/images/contact-us/question.svg"
           theme={theme ?? "light"}
         />
@@ -195,9 +195,9 @@ function MainContactUs({ theme }: propTypes) {
               title="Email"
               theme={theme}
               info={[
-                "chat@macnman.com",
-                "support@macnman.com",
-                "info@macnman.com",
+                "chat@macnman.in",
+                "support@macnman.in",
+                "info@macnman.in",
               ]}
             />
 
