@@ -12,20 +12,20 @@ type Section = {
 };
 
 const sections: Section[] = [
-  { id: "overview", label: "Overview", image: "/blogs/images/section-navigator/confetti.svg" },
-  { id: "problem", label: "Problem", image: "/blogs/images/section-navigator/solution.svg" },
-  { id: "solution", label: "Solution", image: "/blogs/images/section-navigator/solutionnew.svg" },
-  { id: "architecture", label: "Architecture", image: "/blogs/images/section-navigator/architecture.svg" },
-  { id: "deployment", label: "Deployment", image: "/blogs/images/section-navigator/deployment.svg" },
-  { id: "challenges", label: "Challenges", image: "/blogs/images/section-navigator/solution.svg" },
-  { id: "validation", label: "Validation", image: "/blogs/images/section-navigator/quiz-alt.svg" },
-  { id: "impact", label: "Impact", image: "/blogs/images/section-navigator/impact.svg" },
-  { id: "conclusion", label: "Conclusion", image: "/blogs/images/section-navigator/confetti.svg" },
-  { id: "links", label: "Link", image: "/blogs/images/section-navigator/solution.svg" },
+  { id: "overview", label: "Overview", image: "/success-stories/images/section-navigator/confetti.svg" },
+  { id: "problem", label: "Problem", image: "/success-stories/images/section-navigator/solution.svg" },
+  { id: "solution", label: "Solution", image: "/success-stories/images/section-navigator/solutionnew.svg" },
+  { id: "architecture", label: "Architecture", image: "/success-stories/images/section-navigator/architecture.svg" },
+  { id: "deployment", label: "Deployment", image: "/success-stories/images/section-navigator/deployment.svg" },
+  { id: "challenges", label: "Challenges", image: "/success-stories/images/section-navigator/solution.svg" },
+  { id: "validation", label: "Validation", image: "/success-stories/images/section-navigator/quiz-alt.svg" },
+  { id: "impact", label: "Impact", image: "/success-stories/images/section-navigator/impact.svg" },
+  { id: "conclusion", label: "Conclusion", image: "/success-stories/images/section-navigator/confetti.svg" },
+  { id: "links", label: "Link", image: "/success-stories/images/section-navigator/solution.svg" },
 ];
 
 // ✅ Active state icon
-const activeIcon = "/blogs/images/section-navigator/check-circle1.svg";
+const activeIcon = "/success-stories/images/section-navigator/check-circle1.svg";
 
 export default function SectionNavigator() {
   const [activeSection, setActiveSection] = useState("overview");

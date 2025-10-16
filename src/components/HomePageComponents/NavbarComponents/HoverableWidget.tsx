@@ -99,8 +99,8 @@ export default function HoverableWidget({
                 <Image
                   src={
                     activeFilter === filter
-                      ? "/blogs/images/check-blue.svg"
-                      : "/blogs/images/check-gray.svg"
+                      ? "/success-stories/images/check-blue.svg"
+                      : "/success-stories/images/check-gray.svg"
                   }
                   alt="tick"
                   fill

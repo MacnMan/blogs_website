@@ -58,8 +58,8 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
                 <SafeImage
                   src={
                     isActive
-                      ? "/blogs/images/check-blue.svg"
-                      : "/blogs/images/check-gray.svg"
+                      ? "/success-stories/images/check-blue.svg"
+                      : "/success-stories/images/check-gray.svg"
                   }
                   alt={isActive ? "Selected" : "Unselected"}
                   width={14}
@@ -89,8 +89,8 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
                 <SafeImage
                   src={
                     isActive
-                      ? "/blogs/images/check-blue.svg"
-                      : "/blogs/images/check-gray.svg"
+                      ? "/success-stories/images/check-blue.svg"
+                      : "/success-stories/images/check-gray.svg"
                   }
                   alt={isActive ? "Selected" : "Unselected"}
                   width={14}
@@ -134,6 +134,7 @@ export default function SuccessStoriesListV2New({ stories }: { stories: SuccessS
         {filteredStories.map((story) => (
           <SwiperSlide key={story._id} style={{ width: 'auto' }}>
             <Link
+              // href={`/success-stories-version/${story.slug.current}`}
               href={`/success-stories-version/${story.slug.current}`}
               className="flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition"
               style={{ width: '90vw', maxWidth: '400px' }}

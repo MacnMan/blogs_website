@@ -119,7 +119,7 @@ function MainContactUs({ theme }: propTypes) {
           title="Contact to Sales"
           description="Talk to our friendly team"
           contactInfo="chat@macnman.in"
-          src="/blogs/images/contact-us/smile-beam.svg"
+          src="/success-stories/images/contact-us/smile-beam.svg"
           theme={theme ?? "light"}
         />
 
@@ -127,7 +127,7 @@ function MainContactUs({ theme }: propTypes) {
           title="Call Us"
           description="24 X 7 Always On"
           contactInfo="+91 7972856163"
-          src="/blogs/images/contact-us/phone-call.svg"
+          src="/success-stories/images/contact-us/phone-call.svg"
           theme={theme ?? "light"}
         />
 
@@ -135,7 +135,7 @@ function MainContactUs({ theme }: propTypes) {
           title="Contact to Support"
           description="We are here to help"
           contactInfo="support@macnman.in"
-          src="/blogs/images/contact-us/question.svg"
+          src="/success-stories/images/contact-us/question.svg"
           theme={theme ?? "light"}
         />
 
@@ -143,7 +143,7 @@ function MainContactUs({ theme }: propTypes) {
           title="Visit Us"
           description="Visit our office HQ"
           contactInfo="View on Google Map"
-          src="/blogs/images/contact-us/marker.svg"
+          src="/success-stories/images/contact-us/marker.svg"
           theme={theme ?? "light"}
         />
       </div>
@@ -347,7 +347,7 @@ function MainContactUs({ theme }: propTypes) {
               >
                 Submit{' '}
                 <span className="relative w-5 h-5">
-                  <Image src="/blogs/images/paper-plane.svg" alt="" fill />
+                  <Image src="/success-stories/images/paper-plane.svg" alt="" fill />
                 </span>
               </button>
             </div>

@@ -1,25 +1,3 @@
-// // sanity-sitemap.js
-// require('dotenv').config(); // load .env variables
-
-// const { createClient } = require('@sanity/client');
-
-// const client = createClient({
-//   projectId: process.env.SANITY_PROJECT_ID,      // Use server env var
-//   dataset: process.env.SANITY_DATASET,          // Use server env var
-//   apiVersion: process.env.SANITY_API_VERSION,   // optional
-//   useCdn: false,
-// });
-
-// async function getAllDynamicPaths() {
-//   try {
-//     console.log('Fetching data from Sanity...');
-
-//     const results = await client.fetch(`{
-//       "posts": *[_type == "post" && defined(slug.current)]{ "slug": slug.current, _id, _updatedAt },
-//       "blogSuccess": *[_type == "blogSuccess" && defined(slug.current)]{ "slug": slug.current, _id, _updatedAt },
-//       "successStories": *[_type == "successStories" && defined(slug.current)]{ "slug": slug.current, _id, _updatedAt },
-//       "successStoriesVersion": *[_type == "successStoriesVersion" && defined(slug.current)]{ "slug": slug.current, _id, _updatedAt }
-//     }`);
 
 // sanity-sitemap.mjs
 import 'dotenv/config'; // loads .env or .env.local automatically
@@ -63,14 +41,14 @@ export async function getAllDynamicPaths() {
     }
 
     const urls = [
-      { loc: `/blogs`, changefreq: 'weekly', priority: 0.9 },
-      { loc: `/blogs/blog-success-story`, changefreq: 'weekly', priority: 0.9 },
+      { loc: `/success-stories`, changefreq: 'weekly', priority: 0.9 },
+      { loc: `/success-stories/blogs`, changefreq: 'weekly', priority: 0.9 },
     ];
 
     data.blogSuccessStory?.forEach(story => {
       if (story?.slug) {
         urls.push({
-          loc: `/blogs/blog-success-story/${story.slug}`,
+          loc: `/success-stories/blogs/${story.slug}`,
           changefreq: 'weekly',
           priority: 0.8,
         });
@@ -80,7 +58,7 @@ export async function getAllDynamicPaths() {
     data.successStoriesVersion?.forEach(story => {
       if (story?.slug) {
         urls.push({
-          loc: `/blogs/success-stories-version/${story.slug}`,
+          loc: `/success-stories/success-stories-version/${story.slug}`,
           changefreq: 'weekly',
           priority: 0.8,
         });
@@ -105,44 +83,3 @@ if (import.meta.url === process.argv[1] || import.meta.url === `file://${process
 }
 
 
-
-// // sanity-sitemap.js
-// require('dotenv').config();
-// const { createClient } = require('@sanity/client');
-
-// const client = createClient({
-//   projectId: process.env.SANITY_PROJECT_ID,
-//   dataset: process.env.SANITY_DATASET,
-//   apiVersion: process.env.SANITY_API_VERSION || '2025-10-11',
-//   useCdn: false,
-// });
-
-// async function getAllDynamicPaths() {
-//   try {
-//     const results = await client.fetch(`{
-//       "posts": *[_type == "post" && defined(slug.current)]{ "slug": slug.current },
-//       "successStories": *[_type == "successStories" && defined(slug.current)]{ "slug": slug.current },
-//       "blogSuccess": *[_type == "blogSuccess" && defined(slug.current)]{ "slug": slug.current },
-//       "successStoriesVersion": *[_type == "successStoriesVersion" && defined(slug.current)]{ "slug": slug.current }
-//     }`);
-
-//     const urls = [];
-
-//     results.posts?.forEach(post => urls.push(`/post/${post.slug}`));
-//     results.blogSuccess?.forEach(story => urls.push(`/blog-success-story/${story.slug}`));
-//     results.successStories?.forEach(story => urls.push(`/success-stories/${story.slug}`));
-//     results.successStoriesVersion?.forEach(ver => urls.push(`/blogs/success-stories-version/${ver.slug}`));
-
-//     return urls.map(path => ({
-//       loc: path,
-//       lastmod: new Date().toISOString(),
-//       changefreq: 'weekly',
-//       priority: 0.7,
-//     }));
-//   } catch (err) {
-//     console.error('Error fetching Sanity data for sitemap:', err.message);
-//     return [];
-//   }
-// }
-
-// module.exports = { getAllDynamicPaths };

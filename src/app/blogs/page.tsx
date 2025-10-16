@@ -70,7 +70,7 @@ export default async function BlogSuccessPage() {
       {/* Decorative image */}
       <div className="w-full my-10 mb-[-10px]">
         <Image
-          src="/blogs/Group 370.svg"
+          src="/success-stories/Group 370.svg"
           alt="products image macnman"
           width={1920}   // set a large width for full coverage
           height={200}   // adjust height as needed

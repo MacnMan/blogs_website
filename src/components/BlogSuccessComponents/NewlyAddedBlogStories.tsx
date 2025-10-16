@@ -28,7 +28,8 @@ export default function NewlyAddedBlogs({ blogs }: NewlyAddedBlogsProps) {
         {sortedBlogs.map((blog) => (
           <Link
             key={blog._id}
-            href={`/blog-success-story/${blog.slug.current}`}
+            href={`/blogs/${blog.slug.current}`}
+            // href={`/blog-success-story/${blog.slug.current}`}
             className="rounded-xl sm:rounded-3xl transition overflow-hidden"
           >
             {/* Image */}

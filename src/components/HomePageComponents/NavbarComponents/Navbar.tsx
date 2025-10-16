@@ -66,7 +66,7 @@
 //           onClick={() => (window.location.href = ROUTES.HOME)}
 //         >
 //           <Image
-//             src='/blogs/logo.png'
+//             src='/success-stories/logo.png'
 //             fill
 //             alt='MacnMan Logo'
 //             sizes='(max-width: 425px): 500px,500px'
@@ -85,7 +85,7 @@
 //           >
 //             <div className="relative w-8 mt-1 h-6 flex items-center justify-center">
 //               <Image
-//                 src="/blogs/logo_small_red.webp"
+//                 src="/success-stories/logo_small_red.webp"
 //                 alt="Small Logo"
 //                 fill
 //                 className="object-contain"
@@ -162,7 +162,7 @@
 //         <li className='cursor-pointer text-md group relative'>
 //           <a
 //             target='_blank'
-//             href='https://macnman.in/blogs'
+//             href='https://macnman.in/success-stories'
 //             className='hover:text-black hover:font-semibold after:absolute after:content-[""] after:self-center after:w-full after:left-1/2 after:-translate-x-1/2 after:-bottom-[3px] after:h-2 after:bg-gradient-to-r after:from-pink-700 after:to-indigo-700 after:blur-md after:opacity-0 group-hover:after:opacity-90 transition-all duration-300'
 //           >
 //             Success Stories
@@ -176,7 +176,7 @@
 
 //         {/* Cart Icon */}
 //         <Image
-//           src='/blogs/shopping-bag.svg'
+//           src='/success-stories/shopping-bag.svg'
 //           alt='Shopping Bag'
 //           width={16}
 //           height={16}
@@ -266,7 +266,7 @@ export default function Navbar({
             onClick={() => (window.location.href = "https://macnman.in/")}
           >
             <Image
-              src='/blogs/logo.png'
+              src='/success-stories/logo.png'
               fill
               alt='MacnMan Logo'
               sizes='(max-width: 425px): 500px,700px'
@@ -285,7 +285,7 @@ export default function Navbar({
             >
               <div className="relative w-8 mt-1 h-6 flex items-center justify-center">
                 <Image
-                  src="/blogs/logo_small_red.webp"
+                  src="/success-stories/logo_small_red.webp"
                   alt="Small Logo"
                   fill
                   className="object-contain"
@@ -370,7 +370,7 @@ export default function Navbar({
 
           {/* Cart Icon */}
           <Image
-            src='/blogs/images/svgs/shopping-bag 1.svg'
+            src='/success-stories/images/svgs/shopping-bag 1.svg'
             alt='Shopping Bag'
             width={16}
             height={16}

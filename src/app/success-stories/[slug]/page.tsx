@@ -327,7 +327,7 @@ export default async function SuccessStory({ params }: Props) {
       </main>
 
       <Image
-        src={'/blogs/Group 370.svg'}
+        src={'/success-stories/Group 370.svg'}
         alt={'prodcuts image macnman'}
         width={100}
         height={10}

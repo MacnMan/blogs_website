@@ -457,7 +457,7 @@ export default async function SuccessStoryVersion2Page({ params }: Props) {
       </main>
 
       <SafeImage
-        src={"/blogs/Group 370.svg"}
+        src={"/success-stories/Group 370.svg"}
         alt={"Products image macnman"}
         width={100}
         height={10}

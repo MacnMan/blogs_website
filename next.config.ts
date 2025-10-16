@@ -1,38 +1,11 @@
-  // // import type { NextConfig } from "next";
-
-  // // const nextConfig: NextConfig = {
-  // //   /* config options here */
-  // //     images: {
-  // //     domains: ['cdn.sanity.io'],
-  // //   },
-  // // };
-
-  // // export default nextConfig;
-
-  // import type { NextConfig } from "next";
-
-  // const nextConfig: NextConfig = {
-  //   images: {
-  //     remotePatterns: [
-  //       {
-  //         protocol: 'https',
-  //         hostname: 'cdn.sanity.io',
-  //       },
-  //     ],
-  //   },
-  // };
-
-  // export default nextConfig;
-
-
   // next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // This makes your Next.js site run under /blogs
-  basePath: "/blogs",
-  assetPrefix: "/blogs/",
+  // This makes your Next.js site run under /success-stories
+  basePath: "/success-stories",
+  assetPrefix: "/success-stories/",
 
   images: {
     remotePatterns: [

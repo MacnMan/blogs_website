@@ -52,7 +52,7 @@ export default function NavbarMobileDevices() {
           <span className="absolute left-3">
             <a href="https://macnman.in/" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/blogs/images/macnman-small-logo.svg"
+                src="/success-stories/images/macnman-small-logo.svg"
                 alt="logo"
                 width={30}
                 height={30}
@@ -78,7 +78,7 @@ export default function NavbarMobileDevices() {
               </span>
 
               <Image
-                src="/blogs/images/svgs/shopping-bag 1.svg"
+                src="/success-stories/images/svgs/shopping-bag 1.svg"
                 alt="Shopping Bag"
                 width={22}
                 height={22}

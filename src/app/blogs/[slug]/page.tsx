@@ -206,7 +206,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                   className="p-3 bg-[#45A756] rounded-full shadow-md transition-transform"
                 >
                   <Image
-                    src="/blogs/whatsapp.svg"
+                    src="/success-stories/whatsapp.svg"
                     alt="WhatsApp"
                     width={22}
                     height={22}
@@ -220,7 +220,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                   className="p-3 bg-[#2F67FF] rounded-full shadow-md transition-transform"
                 >
                   <Image
-                    src="/blogs/linkedin.svg"
+                    src="/success-stories/linkedin.svg"
                     alt="LinkedIn"
                     width={22}
                     height={22}
@@ -232,7 +232,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                   className="p-3 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md transition-transform"
                 >
                   <Image
-                    src="/blogs/envelope.svg"
+                    src="/success-stories/envelope.svg"
                     alt="Email"
                     width={22}
                     height={22}
@@ -246,7 +246,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                   className="p-3 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md transition-transform"
                 >
                   <Image
-                    src="/blogs/marker 2.svg"
+                    src="/success-stories/marker 2.svg"
                     alt="Location"
                     width={22}
                     height={22}
@@ -279,7 +279,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               className="p-2 bg-[#45A756] rounded-full shadow-md"
             >
               <Image
-                src="/blogs/whatsapp.svg"
+                src="/success-stories/whatsapp.svg"
                 alt="WhatsApp"
                 width={18}
                 height={18}
@@ -292,7 +292,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               className="p-2 bg-[#2F67FF] rounded-full shadow-md"
             >
               <Image
-                src="/blogs/linkedin.svg"
+                src="/success-stories/linkedin.svg"
                 alt="LinkedIn"
                 width={18}
                 height={18}
@@ -303,7 +303,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               className="p-2 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md"
             >
               <Image
-                src="/blogs/envelope.svg"
+                src="/success-stories/envelope.svg"
                 alt="Email"
                 width={18}
                 height={18}
@@ -316,7 +316,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               className="p-2 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md"
             >
               <Image
-                src="/blogs/marker 2.svg"
+                src="/success-stories/marker 2.svg"
                 alt="Location"
                 width={18}
                 height={18}
@@ -328,7 +328,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
         {/* Decorative image */}
         <div className="w-full my-8 sm:my-10">
           <Image
-            src="/blogs/Group 370.svg"
+            src="/success-stories/Group 370.svg"
             alt="products image macnman"
             width={1920}
             height={200}

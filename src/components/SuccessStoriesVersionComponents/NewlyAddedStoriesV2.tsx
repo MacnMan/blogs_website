@@ -67,6 +67,7 @@ export default function NewlyAddedStoriesV2({ stories }: { stories: SuccessStory
           <Link
             key={story._id}
             href={`/success-stories-version/${story.slug.current}`}
+            // href={`/success-stories-version/${story.slug.current}`}
             className="rounded-xl sm:rounded-3xl shadow-sm transition bg-gray-100 overflow-hidden"
           >
             {/* ✅ Image */}

@@ -45,8 +45,8 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
                 <Image
                   src={
                     isActive
-                      ? "/blogs/images/check-blue.svg"
-                      : "/blogs/images/check-gray.svg"
+                      ? "/success-stories/images/check-blue.svg"
+                      : "/success-stories/images/check-gray.svg"
                   }
                   alt={isActive ? "Selected" : "Unselected"}
                   width={14}
@@ -76,8 +76,8 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
                 <Image
                   src={
                     isActive
-                      ? "/blogs/images/check-blue.svg"
-                      : "/blogs/images/check-gray.svg"
+                      ? "/success-stories/images/check-blue.svg"
+                      : "/success-stories/images/check-gray.svg"
                   }
                   alt={isActive ? "Selected" : "Unselected"}
                   width={14}
@@ -119,7 +119,8 @@ export default function BlogSuccessStoriesList({ posts }: { posts: BlogSuccessPo
         {filteredPosts.map((post) => (
           <SwiperSlide key={post._id} style={{ width: "auto" }}>
             <Link
-              href={`/blog-success-story/${post.slug.current}`}
+              href={`/blogs/${post.slug.current}`}
+              // href={`/blog-success-story/${post.slug.current}`}
               className="flex-shrink-0 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition"
               style={{ width: "70vw", maxWidth: "300px" }}
             >

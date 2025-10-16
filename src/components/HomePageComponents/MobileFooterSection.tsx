@@ -8,7 +8,7 @@ export default function MobileFooterSection () {
     <div className='md:hidden'>
       {/* <div className='relative w-full h-96 bg-[#fafafa] mx-auto '>
         <Image
-          src='/blogs/images/mobile-footer-image.svg'
+          src='/success-stories/images/mobile-footer-image.svg'
           alt='Icon'
           fill
           className='object-fill h-full w-60'
@@ -55,7 +55,7 @@ export default function MobileFooterSection () {
               suppressHydrationWarning
             />
             <Image
-              src='/blogs/images/india-flag.png'
+              src='/success-stories/images/india-flag.png'
               alt='flag image'
               width={20}
               height={30}
