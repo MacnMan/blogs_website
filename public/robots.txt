@@ -1,9 +1,20 @@
-# *
+# Allow all major search engines to crawl public content
 User-agent: *
 Allow: /
 
-# Host
-Host: https://macnman.com
+# Block non-SEO pages and backend/internal routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /internal/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /studio/
+Disallow: /search
+Disallow: /preview/
 
-# Sitemaps
-Sitemap: https://macnman.com/sitemap.xml
+# Host directive (optional but helpful for Bing/Yandex)
+Host: https://www.macnman.com
+
+# Primary XML Sitemap
+Sitemap: https://www.macnman.com/sitemap.xml
