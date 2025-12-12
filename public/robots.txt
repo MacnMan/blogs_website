@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.macnman.in
+Host: https://macnman.com
 
 # Sitemaps
-Sitemap: https://www.macnman.in/sitemap.xml
+Sitemap: https://macnman.com/sitemap.xml

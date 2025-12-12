@@ -1,7 +1,7 @@
 const { getAllDynamicPaths } = require('./sanity-sitemap');
 
 module.exports = {
-  siteUrl: 'https://www.macnman.in',
+  siteUrl: 'https://macnman.com',
   generateRobotsTxt: true,
   sitemapSize: 5000,
 

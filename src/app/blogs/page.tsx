@@ -46,7 +46,7 @@ export default async function BlogSuccessPage() {
           {/* Buttons */}
           <div className="flex sm:gap-3 gap-10">
             <a
-              href="https://macnman.in/docs/"
+              href="https://macnman.com/docs/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[12px] border border-blue-500 text-blue-600 rounded-full hover:bg-blue-50 transition sm:px-4 sm:py-2 px-3 py-1"
@@ -54,7 +54,7 @@ export default async function BlogSuccessPage() {
               Read Now
             </a>
             <a
-              href="https://macnman.in/"
+              href="https://macnman.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[12px] bg-blue-600 text-white rounded-full hover:bg-blue-700 transition sm:px-4 sm:py-2 px-3 py-1"
