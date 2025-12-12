@@ -228,7 +228,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
                 </a>
                 {/* Email */}
                 <a
-                  href="mailto:info@macnman.in"
+                  href="mailto:info@macnman.com"
                   className="p-3 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md transition-transform"
                 >
                   <Image
@@ -299,7 +299,7 @@ export default async function BlogSuccessStoryPage({ params }: Props) {
               />
             </a>
             <a
-              href="mailto:info@macnman.in"
+              href="mailto:info@macnman.com"
               className="p-2 bg-gradient-to-r from-[#2F67FF] to-[#FF5F9B] rounded-full shadow-md"
             >
               <Image

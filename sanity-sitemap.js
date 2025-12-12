@@ -41,14 +41,17 @@ export async function getAllDynamicPaths() {
     }
 
     const urls = [
-      { loc: `/success-stories`, changefreq: 'weekly', priority: 0.9 },
-      { loc: `/success-stories/blogs`, changefreq: 'weekly', priority: 0.9 },
+      { loc: `/`, changefreq: 'weekly', priority: 0.9 },
+      // { loc: `/success-stories`, changefreq: 'weekly', priority: 0.9 },
+      { loc: `/blogs`, changefreq: 'weekly', priority: 0.9 },
+      // { loc: `/success-stories/blogs`, changefreq: 'weekly', priority: 0.9 },
     ];
 
     data.blogSuccessStory?.forEach(story => {
       if (story?.slug) {
         urls.push({
-          loc: `/success-stories/blogs/${story.slug}`,
+          loc: `/blogs/${story.slug}`,
+          // loc: `/success-stories/blogs/${story.slug}`,
           changefreq: 'weekly',
           priority: 0.8,
         });
@@ -58,7 +61,8 @@ export async function getAllDynamicPaths() {
     data.successStoriesVersion?.forEach(story => {
       if (story?.slug) {
         urls.push({
-          loc: `/success-stories/success-stories-version/${story.slug}`,
+          loc: `/success-stories-version/${story.slug}`,
+          // loc: `/success-stories/success-stories-version/${story.slug}`,
           changefreq: 'weekly',
           priority: 0.8,
         });

@@ -1,9 +1,10 @@
 const { getAllDynamicPaths } = require('./sanity-sitemap');
 
 module.exports = {
-  siteUrl: 'https://macnman.com',
+  siteUrl: 'https://www.macnman.com/success-stories',
   generateRobotsTxt: true,
   sitemapSize: 5000,
+  outDir: 'public',
 
   transform: async (config, path) => ({
     loc: path.startsWith('http') ? path : `${config.siteUrl}${path}`,

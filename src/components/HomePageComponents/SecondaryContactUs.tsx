@@ -28,7 +28,7 @@ function SecondaryContactUs () {
           <TbMoodSmileBeam className='text-5xl text-gray-300 font-thin mb-10 -ml-2' />
           <p className='font-semibold text-xl mb-2'>Contact to sales</p>
           <p className='font-lg mb-2'>Talk to our friendly team</p>
-          <p className='text-blue-600'>sales@macnman.in</p>
+          <p className='text-blue-600'>sales@macnman.com</p>
         </div>
         <div className='border-2 border-gray-300 rounded-md min-w-64 p-4'>
           <LuPhoneCall className='text-5xl text-gray-300 font-thin mb-10 -ml-2' />
@@ -40,7 +40,7 @@ function SecondaryContactUs () {
           <IoHelpCircleOutline className='text-5xl text-gray-300 font-thin mb-10 -ml-2' />
           <p className='font-semibold text-xl mb-2'>Contact to Support</p>
           <p className='font-lg mb-2'>We are here to help</p>
-          <p className='text-blue-600'>helpdesk@macnman.in</p>
+          <p className='text-blue-600'>helpdesk@macnman.com</p>
         </div>
         <div className='border-2 border-gray-300 rounded-md min-w-64 p-4'>
           <IoLocationOutline className='text-5xl text-gray-300 font-thin mb-10 -ml-2' />
