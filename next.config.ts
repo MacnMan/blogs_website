@@ -4,8 +4,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   // This makes your Next.js site run under /success-stories
-  // basePath: "/success-stories",
-  // assetPrefix: "/success-stories/",
+  basePath: "/success-stories",
+  assetPrefix: "/success-stories",
 
   images: {
     remotePatterns: [
